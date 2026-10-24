@@ -1,0 +1,16 @@
+{
+  "name": "Henry Abimanyu — Data Portfolio",
+  "short_name": "Henry Portfolio",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f0e7",
+  "theme_color": "#f3f0e7",
+  "icons": [
+    {
+      "src": "./assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
