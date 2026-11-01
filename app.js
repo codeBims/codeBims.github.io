@@ -50,8 +50,8 @@ syncPortfolioHash();
 window.addEventListener('hashchange', syncPortfolioHash);
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
-const nav = document.querySelector('nav');
+const navLinks = [...document.querySelectorAll('.section-nav a[href^="#"]')];
+const nav = document.querySelector('.section-nav');
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
@@ -83,7 +83,7 @@ if ('IntersectionObserver' in window) {
 }
 
 const revealTargets = document.querySelectorAll(
-  '.positioning-copy, .section-heading, .timeline article, .capability-grid article, .side-project, .contact-main, .contact-list'
+  '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .fittrack-showcase, .thesis-showcase, .jalanyuk-showcase, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
 );
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
@@ -91,9 +91,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
+      entry.target.classList.toggle('is-visible', entry.isIntersecting);
     });
   }, { rootMargin: '0px 0px -10%', threshold: .08 });
 

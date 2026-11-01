@@ -13,23 +13,24 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
   <script>document.documentElement.dataset.theme = (localStorage.getItem('portfolio-theme') || 'auto') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('portfolio-theme');</script>
-  <link rel="stylesheet" href="./styles.css?v=20261101k">
+  <link rel="stylesheet" href="./styles.css?v=20261101m">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-gmail" viewBox="0 0 24 24"><path d="M3 6.5 12 13l9-6.5v11.8a1.7 1.7 0 0 1-1.7 1.7H4.7A1.7 1.7 0 0 1 3 18.3Z" fill="none" stroke="#4285f4" stroke-width="2.2"/><path d="M3 6.5 12 13l9-6.5" fill="none" stroke="#ea4335" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 8v10.3A1.7 1.7 0 0 0 4.7 20H6V9" fill="none" stroke="#34a853" stroke-width="2.2"/><path d="M18 9v11h1.3a1.7 1.7 0 0 0 1.7-1.7V8" fill="none" stroke="#fbbc04" stroke-width="2.2"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.2 8.6H2.4V21h2.8zM3.8 2.5a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3ZM21.6 13.9c0-3.75-2-5.5-4.7-5.5a4.05 4.05 0 0 0-3.65 2V8.6h-2.8V21h2.8v-6.15c0-1.62.31-3.18 2.3-3.18 1.96 0 1.98 1.84 1.98 3.29V21h2.8z"/></symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.5" r="1.15"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.61 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.6 1 1-3.5-.3-.5A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4Z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
 
   <header class="site-header">
     <a class="brand" href="#atas" aria-label="Kembali ke atas">
       <strong>HA<span>.</span></strong>
       <small>Data portfolio</small>
     </a>
-    <nav aria-label="Navigasi utama">
-      <a href="#karya">Studi kasus</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#sertifikat">Sertifikat</a>
-      <a href="#keahlian">Keahlian</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
     <div class="header-tools">
       <button class="utility-control" id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
       <button class="utility-control" id="theme-toggle" type="button" aria-label="Tema: ikuti perangkat. Klik untuk mode terang" title="Tema: ikuti perangkat">◐</button>
@@ -37,6 +38,14 @@
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
   </header>
+
+  <nav class="section-nav" aria-label="Navigasi bagian">
+    <a href="#profil">Profil</a>
+    <a href="#karya">Portofolio</a>
+    <a href="#pengalaman">Jejak</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#komentar">Komentar</a>
+  </nav>
 
   <main id="konten">
     <section class="hero" id="atas">
@@ -73,7 +82,7 @@
       </dl>
     </section>
 
-    <section class="positioning" aria-labelledby="positioning-title">
+    <section class="positioning" id="profil" aria-labelledby="positioning-title">
       <p class="section-label">01 / Profil</p>
       <div class="positioning-photo-wrap">
         <div class="about-photo">
@@ -306,13 +315,13 @@
         <p>Saya terbuka untuk posisi penuh waktu, kesempatan fresh graduate, dan proyek freelance analitik terpilih.</p>
         <a class="button button-light" href="mailto:abimkaizen@gmail.com">Mulai percakapan <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="contact-list">
-        <a href="mailto:abimkaizen@gmail.com"><span>Email</span><strong>abimkaizen@gmail.com</strong></a>
-        <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Henry Abimanyu</strong></a>
-        <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@hnryabim</strong></a>
-        <a href="https://github.com/codeBims" target="_blank" rel="noreferrer"><span>GitHub</span><strong>@codeBims</strong></a>
-        <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
-        <a href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download><span>Dokumen</span><strong>Unduh CV</strong></a>
+      <div class="contact-list" aria-label="Tautan kontak dan media sosial">
+        <a href="mailto:abimkaizen@gmail.com" aria-label="Email abimkaizen@gmail.com"><svg class="social-icon icon-gmail" aria-hidden="true"><use href="#icon-gmail"/></svg><span>Email</span><strong>abimkaizen@gmail.com</strong></a>
+        <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer" aria-label="LinkedIn Henry Abimanyu"><svg class="social-icon icon-linkedin" aria-hidden="true"><use href="#icon-linkedin"/></svg><span>LinkedIn</span><strong>Henry Abimanyu</strong></a>
+        <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span><strong>@hnryabim</strong></a>
+        <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span><strong>@codeBims</strong></a>
+        <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
+        <a href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
       </div>
     </section>
 
@@ -321,7 +330,13 @@
         <p class="section-label">05 / Komentar</p>
         <h2 id="comments-title">Tinggalkan kesan atau pertanyaan.</h2>
         <p>Tulis langsung di halaman ini. Nama dan komentar Anda akan terlihat oleh pengunjung lain. Untuk peluang kerja atau proyek, gunakan kontak pribadi di atas.</p>
-        <div class="comments-social"><span>Temukan saya</span><a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer">Instagram @hnryabim ↗</a><a href="https://github.com/codeBims" target="_blank" rel="noreferrer">GitHub codeBims ↗</a></div>
+        <div class="comments-social"><span>Temukan saya</span>
+          <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span></a>
+          <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span></a>
+          <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer" aria-label="LinkedIn Henry Abimanyu"><svg class="social-icon icon-linkedin" aria-hidden="true"><use href="#icon-linkedin"/></svg><span>LinkedIn</span></a>
+          <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span></a>
+          <a href="mailto:abimkaizen@gmail.com" aria-label="Email abimkaizen@gmail.com"><svg class="social-icon icon-gmail" aria-hidden="true"><use href="#icon-gmail"/></svg><span>Email</span></a>
+        </div>
       </div>
       <div class="comments-box">
         <h3>Komentar <span id="comment-count"></span></h3>
@@ -345,7 +360,7 @@
 
   <script src="./comments-config.js"></script>
   <script src="./i18n.js?v=20261101c"></script>
-  <script src="./app.js?v=20261101f"></script>
+  <script src="./app.js?v=20261101h"></script>
   <script src="./comments.js?v=20261101c"></script>
 </body>
 </html>
