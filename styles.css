@@ -29,7 +29,7 @@
 :root[data-theme="dark"] .availability { color: #8ed7b7; border-color: #557b69; }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 body {
   margin: 0;
   background:
@@ -69,7 +69,7 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   min-height: 78px;
   padding-inline: max(var(--pad), calc((100vw - var(--max)) / 2));
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 2rem;
   border-bottom: 0;
@@ -98,35 +98,28 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   text-transform: uppercase;
 }
 nav.section-nav {
-  position: fixed;
-  z-index: 40;
-  left: 50%;
-  top: calc(5.15rem + env(safe-area-inset-top));
+  position: relative;
+  z-index: 1;
+  justify-self: center;
   width: max-content;
-  max-width: calc(100vw - 1rem);
+  max-width: 100%;
   display: flex;
   gap: .15rem;
-  padding: .3rem;
+  padding: .25rem 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scrollbar-width: none;
-  transform: translateX(-50%);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 98%, transparent);
-  box-shadow: 0 8px 28px rgba(0,0,0,.16);
-  backdrop-filter: blur(16px);
-  --indicator-x: .3rem;
+  --indicator-x: 0;
   --indicator-width: 4.5rem;
 }
 nav.section-nav::before {
   content: '';
   position: absolute;
   z-index: 0;
-  top: .3rem;
+  top: .25rem;
   left: 0;
   width: var(--indicator-width);
-  height: calc(100% - .6rem);
+  height: calc(100% - .5rem);
   border-radius: 999px;
   background: var(--ink);
   transform: translateX(var(--indicator-x));
@@ -195,7 +188,7 @@ main > section:not(.contact), footer {
   width: min(calc(100% - (2 * var(--pad))), var(--max));
   margin-inline: auto;
 }
-main > section[id] { scroll-margin-top: 160px; }
+main > section[id] { scroll-margin-top: 96px; }
 .hero {
   padding: clamp(7rem, 9vw, 9rem) 0 0;
   display: grid;
@@ -832,8 +825,8 @@ footer p { margin: 0; }
 }
 
 @media (max-width: 980px) {
-  html { scroll-padding-top: 150px; }
-  main > section[id] { scroll-margin-top: 150px; }
+  html { scroll-padding-top: 132px; }
+  main > section[id] { scroll-margin-top: 132px; }
   .contact {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -851,7 +844,7 @@ footer p { margin: 0; }
     gap: .35rem 1rem;
   }
   .header-tools { grid-column: 2; grid-row: 1; }
-  nav.section-nav { top: calc(4.35rem + env(safe-area-inset-top)); width: max-content; max-width: calc(100vw - 1rem); -webkit-overflow-scrolling: touch; }
+  nav.section-nav { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; justify-content: center; width: 100%; max-width: 100%; -webkit-overflow-scrolling: touch; }
   .hero { grid-template-columns: minmax(0, 1.15fr) minmax(260px, .65fr); }
   .project-index { grid-template-columns: 1fr; }
   .case-body { grid-template-columns: 1fr; }
@@ -865,8 +858,8 @@ footer p { margin: 0; }
 
 @media (max-width: 720px) {
   body { padding-bottom: 0; font-size: 16px; }
-  html { scroll-padding-top: 142px; }
-  main > section[id] { scroll-margin-top: 142px; }
+  html { scroll-padding-top: 128px; }
+  main > section[id] { scroll-margin-top: 128px; }
   .contact { padding-bottom: clamp(5rem, 10vw, 8rem); }
   .contact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 .9rem; }
   .site-header { min-height: 0; }
@@ -874,7 +867,7 @@ footer p { margin: 0; }
   .header-cta { padding: .52rem .7rem; }
   .hero {
     min-height: 0;
-    padding-top: 6.5rem;
+    padding-top: 3.5rem;
     grid-template-columns: 1fr;
     gap: 3.2rem;
   }
@@ -952,7 +945,7 @@ footer p { margin: 0; }
   .pipeline i { transform: rotate(90deg); }
   .contact-list a { grid-template-columns: 22px auto; gap: .25rem .55rem; }
   .contact-list a { min-height: 78px; padding-inline: .1rem; }
-  nav.section-nav { top: calc(4rem + env(safe-area-inset-top)); }
+  nav.section-nav { justify-content: flex-start; }
   nav.section-nav a { min-height: 40px; padding: .48rem .62rem; font-size: .62rem; letter-spacing: .06em; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: .8rem; }
 }

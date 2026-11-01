@@ -13,7 +13,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
   <script>document.documentElement.dataset.theme = (localStorage.getItem('portfolio-theme') || 'auto') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('portfolio-theme');</script>
-  <link rel="stylesheet" href="./styles.css?v=20261102c">
+  <link rel="stylesheet" href="./styles.css?v=20261102d">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -31,6 +31,13 @@
       <strong>HA<span>.</span></strong>
       <small>Data portfolio</small>
     </a>
+    <nav class="section-nav" aria-label="Navigasi bagian">
+      <a href="#profil">Profil</a>
+      <a href="#karya">Portofolio</a>
+      <a href="#pengalaman">Jejak</a>
+      <a href="#kontak">Kontak</a>
+      <a href="#komentar">Komentar</a>
+    </nav>
     <div class="header-tools">
       <button class="utility-control" id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
       <button class="utility-control" id="theme-toggle" type="button" aria-label="Tema: ikuti perangkat. Klik untuk mode terang" title="Tema: ikuti perangkat">◐</button>
@@ -38,14 +45,6 @@
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
   </header>
-
-  <nav class="section-nav" aria-label="Navigasi bagian">
-    <a href="#profil">Profil</a>
-    <a href="#karya">Portofolio</a>
-    <a href="#pengalaman">Jejak</a>
-    <a href="#kontak">Kontak</a>
-    <a href="#komentar">Komentar</a>
-  </nav>
 
   <main id="konten">
     <section class="hero" id="atas">
