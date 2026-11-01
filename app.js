@@ -49,16 +49,25 @@ selectCase('fittrack');
 syncPortfolioHash();
 window.addEventListener('hashchange', syncPortfolioHash);
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 document.querySelectorAll('[data-gallery]').forEach((gallery) => {
   const slides = [...gallery.querySelectorAll('[data-gallery-slide]')];
   const previous = gallery.querySelector('[data-gallery-prev]');
   const next = gallery.querySelector('[data-gallery-next]');
+  const toggle = gallery.querySelector('[data-gallery-toggle]');
   const current = gallery.querySelector('[data-gallery-current]');
+  const status = current.parentElement;
   let index = 0;
   let touchStart = null;
+  let autoplay = !reduceMotion;
+  let pointerInside = false;
+  let focusInside = false;
+  let autoplayTimer;
 
-  const showSlide = (nextIndex) => {
+  const showSlide = (nextIndex, announce = false) => {
     index = (nextIndex + slides.length) % slides.length;
+    status.setAttribute('aria-live', announce ? 'polite' : 'off');
     slides.forEach((slide, slideIndex) => {
       const selected = slideIndex === index;
       slide.hidden = !selected;
@@ -67,15 +76,39 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     current.textContent = String(index + 1);
   };
 
-  previous.addEventListener('click', () => showSlide(index - 1));
-  next.addEventListener('click', () => showSlide(index + 1));
+  const scheduleAutoplay = () => {
+    clearTimeout(autoplayTimer);
+    if (!autoplay || reduceMotion) return;
+    autoplayTimer = setTimeout(() => {
+      if (!document.hidden && !pointerInside && !focusInside && !gallery.closest('[hidden]')) showSlide(index + 1);
+      scheduleAutoplay();
+    }, 5000);
+  };
+
+  previous.addEventListener('click', () => { showSlide(index - 1, true); scheduleAutoplay(); });
+  next.addEventListener('click', () => { showSlide(index + 1, true); scheduleAutoplay(); });
+  toggle.addEventListener('click', () => {
+    autoplay = !autoplay;
+    updateControlLabels();
+    scheduleAutoplay();
+  });
   gallery.addEventListener('keydown', (event) => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     event.preventDefault();
-    showSlide(index + (event.key === 'ArrowRight' ? 1 : -1));
+    showSlide(index + (event.key === 'ArrowRight' ? 1 : -1), true);
+    scheduleAutoplay();
+  });
+  gallery.addEventListener('mouseenter', () => { pointerInside = true; clearTimeout(autoplayTimer); });
+  gallery.addEventListener('mouseleave', () => { pointerInside = false; scheduleAutoplay(); });
+  gallery.addEventListener('focusin', () => { focusInside = true; clearTimeout(autoplayTimer); });
+  gallery.addEventListener('focusout', (event) => {
+    if (gallery.contains(event.relatedTarget)) return;
+    focusInside = false;
+    scheduleAutoplay();
   });
   gallery.addEventListener('touchstart', (event) => {
     if (event.target.closest('button')) return;
+    clearTimeout(autoplayTimer);
     const touch = event.changedTouches[0];
     touchStart = { x: touch.clientX, y: touch.clientY };
   }, { passive: true });
@@ -85,21 +118,25 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     const deltaX = touch.clientX - touchStart.x;
     const deltaY = touch.clientY - touchStart.y;
     touchStart = null;
-    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
-    showSlide(index + (deltaX < 0 ? 1 : -1));
+    if (Math.abs(deltaX) >= 50 && Math.abs(deltaX) > Math.abs(deltaY)) showSlide(index + (deltaX < 0 ? 1 : -1), true);
+    scheduleAutoplay();
   }, { passive: true });
 
   const updateControlLabels = () => {
     const english = document.documentElement.lang === 'en';
     previous.setAttribute('aria-label', english ? 'Previous image' : 'Gambar sebelumnya');
     next.setAttribute('aria-label', english ? 'Next image' : 'Gambar berikutnya');
+    toggle.textContent = autoplay ? (english ? 'Pause' : 'Jeda') : (english ? 'Play' : 'Putar');
+    toggle.setAttribute('aria-label', autoplay ? (english ? 'Pause automatic slideshow' : 'Jeda slideshow otomatis') : (english ? 'Play automatic slideshow' : 'Putar slideshow otomatis'));
   };
+  toggle.hidden = reduceMotion;
+  document.addEventListener('visibilitychange', () => document.hidden ? clearTimeout(autoplayTimer) : scheduleAutoplay());
   window.addEventListener('portfolio-language-change', updateControlLabels);
   updateControlLabels();
   showSlide(0);
+  scheduleAutoplay();
 });
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const navLinks = [...document.querySelectorAll('.section-nav a[href^="#"]')];
 const nav = document.querySelector('.section-nav');
 const sections = navLinks

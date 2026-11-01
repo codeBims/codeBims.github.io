@@ -573,6 +573,14 @@ h2 {
 }
 .gallery-controls button:hover, .gallery-controls button:focus-visible { border-color: #f6f3ea; background: #f6f3ea; color: #11130f; }
 .gallery-controls button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.gallery-controls .gallery-autoplay {
+  width: auto;
+  min-width: 4.6rem;
+  padding: 0 .85rem;
+  border-radius: 999px;
+  font: 700 .68rem/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .06em;
+}
 .gallery-controls svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @keyframes gallery-in { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
 .result-callout {
