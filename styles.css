@@ -436,7 +436,22 @@ h2 {
 .timeline h3 { margin-bottom: .3rem; font: 400 1.5rem/1.2 Georgia, serif; }
 .timeline ul { margin: 0; padding-left: 1rem; color: var(--muted); font-size: .9rem; }
 .timeline-description { color: var(--muted); font-size: .92rem; }
-.learning-note { grid-column: 2; max-width: 750px; margin: -2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+
+.certificates { padding: clamp(5rem, 9vw, 8rem) 0; border-top: 1px solid var(--ink); }
+.certificate-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.certificate-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); background: var(--surface); text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+.certificate-card:hover, .certificate-card:focus-visible { border-color: var(--red); transform: translateY(-3px); }
+.certificate-card img { width: 100%; aspect-ratio: 674 / 477; object-fit: contain; background: white; border-bottom: 1px solid var(--line); }
+.certificate-card span { min-height: 150px; padding: 1rem; display: flex; flex-direction: column; align-items: flex-start; }
+.certificate-card small { color: var(--red); font: 700 .64rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; text-transform: uppercase; letter-spacing: .06em; }
+.certificate-card strong { margin: .55rem 0 1rem; font: 400 1.15rem/1.2 Georgia, serif; }
+.certificate-card em { margin-top: auto; font-size: .72rem; font-style: normal; font-weight: 700; text-decoration: underline; text-underline-offset: .25rem; }
+.certificate-more { margin-top: 1.5rem; }
+.certificate-more summary { min-height: 48px; padding: .7rem 0; display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: .85rem; font-weight: 700; cursor: pointer; list-style: none; }
+.certificate-more summary::-webkit-details-marker { display: none; }
+.certificate-more summary span { color: var(--red); font-size: 1.25rem; line-height: 1; }
+.certificate-more[open] summary span { transform: rotate(45deg); }
+.certificate-more .certificate-grid { margin-top: 1.5rem; }
 
 .capabilities { padding: clamp(5rem, 10vw, 9rem) 0; border-top: 1px solid var(--ink); }
 .capability-grid {
@@ -550,7 +565,7 @@ footer p { margin: 0; }
   .case-body { grid-template-columns: 1fr; }
   .case-copy { max-width: 780px; }
   .timeline article { grid-template-columns: 1fr; gap: .6rem; }
-  .learning-note { grid-column: 1; margin: 0; }
+  .certificate-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .capability-grid article:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
   .capability-grid article:nth-child(4) { border-top: 1px solid var(--line); }
@@ -588,6 +603,11 @@ footer p { margin: 0; }
   .capability-grid { grid-template-columns: 1fr; }
   .capability-grid article + article { border-left: 0; border-top: 1px solid var(--line); }
   .side-project { grid-template-columns: 1fr; gap: .75rem; }
+  .certificate-grid { grid-template-columns: 1fr; }
+  .certificate-card { flex-direction: row; }
+  .certificate-card img { width: 42%; border-bottom: 0; border-right: 1px solid var(--line); }
+  .certificate-card span { min-height: 0; padding: .85rem; }
+  .certificate-card strong { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
