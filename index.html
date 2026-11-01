@@ -12,7 +12,7 @@
   <title>Henry Abimanyu — Junior Data Analyst</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20261101f">
+  <link rel="stylesheet" href="./styles.css?v=20261101g">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -316,7 +316,7 @@
       <div class="comments-intro">
         <p class="section-label">05 / Komentar</p>
         <h2 id="comments-title">Tinggalkan kesan atau pertanyaan.</h2>
-        <p>Tulis langsung di halaman ini. Nama dan komentar yang disetujui akan terlihat oleh pengunjung lain. Untuk peluang kerja atau proyek, gunakan kontak pribadi di atas.</p>
+        <p>Tulis langsung di halaman ini. Nama dan komentar Anda akan terlihat oleh pengunjung lain. Untuk peluang kerja atau proyek, gunakan kontak pribadi di atas.</p>
         <div class="comments-social"><span>Temukan saya</span><a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer">Instagram @hnryabim ↗</a><a href="https://github.com/codeBims" target="_blank" rel="noreferrer">GitHub codeBims ↗</a></div>
       </div>
       <div class="comments-box">
@@ -326,10 +326,10 @@
           <div class="comment-field"><label for="comment-body">Komentar</label><textarea id="comment-body" name="body" rows="5" maxlength="1000" minlength="3" placeholder="Tulis komentar Anda di sini..." required></textarea></div>
           <div class="comment-trap" aria-hidden="true"><label for="comment-website">Website</label><input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <button type="submit" class="comment-submit">Kirim komentar <span aria-hidden="true">↗</span></button>
-          <p class="comment-note">Komentar ditinjau sebelum tampil. Jangan tulis informasi pribadi atau rahasia.</p>
+          <p class="comment-note">Komentar langsung tampil untuk semua pengunjung. Jangan tulis informasi pribadi atau rahasia.</p>
           <p id="comment-feedback" class="comment-feedback" role="status" aria-live="polite"></p>
         </form>
-        <div id="guestbook-comments" class="guestbook-comments" aria-live="polite"><p>Memuat komentar...</p></div>
+        <div id="guestbook-comments" class="guestbook-comments" role="region" aria-label="Daftar komentar, dapat digulir" tabindex="0" aria-live="polite"><p>Memuat komentar...</p></div>
       </div>
     </section>
   </main>
@@ -341,6 +341,6 @@
 
   <script src="./comments-config.js"></script>
   <script src="./app.js?v=20261101e"></script>
-  <script src="./comments.js?v=20261101a"></script>
+  <script src="./comments.js?v=20261101b"></script>
 </body>
 </html>

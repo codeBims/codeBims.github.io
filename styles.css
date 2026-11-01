@@ -535,7 +535,8 @@ h2 {
 .comment-submit:disabled { opacity: .6; cursor: wait; }
 .comment-note, .comment-feedback { margin: .7rem 0 0; color: var(--muted); font-size: .76rem; }
 .comment-feedback:not(:empty) { padding: .7rem 0; color: var(--ink); }
-.guestbook-comments { margin-top: 2rem; border-top: 1px solid var(--line); }
+.guestbook-comments { margin-top: 2rem; max-height: 22rem; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; border-top: 1px solid var(--line); }
+.guestbook-comments:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 .guestbook-comments > p { margin: 1.2rem 0 0; color: var(--muted); font-size: .9rem; }
 .guestbook-comments article { padding: 1.2rem 0; display: grid; grid-template-columns: 42px 1fr; gap: .8rem; border-bottom: 1px solid var(--line); }
 .guestbook-comments article .comment-avatar { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; background: #e9dfd7; color: var(--red-dark); font: 700 .8rem ui-monospace, monospace; }

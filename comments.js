@@ -53,8 +53,10 @@
       const response = await fetch(`${endpoint}?select=name,body,created_at&approved=eq.true&order=created_at.desc&limit=50`, { headers: { apikey: config.publishableKey } });
       if (!response.ok) throw new Error('Gagal memuat komentar');
       showComments(await response.json());
+      return true;
     } catch {
       list.firstElementChild.textContent = 'Komentar belum dapat dimuat. Coba lagi nanti.';
+      return false;
     }
   }
 
@@ -79,7 +81,11 @@
       });
       if (!response.ok) throw new Error('Gagal mengirim komentar');
       form.reset();
-      feedback.textContent = 'Terima kasih. Komentar Anda menunggu peninjauan sebelum tampil.';
+      const visible = await loadComments();
+      if (visible) list.scrollTop = 0;
+      feedback.textContent = visible
+        ? 'Komentar terkirim dan sudah tampil di bawah.'
+        : 'Komentar terkirim, tetapi daftar belum dapat dimuat. Muat ulang halaman untuk melihatnya.';
     } catch {
       feedback.textContent = 'Komentar belum terkirim. Coba lagi nanti.';
     } finally {
