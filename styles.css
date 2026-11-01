@@ -281,7 +281,6 @@ h2 {
 .principles p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
 
 .work { padding: clamp(5rem, 10vw, 9rem) 0; border-top: 1px solid var(--ink); }
-.work { counter-reset: case; }
 .section-heading {
   display: grid;
   grid-template-columns: minmax(135px, .28fr) minmax(0, 1fr);
@@ -365,6 +364,19 @@ h2 {
 .thesis-showcase { display: grid; gap: 1rem; }
 .thesis-showcase figure { margin: 0; padding: 1rem; border: 1px solid var(--line); background: white; }
 .thesis-showcase figcaption { color: var(--muted); }
+.route-panel {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid #607668;
+  background: #e7ece7;
+}
+.route-panel .micro-label { color: var(--green); }
+.route-panel ol { margin: 2rem 0 1.5rem; padding: 0; list-style: none; border-top: 1px solid #a9b7aa; }
+.route-panel li { display: flex; gap: 1.5rem; padding: 1.15rem 0; border-bottom: 1px solid #a9b7aa; }
+.route-panel li > span { color: var(--green); font: 700 .72rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.route-panel strong, .route-panel small { display: block; }
+.route-panel strong { font: 400 1.35rem/1.2 Georgia, serif; }
+.route-panel small { margin-top: .35rem; color: #4a5d50; font-size: .78rem; }
+.route-note { margin: 0; color: #4a5d50; font-size: .75rem; }
 .result-callout {
   margin: 1.8rem 0;
   padding: 1rem 0;
@@ -422,6 +434,7 @@ h2 {
 .timeline h3 { margin-bottom: .3rem; font: 400 1.5rem/1.2 Georgia, serif; }
 .timeline ul { margin: 0; padding-left: 1rem; color: var(--muted); font-size: .9rem; }
 .timeline-description { color: var(--muted); font-size: .92rem; }
+.learning-note { grid-column: 2; max-width: 750px; margin: -2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
 
 .capabilities { padding: clamp(5rem, 10vw, 9rem) 0; border-top: 1px solid var(--ink); }
 .capability-grid {
@@ -534,6 +547,7 @@ footer p { margin: 0; }
   .case-body { grid-template-columns: 1fr; }
   .case-copy { max-width: 780px; }
   .timeline article { grid-template-columns: 1fr; gap: .6rem; }
+  .learning-note { grid-column: 1; margin: 0; }
   .capability-grid { grid-template-columns: repeat(2, 1fr); }
   .capability-grid article:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
   .capability-grid article:nth-child(4) { border-top: 1px solid var(--line); }

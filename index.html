@@ -60,7 +60,7 @@
       </aside>
 
       <dl class="proof-strip" aria-label="Ringkasan profil">
-        <div><dt>03</dt><dd>Studi kasus data</dd></div>
+        <div><dt>04</dt><dd>Studi kasus terpilih</dd></div>
         <div><dt>01</dt><dd>Pengalaman magang</dd></div>
         <div><dt>8/8</dt><dd>Repetisi terdeteksi</dd></div>
         <div><dt>2026</dt><dd>S1 Informatika</dd></div>
@@ -85,7 +85,7 @@
         <p class="section-label">02 / Studi kasus</p>
         <div>
           <h2 id="work-title">Bukti kerja, bukan daftar teknologi.</h2>
-          <p>Tiga studi kasus berikut menunjukkan cara saya menangani data produk, evaluasi model, dan monitoring operasional.</p>
+          <p>Empat studi kasus berikut menunjukkan cara saya menangani data produk, evaluasi model, pencarian lokasi, dan monitoring operasional.</p>
         </div>
       </div>
 
@@ -147,9 +147,40 @@
         </div>
       </article>
 
+      <article class="case-study case-jalanyuk">
+        <header class="case-header">
+          <div><span class="case-index">Case file 03</span><span class="case-year">Proyek pribadi · 2026</span></div>
+          <p class="case-status">Prototipe</p>
+        </header>
+        <div class="case-body">
+          <div class="case-copy">
+            <p class="case-kicker">Data lokasi & produk</p>
+            <h3>JalanYuk</h3>
+            <p class="case-summary">Prototipe perencana perjalanan yang menggabungkan katalog destinasi, pencarian tempat, dan penyusunan rute. Tantangannya adalah menjaga asal dan identitas lokasi tetap jelas saat hasil katalog bercampur dengan hasil pencarian.</p>
+            <dl class="case-facts">
+              <div><dt>Data</dt><dd>Katalog lokasi bersumber dari OpenStreetMap, dengan pencarian tempat tambahan melalui Photon.</dd></div>
+              <div><dt>Kontribusi</dt><dd>Membangun alur pencarian, pin lokasi manual, perencanaan rute, dan cadangan data perjalanan terenkripsi.</dd></div>
+              <div><dt>Batasan</dt><dd>Katalog belum mencakup seluruh Indonesia; rute bergantung pada layanan peta publik dan perlu diperiksa sebelum perjalanan.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Teknologi JalanYuk"><li>Next.js</li><li>OpenStreetMap</li><li>Photon</li><li>Data lokasi</li></ul>
+            <a class="case-link" href="https://github.com/codeBims/JalanYuk" target="_blank" rel="noreferrer">Lihat kode dan batasan produk <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="route-panel" aria-label="Gambaran alur data lokasi JalanYuk">
+            <p class="micro-label">Cara kerja / JalanYuk</p>
+            <ol>
+              <li><span>01</span><div><strong>Pilih tempat</strong><small>Katalog lokal atau hasil pencarian</small></div></li>
+              <li><span>02</span><div><strong>Simpan identitas lokasi</strong><small>Sumber, ID, dan koordinat tetap terhubung</small></div></li>
+              <li><span>03</span><div><strong>Susun perjalanan</strong><small>Itinerary, pin manual, dan pilihan moda</small></div></li>
+              <li><span>04</span><div><strong>Periksa rute</strong><small>Jarak dan estimasi dari layanan peta publik</small></div></li>
+            </ol>
+            <p class="route-note">Ringkasan proses; bukan tangkapan layar aplikasi.</p>
+          </div>
+        </div>
+      </article>
+
       <article class="case-study case-confidential">
         <header class="case-header">
-          <div><span class="case-index">Case file 03</span><span class="case-year">Telkom Indonesia · 2025</span></div>
+          <div><span class="case-index">Case file 04</span><span class="case-year">Telkom Indonesia · 2025</span></div>
           <p class="case-status">Internal system</p>
         </header>
         <div class="case-body">
@@ -186,8 +217,8 @@
         </div>
         <div class="timeline">
           <article>
-            <p class="time">Jun–Agu 2025</p>
-            <div><p class="timeline-type">Pengalaman</p><h3>Telkom Indonesia</h3><p>Log and Observability Engineering Intern, DIT-INF</p></div>
+            <p class="time">Jul–Agu 2025</p>
+            <div><p class="timeline-type">Pengalaman</p><h3>Telkom Indonesia</h3><p>Data Analyst Intern, DIT-INE</p></div>
             <ul><li>Mengolah log ITGC dan Kubernetes menggunakan ELK Stack.</li><li>Menyusun beberapa dashboard Kibana untuk monitoring operasional.</li><li>Menyiapkan keluaran log bagi alur otomasi audit lanjutan.</li></ul>
           </article>
           <article>
@@ -196,12 +227,13 @@
             <p class="timeline-description">Tugas akhir membandingkan MediaPipe BlazePose dan YOLOv8-Pose untuk analisis gerakan bicep curl berbasis video.</p>
           </article>
           <article>
-            <p class="time">Mei 2025</p>
-            <div><p class="timeline-type">Pelatihan</p><h3>Azure AI Fundamentals Preparation</h3><p>Mereka Academy</p></div>
-            <p class="timeline-description">Pelatihan dasar mengenai konsep dan layanan kecerdasan buatan pada ekosistem Microsoft Azure.</p>
+            <p class="time">2026</p>
+            <div><p class="timeline-type">Pelatihan</p><h3>AWS AI Practitioner Program</h3><p>Yayasan Indonesia Emas Merdeka · masih berjalan</p></div>
+            <p class="timeline-description">Mempelajari dasar kecerdasan buatan dan penerapannya pada layanan AWS. Status program mengikuti CV terbaru.</p>
           </article>
         </div>
       </div>
+      <p class="learning-note">Pembelajaran tambahan: pengenalan data science, cloud computing, dan rekayasa prompt dengan Azure OpenAI Service. Sertifikat lain tersedia, tetapi saya menampilkan yang paling terkait dengan arah analitik data.</p>
     </section>
 
     <section class="capabilities" id="keahlian" aria-labelledby="capabilities-title">
