@@ -15,13 +15,14 @@
 
   const endpoint = `${config.url.replace(/\/$/, '')}/rest/v1/portfolio_comments`;
   const headers = { apikey: config.publishableKey, 'Content-Type': 'application/json' };
+  const tr = (id, english) => document.documentElement.lang === 'en' ? english : id;
 
   function showComments(comments) {
     list.replaceChildren();
     count.textContent = `(${comments.length}${comments.length === 50 ? '+' : ''})`;
     if (!comments.length) {
       const empty = document.createElement('p');
-      empty.textContent = 'Belum ada komentar yang diterbitkan.';
+      empty.textContent = tr('Belum ada komentar yang diterbitkan.', 'No comments have been posted yet.');
       list.append(empty);
       return;
     }
@@ -38,7 +39,7 @@
       author.textContent = comment.name;
       const date = document.createElement('time');
       date.dateTime = comment.created_at;
-      date.textContent = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(comment.created_at));
+      date.textContent = new Intl.DateTimeFormat(document.documentElement.lang === 'en' ? 'en-US' : 'id-ID', { dateStyle: 'medium' }).format(new Date(comment.created_at));
       const body = document.createElement('p');
       body.textContent = comment.body;
       meta.append(author, date);
@@ -55,7 +56,7 @@
       showComments(await response.json());
       return true;
     } catch {
-      list.firstElementChild.textContent = 'Komentar belum dapat dimuat. Coba lagi nanti.';
+      list.firstElementChild.textContent = tr('Komentar belum dapat dimuat. Coba lagi nanti.', 'Comments could not be loaded. Try again later.');
       return false;
     }
   }
@@ -67,12 +68,12 @@
     const name = form.elements.name.value.trim();
     const body = form.elements.body.value.trim();
     if (name.length < 2 || body.length < 3) {
-      feedback.textContent = 'Nama atau komentar terlalu singkat.';
+      feedback.textContent = tr('Nama atau komentar terlalu singkat.', 'Name or comment is too short.');
       return;
     }
     const submit = form.querySelector('button[type="submit"]');
     submit.disabled = true;
-    feedback.textContent = 'Mengirim komentar...';
+    feedback.textContent = tr('Mengirim komentar...', 'Posting comment...');
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -84,14 +85,15 @@
       const visible = await loadComments();
       if (visible) list.scrollTop = 0;
       feedback.textContent = visible
-        ? 'Komentar terkirim dan sudah tampil di bawah.'
-        : 'Komentar terkirim, tetapi daftar belum dapat dimuat. Muat ulang halaman untuk melihatnya.';
+        ? tr('Komentar terkirim dan sudah tampil di bawah.', 'Comment posted and shown below.')
+        : tr('Komentar terkirim, tetapi daftar belum dapat dimuat. Muat ulang halaman untuk melihatnya.', 'Comment posted, but the list could not be loaded. Refresh the page to see it.');
     } catch {
-      feedback.textContent = 'Komentar belum terkirim. Coba lagi nanti.';
+      feedback.textContent = tr('Komentar belum terkirim. Coba lagi nanti.', 'Comment could not be posted. Try again later.');
     } finally {
       submit.disabled = false;
     }
   });
 
   loadComments();
+  window.addEventListener('portfolio-language-change', loadComments);
 })();

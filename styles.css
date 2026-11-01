@@ -10,15 +10,28 @@
   --white: #fffef9;
   --max: 1280px;
   --pad: clamp(1rem, 4vw, 3rem);
+  --grid: rgba(21, 22, 19, .026);
+  --header-bg: rgba(243, 240, 231, .94);
 }
+:root[data-theme="dark"] { --paper: #11151b; --surface: #1b222b; --ink: #e9e9e2; --muted: #aab1b8; --line: #47515a; --red: #f17d7b; --red-dark: #a72b36; --grid: rgba(255,255,255,.035); --header-bg: rgba(17,21,27,.94); color-scheme: dark; }
+:root[data-theme="dark"] .portfolio-tabs button[aria-selected="true"], :root[data-theme="dark"] .case-switcher button[aria-pressed="true"], :root[data-theme="dark"] nav a:hover, :root[data-theme="dark"] nav a[aria-current="true"] { background: #33414b; color: var(--white); }
+:root[data-theme="dark"] .portfolio-tabs button:hover, :root[data-theme="dark"] .case-switcher button:hover { background: #303a43; }
+:root[data-theme="dark"] .proof-strip { background: #242c35; }
+:root[data-theme="dark"] .comment-field input, :root[data-theme="dark"] .comment-field textarea { background: #151a21; color: var(--ink); }
+:root[data-theme="dark"] .case-header, :root[data-theme="dark"] .case-study:nth-of-type(2) .case-header, :root[data-theme="dark"] .case-study:nth-of-type(3) .case-header { background: #25303a; }
+:root[data-theme="dark"] .comment-avatar { background: #303a43; color: var(--ink); }
+:root[data-theme="dark"] .button:not(.button-light), :root[data-theme="dark"] .header-cta:hover, :root[data-theme="dark"] .utility-control:hover { background: #33414b; color: var(--white); }
+:root[data-theme="dark"] .button-quiet { background: transparent !important; color: var(--ink) !important; }
+:root[data-theme="dark"] .button-light { color: #151613; }
+:root[data-theme="dark"] .comment-submit { color: var(--white); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body {
   margin: 0;
   background:
-    linear-gradient(rgba(21, 22, 19, .026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21, 22, 19, .026) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
     var(--paper);
   background-size: 48px 48px;
   color: var(--ink);
@@ -54,10 +67,14 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 2rem;
-  border-bottom: 1px solid var(--line);
-  background: rgba(243, 240, 231, .94);
+  border-bottom: 0;
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
 }
+.header-tools { display: flex; align-items: center; justify-self: end; gap: .4rem; }
+.utility-control { min-width: 44px; min-height: 44px; padding: .4rem .65rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: 700 .72rem Arial, sans-serif; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.utility-control:hover, .utility-control:focus-visible { background: var(--ink); color: var(--white); }
+.utility-control:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 .brand {
   width: max-content;
   display: flex;
@@ -75,7 +92,7 @@ button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-nav { display: flex; gap: .25rem; }
+nav { display: flex; gap: .25rem; padding: .3rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); box-shadow: 0 8px 25px rgba(0,0,0,.08); }
 nav a {
   position: relative;
   padding: .7rem .9rem;
@@ -616,12 +633,13 @@ footer p { margin: 0; }
     grid-template-columns: 1fr auto;
     gap: .35rem 1rem;
   }
-  .header-cta { grid-column: 2; grid-row: 1; }
+  .header-tools { grid-column: 2; grid-row: 1; }
   nav {
     grid-column: 1 / -1;
     width: 100%;
     display: flex;
     gap: .25rem;
+    border-radius: 999px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scrollbar-width: none;
@@ -689,6 +707,7 @@ footer p { margin: 0; }
 
 @media (max-width: 480px) {
   :root { --pad: 1rem; }
+  .header-tools .header-cta { display: none; }
   .site-header {
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
