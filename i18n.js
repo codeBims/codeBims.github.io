@@ -49,6 +49,25 @@
     'Tulis langsung di halaman ini. Nama dan komentar Anda akan terlihat oleh pengunjung lain. Untuk peluang kerja atau proyek, gunakan kontak pribadi di atas.':'Write directly on this page. Your name and comment will be visible to other visitors. For jobs or projects, use the contact details above.'
   };
   Object.assign(en, sentences);
+  Object.assign(en, {
+    'S1 Informatika · IPK 3,21/4,00':'BSc Informatics · GPA 3.21/4.00',
+    'Yayasan Indonesia Emas Merdeka · masih berjalan':'Yayasan Indonesia Emas Merdeka · in progress',
+    'Dashboard monitoring (magang Telkom)':'Monitoring dashboard (Telkom internship)',
+    'Excel: formula, grafik, dashboard':'Excel: formulas, charts, dashboards',
+    'SQL dasar':'Basic SQL',
+    'Interpretasi hasil (tugas akhir)':'Result interpretation (thesis)',
+    'Konsep Pemrograman':'Programming Concepts',
+    'Dasar-dasar Keamanan AI':'AI Security Fundamentals',
+    'Generative AI untuk Pendidikan':'Generative AI for Education',
+    'Membangun Lab Virtual & Dasar Linux':'Building a Virtual Lab & Linux Fundamentals',
+    'Pencatatan drop set.':'Drop set logging.',
+    'Quick Import dengan tahap peninjauan.':'Quick Import with a review step.',
+    'Ringkasan dan perbandingan sesi.':'Session summary and comparison.',
+    'Digital Talent Academy · 12 jam':'Digital Talent Academy · 12 hours',
+    'Micro Skill · 1 jam':'Micro Skill · 1 hour',
+    'Micro Skill · 2 jam':'Micro Skill · 2 hours',
+    'Micro Skill · 3 jam':'Micro Skill · 3 hours'
+  });
   const original = new WeakMap();
   const nodes = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -71,6 +90,7 @@
     name.placeholder = lang === 'en' ? 'Your name' : 'Nama Anda';
     body.placeholder = lang === 'en' ? 'Write your comment here...' : 'Tulis komentar Anda di sini...';
     document.querySelector('nav').setAttribute('aria-label', lang === 'en' ? 'Main navigation' : 'Navigasi utama');
+    document.getElementById('guestbook-comments').setAttribute('aria-label', lang === 'en' ? 'Scrollable comments' : 'Daftar komentar, dapat digulir');
     document.title = lang === 'en' ? 'Henry Abimanyu — Junior Data Analyst | Portfolio' : 'Henry Abimanyu — Junior Data Analyst';
     langButton.textContent = lang === 'en' ? 'ID' : 'EN';
     langButton.setAttribute('aria-label', lang === 'en' ? 'Ganti ke Bahasa Indonesia' : 'Switch to English');
@@ -88,12 +108,14 @@
     const dark = mode === 'dark' || (mode === 'auto' && media.matches);
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     themeButton.textContent = mode === 'auto' ? '◐' : mode === 'light' ? '☼' : '☾';
-    const label = mode === 'auto' ? 'Ikuti perangkat' : mode === 'light' ? 'Terang' : 'Gelap';
-    themeButton.setAttribute('aria-label', `Tema: ${label}. Klik untuk mengganti`);
+    const english = document.documentElement.lang === 'en';
+    const label = mode === 'auto' ? (english ? 'Follow device' : 'Ikuti perangkat') : mode === 'light' ? (english ? 'Light' : 'Terang') : (english ? 'Dark' : 'Gelap');
+    themeButton.setAttribute('aria-label', english ? `Theme: ${label}. Click to change` : `Tema: ${label}. Klik untuk mengganti`);
     themeButton.title = themeButton.getAttribute('aria-label');
     document.querySelector('meta[name="theme-color"]').content = dark ? '#11151b' : '#f3f0e7';
   }
   themeButton.addEventListener('click', () => { mode = mode === 'auto' ? 'light' : mode === 'light' ? 'dark' : 'auto'; localStorage.setItem('portfolio-theme', mode); applyTheme(); });
   media.addEventListener('change', applyTheme);
+  window.addEventListener('portfolio-language-change', applyTheme);
   applyTheme();
 })();
