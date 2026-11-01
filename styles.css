@@ -313,12 +313,8 @@ h1 em { color: var(--red); font-weight: 400; }
 .positioning { grid-template-columns: minmax(125px, .22fr) minmax(220px, .45fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .positioning-photo-wrap p { margin: .55rem 0 0; color: var(--muted); font-size: .72rem; }
 .positioning-photo-wrap p span { color: var(--red); }
-.about-photo { position: relative; width: 100%; padding: 0; overflow: hidden; display: block; border: 1px solid var(--ink); background: #bbbcb7; cursor: pointer; }
+.about-photo { width: 100%; overflow: hidden; border: 1px solid var(--ink); background: #bbbcb7; }
 .about-photo > img { width: 100%; display: block; aspect-ratio: 515 / 709; object-fit: cover; }
-.armor-layer { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .2s ease; -webkit-mask-image: radial-gradient(circle 23% at var(--reveal-x, 28%) var(--reveal-y, 21%), #000 35%, transparent 100%); mask-image: radial-gradient(circle 23% at var(--reveal-x, 28%) var(--reveal-y, 21%), #000 35%, transparent 100%); }
-.armor-layer img { position: absolute; left: 13.5%; top: 6%; width: 30%; height: 27%; object-fit: fill; filter: drop-shadow(0 2px 5px rgba(0,0,0,.3)); }
-@media (hover: hover) and (pointer: fine) { .about-photo:hover .armor-layer { opacity: 1; } }
-.about-photo:focus-visible .armor-layer, .about-photo[aria-pressed="true"] .armor-layer { opacity: 1; -webkit-mask-image: none; mask-image: none; }
 .section-label { margin: .45rem 0 0; color: var(--red); }
 h2 {
   max-width: 1000px;
