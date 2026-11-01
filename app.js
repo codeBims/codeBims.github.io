@@ -50,7 +50,14 @@ syncPortfolioHash();
 window.addEventListener('hashchange', syncPortfolioHash);
 
 const aboutPhoto = document.querySelector('.about-photo');
-aboutPhoto?.addEventListener('click', () => {
+aboutPhoto?.addEventListener('pointermove', (event) => {
+  if (event.pointerType === 'touch') return;
+  const bounds = aboutPhoto.getBoundingClientRect();
+  aboutPhoto.style.setProperty('--reveal-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
+  aboutPhoto.style.setProperty('--reveal-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+});
+aboutPhoto?.addEventListener('click', (event) => {
+  if (event.detail && window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   const active = aboutPhoto.getAttribute('aria-pressed') !== 'true';
   aboutPhoto.setAttribute('aria-pressed', String(active));
   aboutPhoto.setAttribute('aria-label', active ? 'Tampilkan foto asli' : 'Tampilkan versi armor futuristik');
