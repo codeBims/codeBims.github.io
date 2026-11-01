@@ -56,6 +56,20 @@ const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
 
+function setActiveNav(link) {
+  if (!link) return;
+  navLinks.forEach((item) => {
+    if (item === link) item.setAttribute('aria-current', 'true');
+    else item.removeAttribute('aria-current');
+  });
+  nav.style.setProperty('--indicator-x', `${link.offsetLeft}px`);
+  nav.style.setProperty('--indicator-width', `${link.offsetWidth}px`);
+  if (window.innerWidth <= 980) {
+    const left = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
+    nav.scrollTo({ left: Math.max(0, left), behavior: reduceMotion ? 'auto' : 'smooth' });
+  }
+}
+
 navLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -63,11 +77,8 @@ navLinks.forEach((link) => {
     if (!target) return;
     event.preventDefault();
     if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    setActiveNav(link);
     target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-    navLinks.forEach((item) => {
-      if (item === link) item.setAttribute('aria-current', 'true');
-      else item.removeAttribute('aria-current');
-    });
   });
 });
 
@@ -79,23 +90,18 @@ if ('IntersectionObserver' in window) {
 
     if (!visible) return;
 
-    navLinks.forEach((link) => {
-      const active = link.getAttribute('href') === `#${visible.target.id}`;
-      if (!active) {
-        link.removeAttribute('aria-current');
-        return;
-      }
-
-      link.setAttribute('aria-current', 'true');
-      if (window.innerWidth <= 980) {
-        const left = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
-        nav.scrollTo({ left: Math.max(0, left), behavior: reduceMotion ? 'auto' : 'smooth' });
-      }
-    });
+    setActiveNav(navLinks.find((link) => link.getAttribute('href') === `#${visible.target.id}`));
   }, { rootMargin: '-20% 0px -65%', threshold: [0, .2, .5] });
 
   sections.forEach((section) => observer.observe(section));
 }
+
+const initialNavLink = navLinks.find((link) => link.hash === location.hash) || navLinks[0];
+requestAnimationFrame(() => setActiveNav(initialNavLink));
+window.addEventListener('resize', () => {
+  const active = navLinks.find((link) => link.getAttribute('aria-current') === 'true') || initialNavLink;
+  setActiveNav(active);
+}, { passive: true });
 
 const revealTargets = document.querySelectorAll(
   '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .fittrack-showcase, .thesis-showcase, .jalanyuk-showcase, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
