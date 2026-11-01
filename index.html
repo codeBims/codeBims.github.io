@@ -12,7 +12,7 @@
   <title>Henry Abimanyu — Junior Data Analyst</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20261101e">
+  <link rel="stylesheet" href="./styles.css?v=20261101f">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -313,8 +313,24 @@
     </section>
 
     <section class="comments" id="komentar" aria-labelledby="comments-title">
-      <div><p class="section-label">05 / Komentar</p><h2 id="comments-title">Tanggapan dan pertanyaan.</h2><p>Anda bisa memberi masukan tentang portofolio atau menghubungi saya langsung untuk peluang kerja dan proyek.</p></div>
-      <div class="comments-box"><p>Masuk dengan akun GitHub untuk menulis komentar. Komentar bersifat publik.</p><a href="https://github.com/codeBims/codeBims.github.io/issues/1#issuecomment-new" target="_blank" rel="noreferrer">Tulis komentar di GitHub <span aria-hidden="true">↗</span></a><div id="guestbook-comments" class="guestbook-comments" aria-live="polite"><p>Memuat komentar...</p></div></div>
+      <div class="comments-intro">
+        <p class="section-label">05 / Komentar</p>
+        <h2 id="comments-title">Tinggalkan kesan atau pertanyaan.</h2>
+        <p>Tulis langsung di halaman ini. Nama dan komentar yang disetujui akan terlihat oleh pengunjung lain. Untuk peluang kerja atau proyek, gunakan kontak pribadi di atas.</p>
+        <div class="comments-social"><span>Temukan saya</span><a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer">Instagram @hnryabim ↗</a><a href="https://github.com/codeBims" target="_blank" rel="noreferrer">GitHub codeBims ↗</a></div>
+      </div>
+      <div class="comments-box">
+        <h3>Komentar <span id="comment-count"></span></h3>
+        <form id="comment-form" novalidate>
+          <div class="comment-field"><label for="comment-name">Nama</label><input id="comment-name" name="name" type="text" maxlength="60" minlength="2" autocomplete="name" placeholder="Nama Anda" required></div>
+          <div class="comment-field"><label for="comment-body">Komentar</label><textarea id="comment-body" name="body" rows="5" maxlength="1000" minlength="3" placeholder="Tulis komentar Anda di sini..." required></textarea></div>
+          <div class="comment-trap" aria-hidden="true"><label for="comment-website">Website</label><input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="comment-submit">Kirim komentar <span aria-hidden="true">↗</span></button>
+          <p class="comment-note">Komentar ditinjau sebelum tampil. Jangan tulis informasi pribadi atau rahasia.</p>
+          <p id="comment-feedback" class="comment-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <div id="guestbook-comments" class="guestbook-comments" aria-live="polite"><p>Memuat komentar...</p></div>
+      </div>
     </section>
   </main>
 
@@ -323,6 +339,8 @@
     <p>Portofolio <span id="year">2026</span></p>
   </footer>
 
-  <script src="./app.js?v=20261101d"></script>
+  <script src="./comments-config.js"></script>
+  <script src="./app.js?v=20261101e"></script>
+  <script src="./comments.js?v=20261101a"></script>
 </body>
 </html>

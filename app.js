@@ -56,39 +56,6 @@ aboutPhoto?.addEventListener('click', () => {
   aboutPhoto.setAttribute('aria-label', active ? 'Tampilkan foto asli' : 'Tampilkan versi armor futuristik');
 });
 
-const guestbook = document.getElementById('guestbook-comments');
-if (guestbook) {
-  fetch('https://api.github.com/repos/codeBims/codeBims.github.io/issues/1/comments?per_page=20', {
-    headers: { Accept: 'application/vnd.github+json' }
-  }).then((response) => {
-    if (!response.ok) throw new Error('Komentar tidak tersedia');
-    return response.json();
-  }).then((comments) => {
-    guestbook.replaceChildren();
-    if (!comments.length) {
-      const empty = document.createElement('p');
-      empty.textContent = 'Belum ada komentar. Anda bisa menjadi yang pertama.';
-      guestbook.append(empty);
-    }
-    comments.forEach((comment) => {
-      const item = document.createElement('article');
-      const head = document.createElement('p');
-      const author = document.createElement('strong');
-      author.textContent = comment.user.login;
-      const date = document.createElement('time');
-      date.dateTime = comment.created_at;
-      date.textContent = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(comment.created_at));
-      const body = document.createElement('p');
-      body.textContent = comment.body;
-      head.append(author, date);
-      item.append(head, body);
-      guestbook.append(item);
-    });
-  }).catch(() => {
-    guestbook.firstElementChild.textContent = 'Komentar belum dapat dimuat. Buka GitHub untuk membacanya.';
-  });
-}
-
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
 const nav = document.querySelector('nav');
