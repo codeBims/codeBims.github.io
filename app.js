@@ -49,6 +49,56 @@ selectCase('fittrack');
 syncPortfolioHash();
 window.addEventListener('hashchange', syncPortfolioHash);
 
+document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+  const slides = [...gallery.querySelectorAll('[data-gallery-slide]')];
+  const previous = gallery.querySelector('[data-gallery-prev]');
+  const next = gallery.querySelector('[data-gallery-next]');
+  const current = gallery.querySelector('[data-gallery-current]');
+  let index = 0;
+  let touchStart = null;
+
+  const showSlide = (nextIndex) => {
+    index = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const selected = slideIndex === index;
+      slide.hidden = !selected;
+      slide.setAttribute('aria-hidden', String(!selected));
+    });
+    current.textContent = String(index + 1);
+  };
+
+  previous.addEventListener('click', () => showSlide(index - 1));
+  next.addEventListener('click', () => showSlide(index + 1));
+  gallery.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showSlide(index + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+  gallery.addEventListener('touchstart', (event) => {
+    if (event.target.closest('button')) return;
+    const touch = event.changedTouches[0];
+    touchStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+  gallery.addEventListener('touchend', (event) => {
+    if (!touchStart) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStart.x;
+    const deltaY = touch.clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    showSlide(index + (deltaX < 0 ? 1 : -1));
+  }, { passive: true });
+
+  const updateControlLabels = () => {
+    const english = document.documentElement.lang === 'en';
+    previous.setAttribute('aria-label', english ? 'Previous image' : 'Gambar sebelumnya');
+    next.setAttribute('aria-label', english ? 'Next image' : 'Gambar berikutnya');
+  };
+  window.addEventListener('portfolio-language-change', updateControlLabels);
+  updateControlLabels();
+  showSlide(0);
+});
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const navLinks = [...document.querySelectorAll('.section-nav a[href^="#"]')];
 const nav = document.querySelector('.section-nav');
@@ -107,7 +157,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const revealTargets = document.querySelectorAll(
-  '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .fittrack-showcase, .thesis-showcase, .jalanyuk-showcase, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
+  '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .project-gallery, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
 );
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
