@@ -12,7 +12,7 @@
   <title>Henry Abimanyu — Junior Data Analyst</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=20261101d">
+  <link rel="stylesheet" href="./styles.css?v=20261101e">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -68,22 +68,15 @@
       </dl>
     </section>
 
-    <section class="project-index" aria-labelledby="project-index-title">
-      <div class="project-index-heading">
-        <p class="section-label">Pilih karya</p>
-        <h2 id="project-index-title">Empat proyek, empat jenis masalah.</h2>
-        <p>Mulai dari proyek yang paling dekat dengan kebutuhan Anda. Setiap studi kasus menjelaskan kontribusi dan batasannya.</p>
-      </div>
-      <div class="project-index-list">
-        <a href="#fittrack"><span>01 / Analitik produk</span><strong>FitTrack</strong><small>Progres latihan dari riwayat sesi</small><b aria-hidden="true">↗</b></a>
-        <a href="#pose"><span>02 / Evaluasi model</span><strong>Pose estimation</strong><small>Pengukuran gerakan terhadap ground truth</small><b aria-hidden="true">↗</b></a>
-        <a href="#jalanyuk"><span>03 / Data lokasi</span><strong>JalanYuk</strong><small>Pencarian tempat dan perencanaan rute</small><b aria-hidden="true">↗</b></a>
-        <a href="#telkom"><span>04 / Monitoring</span><strong>Telkom Indonesia</strong><small>Struktur log untuk tinjauan operasional</small><b aria-hidden="true">↗</b></a>
-      </div>
-    </section>
-
     <section class="positioning" aria-labelledby="positioning-title">
       <p class="section-label">01 / Profil</p>
+      <div class="positioning-photo-wrap">
+        <button class="about-photo" type="button" aria-label="Tampilkan versi armor futuristik" aria-pressed="false">
+          <img src="./assets/henry-graduation.png" alt="Henry Abimanyu mengenakan selempang kelulusan Telkom University" width="515" height="709" loading="lazy">
+          <span class="armor-layer" aria-hidden="true"><span class="armor-shoulders"></span><span class="armor-chest"><i></i></span></span>
+        </button>
+        <p>Kelulusan 2026 <span>·</span> Sentuh foto untuk versi lain</p>
+      </div>
       <div class="positioning-copy">
         <h2 id="positioning-title">Berangkat dari pertanyaan, bukan dari alat.</h2>
         <p class="intro-text">Pengalaman saya bergerak dari log operasional hingga data gerakan tubuh. Polanya sama: memahami konteks, merapikan informasi, memilih ukuran yang tepat, lalu menyajikan hasil yang dapat ditelusuri kembali.</p>
@@ -95,15 +88,23 @@
       </div>
     </section>
 
-    <section class="work" id="karya" aria-labelledby="work-title">
+    <section class="portfolio-hub" id="karya" aria-labelledby="portfolio-title">
       <div class="section-heading">
-        <p class="section-label">02 / Studi kasus</p>
-        <div>
-          <h2 id="work-title">Bukti kerja, bukan daftar teknologi.</h2>
-          <p>Empat studi kasus berikut menunjukkan cara saya menangani data produk, evaluasi model, pencarian lokasi, dan monitoring operasional.</p>
-        </div>
+        <p class="section-label">02 / Portofolio</p>
+        <div><h2 id="portfolio-title">Pilih bukti kerja yang ingin dilihat.</h2><p>Proyek, sertifikat, dan alat kerja tersusun dalam satu tempat. Pilih studi kasus untuk membaca proses dan batasannya.</p></div>
       </div>
-
+      <div class="portfolio-tabs" role="tablist" aria-label="Isi portofolio">
+        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>04</span></button>
+        <button type="button" role="tab" id="tab-sertifikat" aria-controls="panel-sertifikat" aria-selected="false" tabindex="-1" data-portfolio-tab="sertifikat">Sertifikat <span>12</span></button>
+        <button type="button" role="tab" id="tab-keahlian" aria-controls="panel-keahlian" aria-selected="false" tabindex="-1" data-portfolio-tab="keahlian">Keahlian</button>
+      </div>
+      <div id="panel-proyek" role="tabpanel" aria-labelledby="tab-proyek" class="portfolio-panel">
+        <div class="case-switcher" aria-label="Pilih studi kasus">
+          <button type="button" data-case="fittrack" aria-pressed="true"><span>01</span> FitTrack</button>
+          <button type="button" data-case="pose" aria-pressed="false"><span>02</span> Pose estimation</button>
+          <button type="button" data-case="jalanyuk" aria-pressed="false"><span>03</span> JalanYuk</button>
+          <button type="button" data-case="telkom" aria-pressed="false"><span>04</span> Telkom</button>
+        </div>
       <article class="case-study case-fittrack" id="fittrack">
         <header class="case-header">
           <div><span class="case-index">Case file 01</span><span class="case-year">Produk pribadi · 2026</span></div>
@@ -212,6 +213,59 @@
           </div>
         </div>
       </article>
+      </div>
+      <div id="panel-sertifikat" role="tabpanel" aria-labelledby="tab-sertifikat" class="portfolio-panel">
+    <section class="certificates" id="sertifikat" aria-labelledby="certificates-title">
+      <div class="section-heading">
+        <p class="section-label">Sertifikat</p>
+        <div>
+          <h2 id="certificates-title">Pelatihan yang dapat diperiksa.</h2>
+          <p>Dokumen Digital Talent Scholarship 2026 dari Komdigi. Sebagian besar adalah Micro Skill singkat; durasi masing-masing dicantumkan agar konteksnya jelas. Pilih kartu untuk membuka PDF asli.</p>
+        </div>
+      </div>
+      <div class="certificate-grid">
+        <a class="certificate-card" href="./assets/certificates/data-science.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/data-science.jpg" alt="Pratinjau sertifikat Pengenalan Data Science" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor</strong><em>Buka sertifikat ↗</em></span></a>
+        <a class="certificate-card" href="./assets/certificates/ai-implementation.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-implementation.jpg" alt="Pratinjau sertifikat Dasar-Dasar Implementasi Kecerdasan Artifisial" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Dasar-Dasar Implementasi Kecerdasan Artifisial</strong><em>Buka sertifikat ↗</em></span></a>
+        <a class="certificate-card" href="./assets/certificates/azure-prompt.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/azure-prompt.jpg" alt="Pratinjau sertifikat rekayasa prompt dengan Azure OpenAI Service" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1,4 jam</small><strong>Menerapkan Rekayasa Prompt dengan Azure OpenAI Service</strong><em>Buka sertifikat ↗</em></span></a>
+        <a class="certificate-card" href="./assets/certificates/cloud-computing.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/cloud-computing.jpg" alt="Pratinjau sertifikat Introduction To Cloud Computing" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Introduction To Cloud Computing</strong><em>Buka sertifikat ↗</em></span></a>
+      </div>
+      <details class="certificate-more">
+        <summary>Lihat 8 sertifikat lainnya <span aria-hidden="true">+</span></summary>
+        <div class="certificate-grid">
+          <a class="certificate-card" href="./assets/certificates/network-administrator.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/network-administrator.jpg" alt="Pratinjau sertifikat Fundamental of Associate Network Administrator" width="674" height="477" loading="lazy"><span><small>Digital Talent Academy · 12 jam</small><strong>Fundamental of Associate Network Administrator – Nasional</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/ai-security.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-security.jpg" alt="Pratinjau sertifikat Dasar-dasar Keamanan AI" width="674" height="477" loading="lazy"><span><small>Micro Skill · 0,8 jam</small><strong>Dasar-dasar Keamanan AI</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/linux-lab.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/linux-lab.jpg" alt="Pratinjau sertifikat Membangun Lab Virtual dan Dasar Linux" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Membangun Lab Virtual &amp; Dasar Linux</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/programming.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/programming.jpg" alt="Pratinjau sertifikat Konsep Pemrograman" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Konsep Pemrograman</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/generative-ai-education.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/generative-ai-education.jpg" alt="Pratinjau sertifikat Generative AI untuk Pendidikan" width="674" height="477" loading="lazy"><span><small>Micro Skill · 3 jam</small><strong>Generative AI untuk Pendidikan</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/ethical-hacking.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ethical-hacking.jpg" alt="Pratinjau sertifikat Ethical Hacker For Dummies" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Ethical Hacker For Dummies</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/phishing-malware.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/phishing-malware.jpg" alt="Pratinjau sertifikat perlindungan dari phishing dan malware" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Tips Melindungi Diri dari Ancaman Phishing dan Malware</strong><em>Buka sertifikat ↗</em></span></a>
+          <a class="certificate-card" href="./assets/certificates/social-media.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/social-media.jpg" alt="Pratinjau sertifikat Social Media Management untuk Brand Digital" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Social Media Management untuk Brand Digital</strong><em>Buka sertifikat ↗</em></span></a>
+        </div>
+      </details>
+    </section>
+      </div>
+      <div id="panel-keahlian" role="tabpanel" aria-labelledby="tab-keahlian" class="portfolio-panel">
+    <section class="capabilities" id="keahlian" aria-labelledby="capabilities-title">
+      <div class="section-heading">
+        <p class="section-label">Keahlian</p>
+        <div>
+          <h2 id="capabilities-title">Perangkat yang saya gunakan untuk menjawab masalah.</h2>
+          <p>Alat dan metode yang pernah saya gunakan dalam pengalaman magang, tugas akhir, atau proyek pribadi. Label proyek membantu menunjukkan konteksnya.</p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL dasar</li><li>Excel: formula, grafik, dashboard</li></ul></article>
+        <article><p>02</p><h3>Monitoring</h3><ul><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Dashboard monitoring (magang Telkom)</li></ul></article>
+        <article><p>03</p><h3>Evaluasi</h3><ul><li>Data cleaning</li><li>MAE & RMSE</li><li>Perbandingan dengan ground truth (tugas akhir)</li><li>Interpretasi hasil (tugas akhir)</li></ul></article>
+        <article><p>04</p><h3>Produk web</h3><ul><li>React & Vite (FitTrack)</li><li>HTML, CSS, JavaScript</li><li>Supabase (FitTrack)</li><li>Git & GitHub</li></ul></article>
+      </div>
+      <aside class="side-project">
+        <div><p class="micro-label">Proyek tambahan · 2025</p><h3>Cripto</h3></div>
+        <p>Situs e-commerce responsif dengan alur pembelian melalui WhatsApp, dibangun secara mandiri menggunakan HTML, CSS, dan JavaScript.</p>
+        <a class="case-link" href="https://cripto-ofcc.vercel.app/" target="_blank" rel="noreferrer">Buka situs <span aria-hidden="true">↗</span></a>
+      </aside>
+    </section>
+      </div>
     </section>
 
     <section class="experience" id="pengalaman" aria-labelledby="experience-title">
@@ -241,59 +295,9 @@
       </div>
     </section>
 
-    <section class="certificates" id="sertifikat" aria-labelledby="certificates-title">
-      <div class="section-heading">
-        <p class="section-label">04 / Sertifikat</p>
-        <div>
-          <h2 id="certificates-title">Pelatihan yang dapat diperiksa.</h2>
-          <p>Dokumen Digital Talent Scholarship 2026 dari Komdigi. Sebagian besar adalah Micro Skill singkat; durasi masing-masing dicantumkan agar konteksnya jelas. Pilih kartu untuk membuka PDF asli.</p>
-        </div>
-      </div>
-      <div class="certificate-grid">
-        <a class="certificate-card" href="./assets/certificates/data-science.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/data-science.jpg" alt="Pratinjau sertifikat Pengenalan Data Science" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/ai-implementation.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-implementation.jpg" alt="Pratinjau sertifikat Dasar-Dasar Implementasi Kecerdasan Artifisial" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Dasar-Dasar Implementasi Kecerdasan Artifisial</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/azure-prompt.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/azure-prompt.jpg" alt="Pratinjau sertifikat rekayasa prompt dengan Azure OpenAI Service" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1,4 jam</small><strong>Menerapkan Rekayasa Prompt dengan Azure OpenAI Service</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/cloud-computing.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/cloud-computing.jpg" alt="Pratinjau sertifikat Introduction To Cloud Computing" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Introduction To Cloud Computing</strong><em>Buka sertifikat ↗</em></span></a>
-      </div>
-      <details class="certificate-more">
-        <summary>Lihat 8 sertifikat lainnya <span aria-hidden="true">+</span></summary>
-        <div class="certificate-grid">
-          <a class="certificate-card" href="./assets/certificates/network-administrator.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/network-administrator.jpg" alt="Pratinjau sertifikat Fundamental of Associate Network Administrator" width="674" height="477" loading="lazy"><span><small>Digital Talent Academy · 12 jam</small><strong>Fundamental of Associate Network Administrator – Nasional</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/ai-security.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-security.jpg" alt="Pratinjau sertifikat Dasar-dasar Keamanan AI" width="674" height="477" loading="lazy"><span><small>Micro Skill · 0,8 jam</small><strong>Dasar-dasar Keamanan AI</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/linux-lab.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/linux-lab.jpg" alt="Pratinjau sertifikat Membangun Lab Virtual dan Dasar Linux" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Membangun Lab Virtual &amp; Dasar Linux</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/programming.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/programming.jpg" alt="Pratinjau sertifikat Konsep Pemrograman" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Konsep Pemrograman</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/generative-ai-education.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/generative-ai-education.jpg" alt="Pratinjau sertifikat Generative AI untuk Pendidikan" width="674" height="477" loading="lazy"><span><small>Micro Skill · 3 jam</small><strong>Generative AI untuk Pendidikan</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/ethical-hacking.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ethical-hacking.jpg" alt="Pratinjau sertifikat Ethical Hacker For Dummies" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Ethical Hacker For Dummies</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/phishing-malware.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/phishing-malware.jpg" alt="Pratinjau sertifikat perlindungan dari phishing dan malware" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Tips Melindungi Diri dari Ancaman Phishing dan Malware</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/social-media.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/social-media.jpg" alt="Pratinjau sertifikat Social Media Management untuk Brand Digital" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Social Media Management untuk Brand Digital</strong><em>Buka sertifikat ↗</em></span></a>
-        </div>
-      </details>
-    </section>
-
-    <section class="capabilities" id="keahlian" aria-labelledby="capabilities-title">
-      <div class="section-heading">
-        <p class="section-label">05 / Keahlian</p>
-        <div>
-          <h2 id="capabilities-title">Perangkat yang saya gunakan untuk menjawab masalah.</h2>
-          <p>Tidak menggunakan persentase kemampuan yang sulit dibuktikan. Daftar ini menunjukkan alat dan metode yang benar-benar muncul dalam pengalaman atau proyek saya.</p>
-        </div>
-      </div>
-      <div class="capability-grid">
-        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL dasar</li><li>Excel: formula, chart, dashboard</li></ul></article>
-        <article><p>02</p><h3>Monitoring</h3><ul><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Operational dashboard</li></ul></article>
-        <article><p>03</p><h3>Evaluasi</h3><ul><li>Data cleaning</li><li>MAE & RMSE</li><li>Ground-truth comparison</li><li>Interpretasi hasil</li></ul></article>
-        <article><p>04</p><h3>Produk web</h3><ul><li>React & Vite</li><li>HTML, CSS, JavaScript</li><li>Supabase</li><li>Git & GitHub</li></ul></article>
-      </div>
-      <aside class="side-project">
-        <div><p class="micro-label">Proyek tambahan · 2025</p><h3>Cripto</h3></div>
-        <p>Situs e-commerce responsif dengan alur pembelian melalui WhatsApp, dibangun secara mandiri menggunakan HTML, CSS, dan JavaScript.</p>
-        <a class="case-link" href="https://cripto-ofcc.vercel.app/" target="_blank" rel="noreferrer">Buka situs <span aria-hidden="true">↗</span></a>
-      </aside>
-    </section>
-
     <section class="contact" id="kontak" aria-labelledby="contact-title">
       <div class="contact-main">
-        <p class="section-label">06 / Kontak</p>
+        <p class="section-label">04 / Kontak</p>
         <h2 id="contact-title">Mencari Junior Data Analyst yang mampu menjelaskan prosesnya?</h2>
         <p>Saya terbuka untuk posisi penuh waktu, kesempatan fresh graduate, dan proyek freelance analitik terpilih.</p>
         <a class="button button-light" href="mailto:abimkaizen@gmail.com">Mulai percakapan <span aria-hidden="true">↗</span></a>
@@ -301,10 +305,16 @@
       <div class="contact-list">
         <a href="mailto:abimkaizen@gmail.com"><span>Email</span><strong>abimkaizen@gmail.com</strong></a>
         <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Henry Abimanyu</strong></a>
+        <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer"><span>Instagram</span><strong>@hnryabim</strong></a>
         <a href="https://github.com/codeBims" target="_blank" rel="noreferrer"><span>GitHub</span><strong>@codeBims</strong></a>
         <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
         <a href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download><span>Dokumen</span><strong>Unduh CV</strong></a>
       </div>
+    </section>
+
+    <section class="comments" id="komentar" aria-labelledby="comments-title">
+      <div><p class="section-label">05 / Komentar</p><h2 id="comments-title">Tanggapan dan pertanyaan.</h2><p>Anda bisa memberi masukan tentang portofolio atau menghubungi saya langsung untuk peluang kerja dan proyek.</p></div>
+      <div class="comments-box"><p>Masuk dengan akun GitHub untuk menulis komentar. Komentar bersifat publik.</p><a href="https://github.com/codeBims/codeBims.github.io/issues/1#issuecomment-new" target="_blank" rel="noreferrer">Tulis komentar di GitHub <span aria-hidden="true">↗</span></a><div id="guestbook-comments" class="guestbook-comments" aria-live="polite"><p>Memuat komentar...</p></div></div>
     </section>
   </main>
 
@@ -313,6 +323,6 @@
     <p>Portofolio <span id="year">2026</span></p>
   </footer>
 
-  <script src="./app.js?v=20261101c"></script>
+  <script src="./app.js?v=20261101d"></script>
 </body>
 </html>

@@ -1,5 +1,94 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const portfolioTabs = [...document.querySelectorAll('[data-portfolio-tab]')];
+const caseButtons = [...document.querySelectorAll('[data-case]')];
+const caseIds = caseButtons.map((button) => button.dataset.case);
+
+function selectPortfolio(name, updateHash = false) {
+  portfolioTabs.forEach((tab) => {
+    const selected = tab.dataset.portfolioTab === name;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    document.getElementById(`panel-${tab.dataset.portfolioTab}`).hidden = !selected;
+  });
+  if (updateHash) history.replaceState(null, '', name === 'proyek' ? '#karya' : `#${name}`);
+}
+
+function selectCase(id, updateHash = false) {
+  selectPortfolio('proyek');
+  caseButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.case === id)));
+  caseIds.forEach((caseId) => { document.getElementById(caseId).hidden = caseId !== id; });
+  if (updateHash) history.replaceState(null, '', `#${id}`);
+}
+
+portfolioTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectPortfolio(tab.dataset.portfolioTab, true));
+  tab.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? portfolioTabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + portfolioTabs.length) % portfolioTabs.length;
+    portfolioTabs[next].focus();
+    selectPortfolio(portfolioTabs[next].dataset.portfolioTab, true);
+  });
+});
+document.querySelectorAll('nav a[href="#sertifikat"], nav a[href="#keahlian"]').forEach((link) => {
+  link.addEventListener('click', () => selectPortfolio(link.hash.slice(1)));
+});
+caseButtons.forEach((button) => button.addEventListener('click', () => selectCase(button.dataset.case, true)));
+document.querySelectorAll('.project-index-list a').forEach((link) => link.addEventListener('click', () => {
+  const id = link.hash.slice(1);
+  if (caseIds.includes(id)) selectCase(id);
+}));
+
+function syncPortfolioHash() {
+  const hash = decodeURIComponent(location.hash.slice(1));
+  if (caseIds.includes(hash)) selectCase(hash);
+  else if (hash === 'sertifikat' || hash === 'keahlian') selectPortfolio(hash);
+}
+selectCase('fittrack');
+syncPortfolioHash();
+window.addEventListener('hashchange', syncPortfolioHash);
+
+const aboutPhoto = document.querySelector('.about-photo');
+aboutPhoto?.addEventListener('click', () => {
+  const active = aboutPhoto.getAttribute('aria-pressed') !== 'true';
+  aboutPhoto.setAttribute('aria-pressed', String(active));
+  aboutPhoto.setAttribute('aria-label', active ? 'Tampilkan foto asli' : 'Tampilkan versi armor futuristik');
+});
+
+const guestbook = document.getElementById('guestbook-comments');
+if (guestbook) {
+  fetch('https://api.github.com/repos/codeBims/codeBims.github.io/issues/1/comments?per_page=20', {
+    headers: { Accept: 'application/vnd.github+json' }
+  }).then((response) => {
+    if (!response.ok) throw new Error('Komentar tidak tersedia');
+    return response.json();
+  }).then((comments) => {
+    guestbook.replaceChildren();
+    if (!comments.length) {
+      const empty = document.createElement('p');
+      empty.textContent = 'Belum ada komentar. Anda bisa menjadi yang pertama.';
+      guestbook.append(empty);
+    }
+    comments.forEach((comment) => {
+      const item = document.createElement('article');
+      const head = document.createElement('p');
+      const author = document.createElement('strong');
+      author.textContent = comment.user.login;
+      const date = document.createElement('time');
+      date.dateTime = comment.created_at;
+      date.textContent = new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium' }).format(new Date(comment.created_at));
+      const body = document.createElement('p');
+      body.textContent = comment.body;
+      head.append(author, date);
+      item.append(head, body);
+      guestbook.append(item);
+    });
+  }).catch(() => {
+    guestbook.firstElementChild.textContent = 'Komentar belum dapat dimuat. Buka GitHub untuk membacanya.';
+  });
+}
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
 const nav = document.querySelector('nav');
