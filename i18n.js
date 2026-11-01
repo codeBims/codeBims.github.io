@@ -50,6 +50,7 @@
   };
   Object.assign(en, sentences);
   Object.assign(en, {
+    'Portofolio':'Portfolio',
     'S1 Informatika · IPK 3,21/4,00':'BSc Informatics · GPA 3.21/4.00',
     'Yayasan Indonesia Emas Merdeka · masih berjalan':'Yayasan Indonesia Emas Merdeka · in progress',
     'Dashboard monitoring (magang Telkom)':'Monitoring dashboard (Telkom internship)',

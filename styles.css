@@ -24,6 +24,7 @@
 :root[data-theme="dark"] .button-quiet { background: transparent !important; color: var(--ink) !important; }
 :root[data-theme="dark"] .button-light { color: #151613; }
 :root[data-theme="dark"] .comment-submit { color: var(--white); }
+:root[data-theme="dark"] .availability { color: #8ed7b7; border-color: #557b69; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
