@@ -82,25 +82,28 @@ navLinks.forEach((link) => {
   });
 });
 
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+let navTicking = false;
 
-    if (!visible) return;
-
-    setActiveNav(navLinks.find((link) => link.getAttribute('href') === `#${visible.target.id}`));
-  }, { rootMargin: '-20% 0px -65%', threshold: [0, .2, .5] });
-
-  sections.forEach((section) => observer.observe(section));
+function updateActiveSection() {
+  const activationLine = Math.max(nav.getBoundingClientRect().bottom + 24, window.innerHeight * .38);
+  const activeSection = sections.reduce((current, section) => (
+    section.getBoundingClientRect().top <= activationLine ? section : current
+  ), sections[0]);
+  const activeLink = navLinks.find((link) => link.getAttribute('href') === `#${activeSection.id}`);
+  setActiveNav(activeLink);
+  navTicking = false;
 }
 
 const initialNavLink = navLinks.find((link) => link.hash === location.hash) || navLinks[0];
 requestAnimationFrame(() => setActiveNav(initialNavLink));
 window.addEventListener('resize', () => {
-  const active = navLinks.find((link) => link.getAttribute('aria-current') === 'true') || initialNavLink;
-  setActiveNav(active);
+  updateActiveSection();
+}, { passive: true });
+
+window.addEventListener('scroll', () => {
+  if (navTicking) return;
+  navTicking = true;
+  window.requestAnimationFrame(updateActiveSection);
 }, { passive: true });
 
 const revealTargets = document.querySelectorAll(
