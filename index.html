@@ -12,7 +12,7 @@
   <title>Henry Abimanyu — Junior Data Analyst</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=7270332">
+  <link rel="stylesheet" href="./styles.css?v=20261101b">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -67,6 +67,20 @@
       </dl>
     </section>
 
+    <section class="project-index" aria-labelledby="project-index-title">
+      <div class="project-index-heading">
+        <p class="section-label">Pilih karya</p>
+        <h2 id="project-index-title">Empat proyek, empat jenis masalah.</h2>
+        <p>Mulai dari proyek yang paling dekat dengan kebutuhan Anda. Setiap studi kasus menjelaskan kontribusi dan batasannya.</p>
+      </div>
+      <div class="project-index-list">
+        <a href="#fittrack"><span>01 / Analitik produk</span><strong>FitTrack</strong><small>Progres latihan dari riwayat sesi</small><b aria-hidden="true">↗</b></a>
+        <a href="#pose"><span>02 / Evaluasi model</span><strong>Pose estimation</strong><small>Pengukuran gerakan terhadap ground truth</small><b aria-hidden="true">↗</b></a>
+        <a href="#jalanyuk"><span>03 / Data lokasi</span><strong>JalanYuk</strong><small>Pencarian tempat dan perencanaan rute</small><b aria-hidden="true">↗</b></a>
+        <a href="#telkom"><span>04 / Monitoring</span><strong>Telkom Indonesia</strong><small>Struktur log untuk tinjauan operasional</small><b aria-hidden="true">↗</b></a>
+      </div>
+    </section>
+
     <section class="positioning" aria-labelledby="positioning-title">
       <p class="section-label">01 / Profil</p>
       <div class="positioning-copy">
@@ -89,7 +103,7 @@
         </div>
       </div>
 
-      <article class="case-study case-fittrack">
+      <article class="case-study case-fittrack" id="fittrack">
         <header class="case-header">
           <div><span class="case-index">Case file 01</span><span class="case-year">Produk pribadi · 2026</span></div>
           <p class="case-status">Live product</p>
@@ -117,7 +131,7 @@
         </div>
       </article>
 
-      <article class="case-study">
+      <article class="case-study" id="pose">
         <header class="case-header">
           <div><span class="case-index">Case file 02</span><span class="case-year">Tugas akhir · 2025–2026</span></div>
           <p class="case-status">Model evaluation</p>
@@ -147,7 +161,7 @@
         </div>
       </article>
 
-      <article class="case-study case-jalanyuk">
+      <article class="case-study case-jalanyuk" id="jalanyuk">
         <header class="case-header">
           <div><span class="case-index">Case file 03</span><span class="case-year">Proyek pribadi · 2026</span></div>
           <p class="case-status">Prototipe</p>
@@ -165,20 +179,14 @@
             <ul class="tags" aria-label="Teknologi JalanYuk"><li>Next.js</li><li>OpenStreetMap</li><li>Photon</li><li>Data lokasi</li></ul>
             <a class="case-link" href="https://github.com/codeBims/JalanYuk" target="_blank" rel="noreferrer">Lihat kode dan batasan produk <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="route-panel" aria-label="Gambaran alur data lokasi JalanYuk">
-            <p class="micro-label">Cara kerja / JalanYuk</p>
-            <ol>
-              <li><span>01</span><div><strong>Pilih tempat</strong><small>Katalog lokal atau hasil pencarian</small></div></li>
-              <li><span>02</span><div><strong>Simpan identitas lokasi</strong><small>Sumber, ID, dan koordinat tetap terhubung</small></div></li>
-              <li><span>03</span><div><strong>Susun perjalanan</strong><small>Itinerary, pin manual, dan pilihan moda</small></div></li>
-              <li><span>04</span><div><strong>Periksa rute</strong><small>Jarak dan estimasi dari layanan peta publik</small></div></li>
-            </ol>
-            <p class="route-note">Ringkasan proses; bukan tangkapan layar aplikasi.</p>
+          <div class="jalanyuk-showcase" aria-label="Tampilan JalanYuk">
+            <figure><img src="./assets/jalanyuk-explore.png" alt="Halaman Jelajahi JalanYuk dengan pencarian dan katalog destinasi" width="1440" height="1000" loading="lazy" decoding="async"><figcaption>Jelajahi: katalog destinasi dengan sumber lokasi yang dapat ditelusuri.</figcaption></figure>
+            <figure><img src="./assets/jalanyuk-route.png" alt="Halaman Rute Kustom JalanYuk dengan pilihan moda dan titik perjalanan" width="1440" height="1000" loading="lazy" decoding="async"><figcaption>Rute Kustom: pilih moda, titik awal, singgah, dan tujuan.</figcaption></figure>
           </div>
         </div>
       </article>
 
-      <article class="case-study case-confidential">
+      <article class="case-study case-confidential" id="telkom">
         <header class="case-header">
           <div><span class="case-index">Case file 04</span><span class="case-year">Telkom Indonesia · 2025</span></div>
           <p class="case-status">Internal system</p>
@@ -198,11 +206,8 @@
             </ul>
           </div>
           <div class="confidential-panel">
-            <p class="micro-label">Batas publikasi</p>
-            <blockquote>Materi, nama host, data, dan tangkapan layar sistem internal tidak ditampilkan karena tidak ada izin publikasi.</blockquote>
-            <div class="pipeline" aria-label="Ringkasan alur kerja">
-              <span>Raw logs</span><i aria-hidden="true">→</i><span>Parse & structure</span><i aria-hidden="true">→</i><span>Dashboard</span><i aria-hidden="true">→</i><span>Operational review</span>
-            </div>
+            <figure><img src="./assets/telkom-intern.png" alt="Henry saat magang di area Telkom Indonesia" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Dokumentasi pribadi selama magang di Telkom Indonesia.</figcaption></figure>
+            <p><strong>Batas publikasi.</strong> Materi, nama host, data, dan tangkapan layar sistem internal tidak ditampilkan karena tidak ada izin publikasi.</p>
           </div>
         </div>
       </article>
