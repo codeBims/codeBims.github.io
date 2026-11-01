@@ -34,7 +34,7 @@ if ('IntersectionObserver' in window) {
 }
 
 const revealTargets = document.querySelectorAll(
-  '.positioning-copy, .section-heading, .case-study, .timeline article, .capability-grid article, .side-project, .contact-main, .contact-list'
+  '.positioning-copy, .section-heading, .timeline article, .capability-grid article, .side-project, .contact-main, .contact-list'
 );
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
