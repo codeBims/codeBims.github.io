@@ -719,6 +719,8 @@ footer p { margin: 0; }
 @media (max-width: 720px) {
   body { padding-bottom: 6.25rem; font-size: 16px; }
   html { scroll-padding-top: 100px; }
+  .contact { padding-bottom: calc(clamp(5rem, 10vw, 8rem) + 5.5rem); }
+  .contact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 .9rem; }
   .site-header { min-height: 0; }
   .brand small { display: none; }
   .header-cta { padding: .52rem .7rem; }
@@ -794,7 +796,6 @@ footer p { margin: 0; }
   .pipeline { align-items: flex-start; flex-direction: column; }
   .pipeline i { transform: rotate(90deg); }
   .contact-list a { grid-template-columns: 22px auto; gap: .25rem .55rem; }
-  .contact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 .9rem; }
   .contact-list a { min-height: 78px; padding-inline: .1rem; }
   nav.section-nav { bottom: calc(.55rem + env(safe-area-inset-bottom)); }
   nav.section-nav a { min-height: 40px; padding: .48rem .62rem; font-size: .62rem; letter-spacing: .06em; }
