@@ -15,7 +15,7 @@
     'Dasar-Dasar Implementasi Kecerdasan Artifisial':'Fundamentals of Artificial Intelligence Implementation',
     'Menerapkan Rekayasa Prompt dengan Azure OpenAI Service':'Applying Prompt Engineering with Azure OpenAI Service',
     'Tips Melindungi Diri dari Ancaman Phishing dan Malware':'Protecting Yourself from Phishing and Malware',
-    'Daftar ini berasal dari pekerjaan magang, tugas akhir, dan proyek pribadi saya—bukan sekadar teknologi yang pernah saya baca.':'This list comes from my internship, thesis, and personal projects—not just technologies I have read about.',
+    'Daftar ini berasal dari pekerjaan magang, tugas akhir, dan proyek pribadi saya, bukan sekadar teknologi yang pernah saya baca.':'This list comes from my internship, thesis, and personal projects, not just technologies I have read about.',
     'Perbandingan dengan ground truth (tugas akhir)':'Comparison with ground truth (thesis)',
     'Eksperimen e-commerce sederhana yang saya bangun dengan HTML, CSS, dan JavaScript, lengkap dengan alur pemesanan melalui WhatsApp.':'A simple e-commerce experiment I built with HTML, CSS, and JavaScript, including an ordering flow through WhatsApp.',
     'Mengolah log ITGC dan Kubernetes menggunakan ELK Stack.':'Processed ITGC and Kubernetes logs using the ELK Stack.',
@@ -23,7 +23,7 @@
     'Menyiapkan keluaran log bagi alur otomasi audit lanjutan.':'Prepared log output for subsequent audit automation.',
     'Untuk tugas akhir, saya membandingkan MediaPipe BlazePose dan YOLOv8-Pose dalam membaca gerakan bicep curl dari video.':'For my thesis, I compared MediaPipe BlazePose and YOLOv8-Pose in reading bicep curl movements from video.',
     'Saat ini saya sedang mempelajari dasar kecerdasan buatan dan penerapannya pada layanan AWS.':'I am currently studying AI fundamentals and how they are applied in AWS services.',
-    'Saya Henry Abimanyu Dewandani. Saya biasa bekerja dengan log, data gerakan, dan dashboard—mencari pola, menguji hasil, lalu menjelaskannya tanpa membuat orang lain ikut pusing.':'I am Henry Abimanyu Dewandani. I work with logs, movement data, and dashboards—finding patterns, testing results, and explaining them without making things harder than they need to be.',
+    'Saya Henry Abimanyu Dewandani. Saya biasa bekerja dengan log, data gerakan, dan dashboard. Saya mencari pola, menguji hasil, lalu menjelaskannya tanpa membuat orang lain ikut pusing.':'I am Henry Abimanyu Dewandani. I work with logs, movement data, and dashboards. I find patterns, test results, and explain them without making things harder than they need to be.',
     'Datanya bisa berupa log operasional atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.':'The data may be operational logs or recordings of human movement. Whatever the format, I start by understanding the context, organizing the data, and choosing measurements that are genuinely useful.',
     'Data mentah saya susun dulu supaya masalahnya terlihat dan analisisnya tidak menyesatkan.':'I organize raw data first so the problem becomes visible and the analysis does not mislead.',
     'Saya memilih metrik sesuai kebutuhan, termasuk MAE dan RMSE saat mengevaluasi model.':'I choose metrics based on the need, including MAE and RMSE when evaluating models.',
@@ -95,7 +95,7 @@
     body.placeholder = lang === 'en' ? 'Write your comment here...' : 'Tulis komentar Anda di sini...';
     document.querySelector('nav').setAttribute('aria-label', lang === 'en' ? 'Main navigation' : 'Navigasi utama');
     document.getElementById('guestbook-comments').setAttribute('aria-label', lang === 'en' ? 'Scrollable comments' : 'Daftar komentar, dapat digulir');
-    document.title = lang === 'en' ? 'Henry Abimanyu — Junior Data Analyst | Portfolio' : 'Henry Abimanyu — Junior Data Analyst';
+    document.title = lang === 'en' ? 'Henry Abimanyu | Junior Data Analyst Portfolio' : 'Henry Abimanyu | Junior Data Analyst';
     langButton.textContent = lang === 'en' ? 'ID' : 'EN';
     langButton.setAttribute('aria-label', lang === 'en' ? 'Ganti ke Bahasa Indonesia' : 'Switch to English');
     langButton.title = langButton.getAttribute('aria-label');

@@ -297,7 +297,7 @@ h1 em { color: var(--red); font-weight: 400; }
 .profile-note .micro-label { margin-bottom: .65rem; color: var(--red); }
 .profile-note ul { margin: 0; padding: 0; list-style: none; }
 .profile-note li { padding: .24rem 0; font-size: .86rem; }
-.profile-note li::before { content: '—'; margin-right: .55rem; color: var(--red); }
+.profile-note li::before { content: '•'; margin-right: .55rem; color: var(--red); }
 .proof-strip {
   grid-column: 1 / -1;
   margin: clamp(4rem, 8vw, 7rem) 0 0;
