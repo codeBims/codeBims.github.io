@@ -588,7 +588,7 @@ h2 {
 }
 .result-callout strong { color: var(--red); font: 400 2.6rem/1 Georgia, serif; }
 .result-callout p { margin: 0; font-size: .84rem; line-height: 1.4; }
-.case-confidential { background: var(--ink); color: var(--white); }
+.case-confidential { background: #1b222b; color: var(--white); }
 .case-confidential .case-header { border-color: #50524c; background: #20211e; }
 .case-confidential .case-year, .case-confidential .case-facts dd { color: #c8c8c0; }
 .case-confidential .case-facts { border-color: #50524c; }
