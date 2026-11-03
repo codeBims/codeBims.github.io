@@ -72,6 +72,22 @@
     'Micro Skill · 2 jam':'Micro Skill · 2 hours',
     'Micro Skill · 3 jam':'Micro Skill · 3 hours'
   });
+  Object.assign(en, {
+    'Datanya bisa berupa log operasional, transaksi, atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.':'The data may be operational logs, transactions, or recordings of human movement. Whatever the format, I start by understanding the context, organizing the data, and choosing measurements that are genuinely useful.',
+    'Analisis data · 2026':'Data analysis · 2026',
+    'Studi kasus publik':'Public case study',
+    'Analisis transaksi':'Transaction analysis',
+    'Saya memeriksa 541.909 baris transaksi untuk mencari tahu berapa banyak pelanggan yang punya invoice lain dalam 90 hari setelah invoice pertama yang terlihat di data.':'I examined 541,909 transaction rows to find how many customers had another invoice within 90 days of their first observed invoice.',
+    '885 dari 2.075 pelanggan pada kohort Januari–Juni 2011 memiliki invoice non-pembatalan berikutnya dalam 90 hari.':'885 of 2,075 customers in the January–June 2011 cohort had another non-cancellation invoice within 90 days.',
+    'Saya memeriksa data kosong, pembatalan, nilai nonpositif, dan baris identik sebelum membentuk kohort dengan SQL.':'I checked missing data, cancellations, nonpositive values, and identical rows before building the cohort with SQL.',
+    'Proporsi invoice lanjutan berbeda menurut bulan dan kelompok nilai invoice pertama.':'The share with another invoice varied by month and first invoice value group.',
+    'Ini mengukur aktivitas invoice, bukan retensi pembelian bersih. Pembatalan dan retur belum sepenuhnya dipasangkan dengan invoice asal.':'This measures invoice activity, not net purchase retention. Cancellations and returns have not been fully matched to their original invoices.',
+    'Sumber data: UCI Online Retail':'Data source: UCI Online Retail',
+    'Invoice lanjutan menurut bulan invoice pertama yang teramati.':'Subsequent invoices by month of first observed invoice.',
+    'Perbandingan menurut nilai invoice pertama. Hubungan ini bersifat deskriptif.':'Comparison by first invoice value. This relationship is descriptive.',
+    'Lihat ukuran penuh ↗':'View full size ↗',
+    'SQL: SQLite dan window functions':'SQL: SQLite and window functions'
+  });
   const original = new WeakMap();
   const nodes = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);

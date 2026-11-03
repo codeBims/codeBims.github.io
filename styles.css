@@ -20,13 +20,14 @@
 :root[data-theme="dark"] .portfolio-tabs button:hover, :root[data-theme="dark"] .case-switcher button:hover { background: #303a43; }
 :root[data-theme="dark"] .proof-strip { background: #242c35; }
 :root[data-theme="dark"] .comment-field input, :root[data-theme="dark"] .comment-field textarea { background: #151a21; color: var(--ink); }
-:root[data-theme="dark"] .case-header, :root[data-theme="dark"] .case-study:nth-of-type(2) .case-header, :root[data-theme="dark"] .case-study:nth-of-type(3) .case-header { background: #25303a; }
+:root[data-theme="dark"] .case-header { background: #25303a; }
 :root[data-theme="dark"] .comment-avatar { background: #303a43; color: var(--ink); }
 :root[data-theme="dark"] .button:not(.button-light), :root[data-theme="dark"] .header-cta:hover, :root[data-theme="dark"] .utility-control:hover { background: #33414b; color: var(--white); }
 :root[data-theme="dark"] .button-quiet { background: transparent !important; color: var(--ink) !important; }
 :root[data-theme="dark"] .button-light { color: #151613; }
 :root[data-theme="dark"] .comment-submit { color: var(--white); }
 :root[data-theme="dark"] .availability { color: #8ed7b7; border-color: #557b69; }
+:root[data-theme="dark"] .case-retail { --case-accent: #7bd0d7; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
@@ -421,6 +422,7 @@ h2 {
 .case-switcher button[aria-pressed="true"] { background: var(--ink); color: var(--white); border-color: var(--ink); }
 .case-switcher button[data-case="fittrack"][aria-pressed="true"] { box-shadow: inset 0 -3px 0 #d86b2e; }
 .case-switcher button[data-case="pose"][aria-pressed="true"] { box-shadow: inset 0 -3px 0 #d94a55; }
+.case-switcher button[data-case="online-retail"][aria-pressed="true"] { box-shadow: inset 0 -3px 0 #7bd0d7; }
 .case-switcher button[data-case="jalanyuk"][aria-pressed="true"] { box-shadow: inset 0 -3px 0 #43b8ae; }
 .case-switcher button[data-case="telkom"][aria-pressed="true"] { box-shadow: inset 0 -3px 0 #ed5656; }
 .case-switcher span { margin-right: .6rem; color: var(--red); font: 700 .67rem ui-monospace, monospace; }
@@ -459,7 +461,7 @@ h2 {
 }
 .case-header > div { display: flex; gap: 1.5rem; }
 .case-index { color: var(--case-accent); }
-.case-study:nth-of-type(2) .case-header, .case-study:nth-of-type(3) .case-header { background: transparent; }
+.case-pose .case-header, .case-jalanyuk .case-header { background: transparent; }
 .case-year { color: var(--muted); }
 .case-status { margin: 0; }
 .case-status::before { content: '■'; margin-right: .55rem; color: var(--case-accent); }
@@ -496,16 +498,19 @@ h2 {
 
 .case-fittrack { --case-accent: #d86b2e; }
 .case-pose { --case-accent: #b31f2c; }
+.case-retail { --case-accent: #21656e; }
 .case-jalanyuk { --case-accent: #248f86; }
 .case-confidential { --case-accent: #ed5656; }
 .case-fittrack .project-gallery { border-color: #9b552e; }
 .case-jalanyuk .project-gallery { border-color: #2c716c; background: #0c1922; }
-.case-pose .project-gallery { border-color: #c9c2b4; background: #f8f6ef; color: #151613; }
-.case-pose .project-gallery img { background: #fff; }
-.case-pose .project-gallery figcaption, .case-pose .gallery-controls p { color: #55574f; }
-.case-pose .gallery-controls { border-color: #d8d2c6; }
-.case-pose .gallery-controls button { border-color: #777970; color: #151613; }
-.case-pose .gallery-controls button:hover, .case-pose .gallery-controls button:focus-visible { border-color: #151613; background: #151613; color: #fff; }
+.case-pose .project-gallery, .case-retail .project-gallery { border-color: #c9c2b4; background: #f8f6ef; color: #151613; }
+.case-pose .project-gallery img, .case-retail .project-gallery img { background: #f8f6ef; }
+.case-pose .project-gallery figcaption, .case-pose .gallery-controls p, .case-retail .project-gallery figcaption, .case-retail .gallery-controls p { color: #55574f; }
+.case-pose .gallery-controls, .case-retail .gallery-controls { border-color: #d8d2c6; }
+.case-pose .gallery-controls button, .case-retail .gallery-controls button { border-color: #777970; color: #151613; }
+.case-pose .gallery-controls button:hover, .case-pose .gallery-controls button:focus-visible, .case-retail .gallery-controls button:hover, .case-retail .gallery-controls button:focus-visible { border-color: #151613; background: #151613; color: #fff; }
+.case-retail .project-gallery figcaption a { color: #21656e; font-weight: 700; text-underline-offset: .2rem; }
+.case-retail .project-gallery figcaption a:focus-visible { outline: 2px solid #21656e; outline-offset: 2px; }
 
 .project-gallery {
   width: min(100%, 860px);

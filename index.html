@@ -13,7 +13,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
   <script>document.documentElement.dataset.theme = (localStorage.getItem('portfolio-theme') || 'auto') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('portfolio-theme');</script>
-  <link rel="stylesheet" href="./styles.css?v=20261102f">
+  <link rel="stylesheet" href="./styles.css?v=20261103a">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -41,7 +41,7 @@
     <div class="header-tools">
       <button class="utility-control" id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
       <button class="utility-control" id="theme-toggle" type="button" aria-label="Tema: ikuti perangkat. Klik untuk mode terang" title="Tema: ikuti perangkat">◐</button>
-      <a class="header-cta" href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download>Unduh CV</a>
+      <a class="header-cta" href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download>Unduh CV</a>
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
   </header>
@@ -55,7 +55,7 @@
         <p class="lede">Saya Henry Abimanyu Dewandani, lulusan Informatika yang tertarik pada analisis data. Saat magang, saya membuat dashboard dari log operasional. Dalam tugas akhir, saya menguji model pembaca gerakan. Di sini saya tunjukkan proses dan hasil yang bisa diperiksa.</p>
         <div class="hero-actions">
           <a class="button" href="#karya">Jelajahi studi kasus</a>
-          <a class="button button-quiet" href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download>Unduh CV <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download>Unduh CV <span aria-hidden="true">↓</span></a>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
       </aside>
 
       <dl class="proof-strip" aria-label="Ringkasan profil">
-        <div><dt>04</dt><dd>Studi kasus terpilih</dd></div>
+        <div><dt>05</dt><dd>Studi kasus terpilih</dd></div>
         <div><dt>01</dt><dd>Pengalaman magang</dd></div>
         <div><dt>01</dt><dd>Tugas akhir evaluasi model</dd></div>
         <div><dt>2026</dt><dd>S1 Informatika</dd></div>
@@ -91,7 +91,7 @@
       </div>
       <div class="positioning-copy">
         <h2 id="positioning-title">Saya mulai dari masalah yang ingin dijawab.</h2>
-        <p class="intro-text">Datanya bisa berupa log operasional atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.</p>
+        <p class="intro-text">Datanya bisa berupa log operasional, transaksi, atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.</p>
         <div class="principles">
           <article><span>01</span><h3>Rapikan</h3><p>Data mentah saya susun dulu supaya masalahnya terlihat dan analisisnya tidak menyesatkan.</p></article>
           <article><span>02</span><h3>Uji</h3><p>Saya memilih metrik sesuai kebutuhan, termasuk MAE dan RMSE saat mengevaluasi model.</p></article>
@@ -106,7 +106,7 @@
         <div><h2 id="portfolio-title">Mau lihat yang saya kerjakan?</h2><p>Mulai dari proyek yang paling menarik perhatian Anda. Tiap studi kasus membahas apa yang saya kerjakan, alasan di baliknya, dan batasan yang masih ada.</p></div>
       </div>
       <div class="portfolio-tabs" role="tablist" aria-label="Isi portofolio">
-        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>04</span></button>
+        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>05</span></button>
         <button type="button" role="tab" id="tab-sertifikat" aria-controls="panel-sertifikat" aria-selected="false" tabindex="-1" data-portfolio-tab="sertifikat">Sertifikat <span>12</span></button>
         <button type="button" role="tab" id="tab-keahlian" aria-controls="panel-keahlian" aria-selected="false" tabindex="-1" data-portfolio-tab="keahlian">Keahlian</button>
       </div>
@@ -114,8 +114,9 @@
         <div class="case-switcher" aria-label="Pilih studi kasus">
           <button type="button" data-case="fittrack" aria-pressed="true"><span>01</span> FitTrack</button>
           <button type="button" data-case="pose" aria-pressed="false"><span>02</span> Pose estimation</button>
-          <button type="button" data-case="jalanyuk" aria-pressed="false"><span>03</span> JalanYuk</button>
-          <button type="button" data-case="telkom" aria-pressed="false"><span>04</span> Telkom</button>
+          <button type="button" data-case="online-retail" aria-pressed="false"><span>03</span> Online Retail</button>
+          <button type="button" data-case="jalanyuk" aria-pressed="false"><span>04</span> JalanYuk</button>
+          <button type="button" data-case="telkom" aria-pressed="false"><span>05</span> Telkom</button>
         </div>
       <article class="case-study case-fittrack" id="fittrack">
         <header class="case-header">
@@ -177,9 +178,39 @@
         </div>
       </article>
 
+      <article class="case-study case-retail" id="online-retail">
+        <header class="case-header">
+          <div><span class="case-index">Case file 03</span><span class="case-year">Analisis data · 2026</span></div>
+          <p class="case-status">Studi kasus publik</p>
+        </header>
+        <div class="case-body">
+          <div class="case-copy">
+            <p class="case-kicker">Analisis transaksi</p>
+            <h3>Online Retail</h3>
+            <p class="case-summary">Saya memeriksa 541.909 baris transaksi untuk mencari tahu berapa banyak pelanggan yang punya invoice lain dalam 90 hari setelah invoice pertama yang terlihat di data.</p>
+            <div class="result-callout" aria-label="Hasil utama">
+              <strong>42,7%</strong>
+              <p>885 dari 2.075 pelanggan pada kohort Januari–Juni 2011 memiliki invoice non-pembatalan berikutnya dalam 90 hari.</p>
+            </div>
+            <dl class="case-facts">
+              <div><dt>Proses</dt><dd>Saya memeriksa data kosong, pembatalan, nilai nonpositif, dan baris identik sebelum membentuk kohort dengan SQL.</dd></div>
+              <div><dt>Temuan</dt><dd>Proporsi invoice lanjutan berbeda menurut bulan dan kelompok nilai invoice pertama.</dd></div>
+              <div><dt>Batasan</dt><dd>Ini mengukur aktivitas invoice, bukan retensi pembelian bersih. Pembatalan dan retur belum sepenuhnya dipasangkan dengan invoice asal.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Teknologi analisis Online Retail"><li>Python</li><li>Pandas</li><li>SQLite</li><li>Matplotlib</li></ul>
+            <a class="case-link" href="https://archive.ics.uci.edu/dataset/352/online+retail" target="_blank" rel="noreferrer">Sumber data: UCI Online Retail <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="project-gallery" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Grafik analisis Online Retail">
+            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 2"><img src="./assets/online-retail-by-month.png" alt="Persentase pelanggan dengan invoice lanjutan dalam 90 hari menurut bulan, Januari sampai Juni 2011" width="1980" height="1080" loading="lazy" decoding="async"><figcaption>Invoice lanjutan menurut bulan invoice pertama yang teramati. <a href="./assets/online-retail-by-month.png" target="_blank" rel="noreferrer">Lihat ukuran penuh ↗</a></figcaption></figure>
+            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 2" hidden><img src="./assets/online-retail-by-first-invoice.png" alt="Persentase invoice lanjutan menurut empat kelompok nilai invoice pertama" width="1980" height="1080" loading="lazy" decoding="async"><figcaption>Perbandingan menurut nilai invoice pertama. Hubungan ini bersifat deskriptif. <a href="./assets/online-retail-by-first-invoice.png" target="_blank" rel="noreferrer">Lihat ukuran penuh ↗</a></figcaption></figure>
+            <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Grafik sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>2</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Grafik berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+          </div>
+        </div>
+      </article>
+
       <article class="case-study case-jalanyuk" id="jalanyuk">
         <header class="case-header">
-          <div><span class="case-index">Case file 03</span><span class="case-year">Proyek pribadi · 2026</span></div>
+          <div><span class="case-index">Case file 04</span><span class="case-year">Proyek pribadi · 2026</span></div>
           <p class="case-status">Prototipe</p>
         </header>
         <div class="case-body">
@@ -205,7 +236,7 @@
 
       <article class="case-study case-confidential" id="telkom">
         <header class="case-header">
-          <div><span class="case-index">Case file 04</span><span class="case-year">Telkom Indonesia · 2025</span></div>
+          <div><span class="case-index">Case file 05</span><span class="case-year">Telkom Indonesia · 2025</span></div>
           <p class="case-status">Internal system</p>
         </header>
         <div class="case-body">
@@ -274,7 +305,7 @@
         </div>
       </div>
       <div class="capability-grid">
-        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL dasar</li><li>Excel: formula, grafik, dashboard</li></ul></article>
+        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL: SQLite dan window functions</li><li>Excel: formula, grafik, dashboard</li><li>Power BI</li></ul></article>
         <article><p>02</p><h3>Monitoring</h3><ul><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Dashboard monitoring (magang Telkom)</li></ul></article>
         <article><p>03</p><h3>Evaluasi</h3><ul><li>Data cleaning</li><li>MAE & RMSE</li><li>Perbandingan dengan ground truth (tugas akhir)</li><li>Interpretasi hasil (tugas akhir)</li></ul></article>
         <article><p>04</p><h3>Produk web</h3><ul><li>React & Vite (FitTrack)</li><li>HTML, CSS, JavaScript</li><li>Supabase (FitTrack)</li><li>Git & GitHub</li></ul></article>
@@ -328,7 +359,7 @@
         <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span><strong>@hnryabim</strong></a>
         <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span><strong>@codeBims</strong></a>
         <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
-        <a href="./assets/CV-Henry-Abimanyu.pdf?v=7270332" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
+        <a href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
       </div>
     </section>
 
@@ -366,7 +397,7 @@
   </footer>
 
   <script src="./comments-config.js"></script>
-  <script src="./i18n.js?v=20261102d"></script>
+  <script src="./i18n.js?v=20261103a"></script>
   <script src="./app.js?v=20261102b"></script>
   <script src="./comments.js?v=20261101c"></script>
 </body>
