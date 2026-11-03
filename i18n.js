@@ -88,7 +88,25 @@
     'Invoice lanjutan menurut bulan invoice pertama yang teramati.':'Subsequent invoices by month of first observed invoice.',
     'Perbandingan menurut nilai invoice pertama. Hubungan ini bersifat deskriptif.':'Comparison by first invoice value. This relationship is descriptive.',
     'Lihat ukuran penuh ↗':'View full size ↗',
-    'SQL: SQLite dan window functions':'SQL: SQLite and window functions'
+    'SQL: SQLite dan window functions':'SQL: SQLite and window functions',
+    'Proyek kelompok · 2026':'Group project · 2026',
+    'Dashboard publik':'Public dashboard',
+    'Visualisasi data':'Data visualization',
+    'Dalam proyek kelompok ini, saya menyiapkan data World Happiness Report dan membuat dua grafik dengan Chart.js. Keduanya membantu pembaca membandingkan negara pada 2023 dan melihat perubahan skor dari tahun ke tahun.':'In this group project, I prepared World Happiness Report data and built two charts with Chart.js. They help readers compare countries in 2023 and see how scores changed over time.',
+    'Grafik batang':'Bar chart',
+    'Perbandingan 15 negara dengan skor kebahagiaan tertinggi pada 2023.':'Comparison of the 15 countries with the highest happiness scores in 2023.',
+    'Grafik garis':'Line chart',
+    'Perubahan skor kebahagiaan beberapa negara dari tahun ke tahun.':'Changes in happiness scores for several countries over time.',
+    'Peran':'My role',
+    'Persiapan data dan dua visualisasi di atas. Fitur dashboard lainnya dikerjakan bersama tim.':'Data preparation and the two charts above. The other dashboard features were built with the team.',
+    'Lihat hasilnya langsung':'Explore the live result',
+    'Grafik dan interaksinya dapat dicoba di dashboard kelompok.':'Explore the charts and interactions in the team dashboard.',
+    '15 negara teratas':'Top 15 countries',
+    'Perbandingan skor tahun 2023':'2023 score comparison',
+    'Tren lintas tahun':'Trend over time',
+    'Grafik garis yang bisa dijelajahi':'Interactive line chart',
+    'Buka dashboard':'Open dashboard',
+    'Lihat repositori kelompok':'View team repository'
   });
   const original = new WeakMap();
   const nodes = [];

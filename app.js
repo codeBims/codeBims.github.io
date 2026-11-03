@@ -221,7 +221,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const revealTargets = document.querySelectorAll(
-  '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .project-gallery, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
+  '.hero-copy, .hero-profile, .proof-strip, .positioning > .section-label, .positioning-photo-wrap, .positioning-copy, .section-heading, .portfolio-tabs, .case-switcher, .case-header, .case-copy, .project-gallery, .happiness-evidence, .confidential-panel, .experience > .section-label, .section-intro, .timeline article, .certificate-card, .capability-grid article, .side-project, .contact-main, .contact-list a, .comments-intro, .comments-social, .comments-box, footer'
 );
 
 if (!reduceMotion && 'IntersectionObserver' in window) {

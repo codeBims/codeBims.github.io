@@ -13,7 +13,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
   <script>document.documentElement.dataset.theme = (localStorage.getItem('portfolio-theme') || 'auto') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('portfolio-theme');</script>
-  <link rel="stylesheet" href="./styles.css?v=20261103c">
+  <link rel="stylesheet" href="./styles.css?v=20261103d">
 </head>
 <body>
   <a class="skip-link" href="#konten">Lewati ke konten</a>
@@ -41,7 +41,7 @@
     <div class="header-tools">
       <button class="utility-control" id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
       <button class="utility-control" id="theme-toggle" type="button" aria-label="Tema: ikuti perangkat. Klik untuk mode terang" title="Tema: ikuti perangkat">◐</button>
-      <a class="header-cta" href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download>Unduh CV</a>
+      <a class="header-cta" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v6" download>Unduh CV</a>
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
   </header>
@@ -55,7 +55,7 @@
         <p class="lede">Saya Henry Abimanyu Dewandani, lulusan Informatika yang tertarik pada analisis data. Saat magang, saya membuat dashboard dari log operasional. Dalam tugas akhir, saya menguji model pembaca gerakan. Di sini saya tunjukkan proses dan hasil yang bisa diperiksa.</p>
         <div class="hero-actions">
           <a class="button" href="#karya">Jelajahi studi kasus</a>
-          <a class="button button-quiet" href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download>Unduh CV <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v6" download>Unduh CV <span aria-hidden="true">↓</span></a>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
       </aside>
 
       <dl class="proof-strip" aria-label="Ringkasan profil">
-        <div><dt>05</dt><dd>Studi kasus terpilih</dd></div>
+        <div><dt>06</dt><dd>Studi kasus terpilih</dd></div>
         <div><dt>01</dt><dd>Pengalaman magang</dd></div>
         <div><dt>01</dt><dd>Tugas akhir evaluasi model</dd></div>
         <div><dt>2026</dt><dd>S1 Informatika</dd></div>
@@ -106,7 +106,7 @@
         <div><h2 id="portfolio-title">Mau lihat yang saya kerjakan?</h2><p>Mulai dari proyek yang paling menarik perhatian Anda. Tiap studi kasus membahas apa yang saya kerjakan, alasan di baliknya, dan batasan yang masih ada.</p></div>
       </div>
       <div class="portfolio-tabs" role="tablist" aria-label="Isi portofolio">
-        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>05</span></button>
+        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>06</span></button>
         <button type="button" role="tab" id="tab-sertifikat" aria-controls="panel-sertifikat" aria-selected="false" tabindex="-1" data-portfolio-tab="sertifikat">Sertifikat <span>12</span></button>
         <button type="button" role="tab" id="tab-keahlian" aria-controls="panel-keahlian" aria-selected="false" tabindex="-1" data-portfolio-tab="keahlian">Keahlian</button>
       </div>
@@ -117,6 +117,7 @@
           <button type="button" data-case="online-retail" aria-pressed="false"><span>03</span> Online Retail</button>
           <button type="button" data-case="jalanyuk" aria-pressed="false"><span>04</span> JalanYuk</button>
           <button type="button" data-case="telkom" aria-pressed="false"><span>05</span> Telkom</button>
+          <button type="button" data-case="happiness" aria-pressed="false"><span>06</span> World Happiness</button>
         </div>
       <article class="case-study case-fittrack" id="fittrack">
         <header class="case-header">
@@ -266,6 +267,33 @@
           </div>
         </div>
       </article>
+      <article class="case-study case-happiness" id="happiness">
+        <header class="case-header">
+          <div><span class="case-index">Case file 06</span><span class="case-year">Proyek kelompok · 2026</span></div>
+          <p class="case-status">Dashboard publik</p>
+        </header>
+        <div class="case-body">
+          <div class="case-copy">
+            <p class="case-kicker">Visualisasi data</p>
+            <h3>World Happiness Dashboard</h3>
+            <p class="case-summary">Dalam proyek kelompok ini, saya menyiapkan data World Happiness Report dan membuat dua grafik dengan Chart.js. Keduanya membantu pembaca membandingkan negara pada 2023 dan melihat perubahan skor dari tahun ke tahun.</p>
+            <dl class="case-facts">
+              <div><dt>Grafik batang</dt><dd>Perbandingan 15 negara dengan skor kebahagiaan tertinggi pada 2023.</dd></div>
+              <div><dt>Grafik garis</dt><dd>Perubahan skor kebahagiaan beberapa negara dari tahun ke tahun.</dd></div>
+              <div><dt>Peran</dt><dd>Persiapan data dan dua visualisasi di atas. Fitur dashboard lainnya dikerjakan bersama tim.</dd></div>
+            </dl>
+            <ul class="tags" aria-label="Teknologi World Happiness Dashboard"><li>Chart.js</li><li>JavaScript</li><li>World Happiness Report</li></ul>
+          </div>
+          <div class="happiness-evidence">
+            <p class="micro-label">Lihat hasilnya langsung</p>
+            <p>Grafik dan interaksinya dapat dicoba di dashboard kelompok.</p>
+            <div><span>01</span><strong>15 negara teratas</strong><small>Perbandingan skor tahun 2023</small></div>
+            <div><span>02</span><strong>Tren lintas tahun</strong><small>Grafik garis yang bisa dijelajahi</small></div>
+            <a class="button" href="https://visdatgokil.vercel.app/" target="_blank" rel="noopener noreferrer">Buka dashboard <span aria-hidden="true">↗</span></a>
+            <a class="case-link" href="https://github.com/adhihihi/Final-Project-Visdat" target="_blank" rel="noopener noreferrer">Lihat repositori kelompok <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
       </div>
       <div id="panel-sertifikat" role="tabpanel" aria-labelledby="tab-sertifikat" class="portfolio-panel">
     <section class="certificates" id="sertifikat" aria-labelledby="certificates-title">
@@ -307,7 +335,7 @@
         </div>
       </div>
       <div class="capability-grid">
-        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL: SQLite dan window functions</li><li>Excel: formula, grafik, dashboard</li><li>Power BI</li></ul></article>
+        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL: SQLite dan window functions</li><li>Excel: formula, grafik, dashboard</li><li>Power BI</li><li>Chart.js (World Happiness)</li></ul></article>
         <article><p>02</p><h3>Monitoring</h3><ul><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Dashboard monitoring (magang Telkom)</li></ul></article>
         <article><p>03</p><h3>Evaluasi</h3><ul><li>Data cleaning</li><li>MAE & RMSE</li><li>Perbandingan dengan ground truth (tugas akhir)</li><li>Interpretasi hasil (tugas akhir)</li></ul></article>
         <article><p>04</p><h3>Produk web</h3><ul><li>React & Vite (FitTrack)</li><li>HTML, CSS, JavaScript</li><li>Supabase (FitTrack)</li><li>Git & GitHub</li></ul></article>
@@ -361,7 +389,7 @@
         <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span><strong>@hnryabim</strong></a>
         <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span><strong>@codeBims</strong></a>
         <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
-        <a href="./assets/CV-Henry-Abimanyu.pdf?v=f7b204d" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
+        <a href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v6" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
       </div>
     </section>
 
@@ -399,8 +427,8 @@
   </footer>
 
   <script src="./comments-config.js"></script>
-  <script src="./i18n.js?v=20261103b"></script>
-  <script src="./app.js?v=20261103a"></script>
+  <script src="./i18n.js?v=20261103c"></script>
+  <script src="./app.js?v=20261103b"></script>
   <script src="./comments.js?v=20261101c"></script>
 </body>
 </html>
