@@ -510,6 +510,7 @@ h2 {
 .case-pose .gallery-controls button, .case-retail .gallery-controls button { border-color: #777970; color: #151613; }
 .case-pose .gallery-controls button:hover, .case-pose .gallery-controls button:focus-visible, .case-retail .gallery-controls button:hover, .case-retail .gallery-controls button:focus-visible { border-color: #151613; background: #151613; color: #fff; }
 .case-retail .project-gallery figcaption a { color: #21656e; font-weight: 700; text-underline-offset: .2rem; }
+.case-confidential .project-gallery figcaption a { color: #f8d095; font-weight: 700; text-underline-offset: .2rem; }
 .case-retail .project-gallery figcaption a:focus-visible { outline: 2px solid #21656e; outline-offset: 2px; }
 
 .project-gallery {
