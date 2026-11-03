@@ -11,6 +11,7 @@ function selectPortfolio(name, updateHash = false) {
     tab.tabIndex = selected ? 0 : -1;
     document.getElementById(`panel-${tab.dataset.portfolioTab}`).hidden = !selected;
   });
+  document.querySelectorAll('video').forEach((video) => { if (video.closest('[hidden]')) video.pause(); });
   if (updateHash) history.replaceState(null, '', name === 'proyek' ? '#karya' : `#${name}`);
 }
 
@@ -18,6 +19,7 @@ function selectCase(id, updateHash = false) {
   selectPortfolio('proyek');
   caseButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.case === id)));
   caseIds.forEach((caseId) => { document.getElementById(caseId).hidden = caseId !== id; });
+  document.querySelectorAll('video').forEach((video) => { if (video.closest('[hidden]')) video.pause(); });
   if (updateHash) history.replaceState(null, '', `#${id}`);
 }
 
@@ -66,6 +68,10 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
   let autoplayTimer;
 
   const showSlide = (nextIndex, announce = false) => {
+    slides[index].querySelectorAll('video').forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+    });
     index = (nextIndex + slides.length) % slides.length;
     status.setAttribute('aria-live', announce ? 'polite' : 'off');
     slides.forEach((slide, slideIndex) => {
@@ -74,16 +80,32 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
       slide.setAttribute('aria-hidden', String(!selected));
     });
     current.textContent = String(index + 1);
+    const video = slides[index].querySelector('video');
+    if (video && autoplay && !reduceMotion && !document.hidden && !gallery.closest('[hidden]') && !pointerInside && !focusInside) {
+      video.play().catch(() => {});
+    }
   };
 
   const scheduleAutoplay = () => {
     clearTimeout(autoplayTimer);
     if (!autoplay || reduceMotion) return;
+    const video = slides[index].querySelector('video');
+    const delay = video ? Math.max(8000, (video.duration || 7) * 1000 + 800) : 5000;
     autoplayTimer = setTimeout(() => {
       if (!document.hidden && !pointerInside && !focusInside && !gallery.closest('[hidden]')) showSlide(index + 1);
       scheduleAutoplay();
-    }, 5000);
+    }, delay);
   };
+
+  gallery.querySelectorAll('video').forEach((video) => {
+    video.addEventListener('play', () => clearTimeout(autoplayTimer));
+    video.addEventListener('pause', () => { if (!video.ended) scheduleAutoplay(); });
+    video.addEventListener('ended', () => {
+      if (autoplay && !pointerInside && !focusInside && !document.hidden && !gallery.closest('[hidden]')) showSlide(index + 1);
+      scheduleAutoplay();
+    });
+    video.addEventListener('loadedmetadata', scheduleAutoplay);
+  });
 
   previous.addEventListener('click', () => { showSlide(index - 1, true); scheduleAutoplay(); });
   next.addEventListener('click', () => { showSlide(index + 1, true); scheduleAutoplay(); });
@@ -107,7 +129,7 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     scheduleAutoplay();
   });
   gallery.addEventListener('touchstart', (event) => {
-    if (event.target.closest('button')) return;
+    if (event.target.closest('button, video')) return;
     clearTimeout(autoplayTimer);
     const touch = event.changedTouches[0];
     touchStart = { x: touch.clientX, y: touch.clientY };
@@ -130,7 +152,12 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     toggle.setAttribute('aria-label', autoplay ? (english ? 'Pause automatic slideshow' : 'Jeda slideshow otomatis') : (english ? 'Play automatic slideshow' : 'Putar slideshow otomatis'));
   };
   toggle.hidden = reduceMotion;
-  document.addEventListener('visibilitychange', () => document.hidden ? clearTimeout(autoplayTimer) : scheduleAutoplay());
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearTimeout(autoplayTimer);
+      gallery.querySelectorAll('video').forEach((video) => video.pause());
+    } else scheduleAutoplay();
+  });
   window.addEventListener('portfolio-language-change', updateControlLabels);
   updateControlLabels();
   showSlide(0);

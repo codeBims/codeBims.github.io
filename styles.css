@@ -526,13 +526,14 @@ h2 {
 .project-gallery:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
 .project-gallery figure { margin: 0; }
 .project-gallery figure:not([hidden]) { animation: gallery-in .38s cubic-bezier(.22, 1, .36, 1); }
-.project-gallery img {
+.project-gallery img, .project-gallery video {
   width: 100%;
   height: clamp(280px, 38vw, 470px);
   object-fit: contain;
   background: #090a08;
   border-radius: 14px;
 }
+.case-pose .project-gallery video { background: #11130f; }
 .project-gallery figcaption {
   min-height: 2.7rem;
   padding: .75rem .35rem .4rem;
@@ -944,7 +945,7 @@ footer p { margin: 0; }
   .case-summary { font-size: 1rem; }
   .case-facts div { grid-template-columns: 1fr; gap: .25rem; }
   .project-gallery { padding: .55rem; border-radius: 16px; }
-  .project-gallery img { height: clamp(230px, 68vw, 340px); border-radius: 11px; }
+  .project-gallery img, .project-gallery video { height: clamp(230px, 68vw, 340px); border-radius: 11px; }
   .result-callout { grid-template-columns: 1fr; }
   .pipeline { align-items: flex-start; flex-direction: column; }
   .pipeline i { transform: rotate(90deg); }
