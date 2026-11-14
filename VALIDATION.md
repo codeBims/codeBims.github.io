@@ -17,3 +17,5 @@ Verified before release:
 - Previously weak text accent combinations were recalculated after changes: 6.21–9.09:1 for the checked light/dark pairs. Hero 800 px WebP is 21,130 bytes versus the original 1,977,572-byte JPEG. Responsive source descriptors match actual image dimensions.
 
 Limits: desktop browser viewport checks are not physical iOS/Android device tests. No Lighthouse score or field Core Web Vitals result is claimed. User testing with 3–5 people has not occurred. Analytics is prepared but disabled at the owner's request until account configuration is available. Public deployment is verified separately after publishing.
+
+Public smoke check: GitHub Pages deployment succeeded. The public homepage loaded the versioned stylesheet and WebP hero, existing comments loaded, Telkom media enlargement and Escape worked, and the published Online Retail detail page opened with five narrative sections. No console error was observed in those public flows. Analytics remained disabled.
