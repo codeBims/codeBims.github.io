@@ -1,434 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Portofolio Henry Abimanyu Dewandani, Junior Data Analyst dengan fokus pada operational analytics, dashboard, observability, dan evaluasi model.">
-  <meta name="theme-color" content="#f3f0e7">
-  <meta name="color-scheme" content="light dark">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Henry Portfolio">
-  <title>Henry Abimanyu | Junior Data Analyst</title>
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="./site.webmanifest">
-  <script>document.documentElement.dataset.theme = (localStorage.getItem('portfolio-theme') || 'auto') === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : localStorage.getItem('portfolio-theme');</script>
-  <link rel="stylesheet" href="./styles.css?v=20261103d">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="Portofolio Henry Abimanyu Dewandani, Junior Data Analyst dengan fokus pada operational analytics, dashboard, observability, dan evaluasi model." name="description"/>
+<meta content="#f3f0e7" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="Henry Portfolio" name="apple-mobile-web-app-title"/>
+<title>Henry Abimanyu | Junior Data Analyst</title>
+<link href="./assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="./site.webmanifest" rel="manifest"/>
+<script>try { const t = localStorage.getItem('portfolio-theme') || 'auto'; document.documentElement.dataset.theme = t === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : t; } catch { document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }</script>
+<link href="./styles.css?v=20261103d" rel="stylesheet"/>
+<link href="https://codebims.github.io/" rel="canonical"/><meta content="website" property="og:type"/><meta content="https://codebims.github.io/" property="og:url"/><meta content="Henry Abimanyu | Junior Data Analyst" property="og:title"/><meta content="Analisis transaksi, dashboard operasional, dan evaluasi model. Lihat proses, hasil, dan batasan di setiap studi kasus." property="og:description"/><meta content="https://codebims.github.io/assets/social-preview.jpg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><link href="./refinements.css?v=20261115r3" rel="stylesheet"/>
+<link href="./refinements.css?v=20261115r3" rel="stylesheet"/>
 </head>
 <body>
-  <a class="skip-link" href="#konten">Lewati ke konten</a>
-  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <symbol id="icon-gmail" viewBox="0 0 24 24"><path d="M3 6.5 12 13l9-6.5v11.8a1.7 1.7 0 0 1-1.7 1.7H4.7A1.7 1.7 0 0 1 3 18.3Z" fill="none" stroke="#4285f4" stroke-width="2.2"/><path d="M3 6.5 12 13l9-6.5" fill="none" stroke="#ea4335" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 8v10.3A1.7 1.7 0 0 0 4.7 20H6V9" fill="none" stroke="#34a853" stroke-width="2.2"/><path d="M18 9v11h1.3a1.7 1.7 0 0 0 1.7-1.7V8" fill="none" stroke="#fbbc04" stroke-width="2.2"/></symbol>
-    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.2 8.6H2.4V21h2.8zM3.8 2.5a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3ZM21.6 13.9c0-3.75-2-5.5-4.7-5.5a4.05 4.05 0 0 0-3.65 2V8.6h-2.8V21h2.8v-6.15c0-1.62.31-3.18 2.3-3.18 1.96 0 1.98 1.84 1.98 3.29V21h2.8z"/></symbol>
-    <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.7" cy="6.5" r="1.15"/></symbol>
-    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.61 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.6 1 1-3.5-.3-.5A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4Z"/></symbol>
-    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  </svg>
-
-  <header class="site-header">
-    <a class="brand" href="#atas" aria-label="Kembali ke atas">
-      <strong>HA<span>.</span></strong>
-      <small>Data portfolio</small>
-    </a>
-    <nav class="section-nav" aria-label="Navigasi bagian">
-      <a href="#profil">Profil</a>
-      <a href="#karya">Portofolio</a>
-      <a href="#pengalaman">Jejak</a>
-      <a href="#kontak">Kontak</a>
-      <a href="#komentar">Komentar</a>
-    </nav>
-    <div class="header-tools">
-      <button class="utility-control" id="language-toggle" type="button" aria-label="Switch to English" title="Switch to English">EN</button>
-      <button class="utility-control" id="theme-toggle" type="button" aria-label="Tema: ikuti perangkat. Klik untuk mode terang" title="Tema: ikuti perangkat">◐</button>
-      <a class="header-cta" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7" download>Unduh CV</a>
-    </div>
-    <div class="scroll-progress" aria-hidden="true"></div>
-  </header>
-
-  <main id="konten">
-    <section class="hero" id="atas">
-      <div class="hero-copy">
-        <p class="availability"><span aria-hidden="true"></span>Tersedia untuk peluang kerja</p>
-        <p class="eyebrow">Junior Data Analyst · Bekasi, Jawa Barat</p>
-        <h1>Dari log dan gerakan,<br><em>menjadi informasi yang jelas.</em></h1>
-        <p class="lede">Saya Henry Abimanyu Dewandani, lulusan Informatika yang tertarik pada analisis data. Saat magang, saya membuat dashboard dari log operasional. Dalam tugas akhir, saya menguji model pembaca gerakan. Di sini saya tunjukkan proses dan hasil yang bisa diperiksa.</p>
-        <div class="hero-actions">
-          <a class="button" href="#karya">Jelajahi studi kasus</a>
-          <a class="button button-quiet" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7" download>Unduh CV <span aria-hidden="true">↓</span></a>
-        </div>
-      </div>
-
-      <aside class="hero-profile" aria-label="Profil singkat Henry">
-        <figure class="portrait">
-          <img src="./assets/henry-abimanyu.jpg" alt="Potret Henry Abimanyu dengan latar merah" width="1838" height="2304" decoding="async" fetchpriority="high">
-        </figure>
-        <div class="profile-note">
-          <p class="micro-label">Fokus saat ini</p>
-          <ul>
-            <li>Operational analytics</li>
-            <li>Dashboard & reporting</li>
-            <li>Monitoring & observability</li>
-          </ul>
-        </div>
-      </aside>
-
-      <dl class="proof-strip" aria-label="Ringkasan profil">
-        <div><dt>06</dt><dd>Studi kasus terpilih</dd></div>
-        <div><dt>01</dt><dd>Pengalaman magang</dd></div>
-        <div><dt>01</dt><dd>Tugas akhir evaluasi model</dd></div>
-        <div><dt>2026</dt><dd>S1 Informatika</dd></div>
-      </dl>
-    </section>
-
-    <section class="positioning" id="profil" aria-labelledby="positioning-title">
-      <p class="section-label">01 / Profil</p>
-      <div class="positioning-photo-wrap">
-        <div class="about-photo">
-          <img src="./assets/henry-graduation.png" alt="Henry Abimanyu mengenakan selempang kelulusan Telkom University" width="515" height="709" loading="lazy">
-        </div>
-        <p>Kelulusan 2026</p>
-      </div>
-      <div class="positioning-copy">
-        <h2 id="positioning-title">Saya mulai dari masalah yang ingin dijawab.</h2>
-        <p class="intro-text">Datanya bisa berupa log operasional, transaksi, atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.</p>
-        <div class="principles">
-          <article><span>01</span><h3>Rapikan</h3><p>Data mentah saya susun dulu supaya masalahnya terlihat dan analisisnya tidak menyesatkan.</p></article>
-          <article><span>02</span><h3>Uji</h3><p>Saya memilih metrik sesuai kebutuhan, termasuk MAE dan RMSE saat mengevaluasi model.</p></article>
-          <article><span>03</span><h3>Ceritakan</h3><p>Hasil akhirnya saya ubah menjadi dashboard, grafik, atau ringkasan yang cepat dipahami.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="portfolio-hub" id="karya" aria-labelledby="portfolio-title">
-      <div class="section-heading">
-        <p class="section-label">02 / Portofolio</p>
-        <div><h2 id="portfolio-title">Mau lihat yang saya kerjakan?</h2><p>Mulai dari proyek yang paling menarik perhatian Anda. Tiap studi kasus membahas apa yang saya kerjakan, alasan di baliknya, dan batasan yang masih ada.</p></div>
-      </div>
-      <div class="portfolio-tabs" role="tablist" aria-label="Isi portofolio">
-        <button type="button" role="tab" id="tab-proyek" aria-controls="panel-proyek" aria-selected="true" tabindex="0" data-portfolio-tab="proyek">Proyek <span>06</span></button>
-        <button type="button" role="tab" id="tab-sertifikat" aria-controls="panel-sertifikat" aria-selected="false" tabindex="-1" data-portfolio-tab="sertifikat">Sertifikat <span>12</span></button>
-        <button type="button" role="tab" id="tab-keahlian" aria-controls="panel-keahlian" aria-selected="false" tabindex="-1" data-portfolio-tab="keahlian">Keahlian</button>
-      </div>
-      <div id="panel-proyek" role="tabpanel" aria-labelledby="tab-proyek" class="portfolio-panel">
-        <div class="case-switcher" aria-label="Pilih studi kasus">
-          <button type="button" data-case="fittrack" aria-pressed="true"><span>01</span> FitTrack</button>
-          <button type="button" data-case="pose" aria-pressed="false"><span>02</span> Pose estimation</button>
-          <button type="button" data-case="online-retail" aria-pressed="false"><span>03</span> Online Retail</button>
-          <button type="button" data-case="jalanyuk" aria-pressed="false"><span>04</span> JalanYuk</button>
-          <button type="button" data-case="telkom" aria-pressed="false"><span>05</span> Telkom</button>
-          <button type="button" data-case="happiness" aria-pressed="false"><span>06</span> World Happiness</button>
-        </div>
-      <article class="case-study case-fittrack" id="fittrack">
-        <header class="case-header">
-          <div><span class="case-index">Case file 01</span><span class="case-year">Produk pribadi · 2026</span></div>
-          <p class="case-status">Live product</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Product analytics</p>
-            <h3>FitTrack</h3>
-            <p class="case-summary">Saya membangun FitTrack agar catatan latihan bisa dilihat kembali sebagai progres. Pengguna dapat mencatat sesi, membandingkan riwayat, dan membaca grafiknya, termasuk saat sedang offline.</p>
-            <dl class="case-facts">
-              <div><dt>Tantangan</dt><dd>Catatan latihan mudah tercecer dan sulit dibaca kembali sebagai progres.</dd></div>
-              <div><dt>Pendekatan</dt><dd>Saya menyatukan pencatatan, riwayat, grafik progres, volume mingguan, dan estimasi 1RM, yaitu perkiraan beban maksimal untuk satu repetisi.</dd></div>
-              <div><dt>Kontribusi</dt><dd>Saya merancang alur, membangun aplikasinya, lalu menguji kembali perilaku fitur analitiknya.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi FitTrack">
-              <li>React</li><li>Vite</li><li>Supabase</li><li>Data visualization</li>
-            </ul>
-            <a class="case-link" href="https://fittrack-mocha-iota.vercel.app/" target="_blank" rel="noreferrer">Kunjungi FitTrack <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-gallery" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Tampilan fitur FitTrack">
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 3"><img src="./assets/fittrack-quick-import.png" alt="Tampilan hasil Quick Import dua set pada FitTrack" width="1110" height="625" loading="lazy" decoding="async"><figcaption>Quick Import dengan tahap peninjauan.</figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 3" hidden><img src="./assets/fittrack-drop-set.png" alt="Tampilan pencatatan drop set pada FitTrack" width="639" height="729" loading="lazy" decoding="async"><figcaption>Pencatatan drop set.</figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="3 dari 3" hidden><img src="./assets/fittrack-workout-summary.jpg" alt="Ringkasan latihan FitTrack di perangkat seluler" width="329" height="711" loading="lazy" decoding="async"><figcaption>Ringkasan dan perbandingan sesi.</figcaption></figure>
-            <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Tampilan sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>3</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Tampilan berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="case-study case-pose" id="pose">
-        <header class="case-header">
-          <div><span class="case-index">Case file 02</span><span class="case-year">Tugas akhir · 2025–2026</span></div>
-          <p class="case-status">Model evaluation</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Computer vision analysis</p>
-            <h3>Evaluasi pose estimation untuk analisis gerakan</h3>
-            <p class="case-summary">Dalam tugas akhir ini, saya membandingkan MediaPipe BlazePose dan YOLOv8-Pose dengan pengukuran manual dari ImageJ pada video bicep curl.</p>
-            <div class="result-callout" aria-label="Hasil terpilih">
-              <strong>8/8</strong>
-              <p>repetisi berhasil terdeteksi oleh BlazePose pada salah satu skenario pengujian yang tercantum di CV.</p>
-            </div>
-            <dl class="case-facts">
-              <div><dt>Metrik</dt><dd>MAE dan RMSE untuk mengukur selisih prediksi model dari pengukuran manual.</dd></div>
-              <div><dt>Output</dt><dd>Sudut siku, jumlah repetisi, range of motion, angular velocity, dan time under tension.</dd></div>
-              <div><dt>Temuan</dt><dd>Normal curl subjek 1: MAE BlazePose 8,4° dan YOLOv8-Pose 8,6°.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi tugas akhir">
-              <li>Python</li><li>Pandas</li><li>MediaPipe</li><li>YOLOv8-Pose</li><li>ImageJ</li>
-            </ul>
-          </div>
-          <div class="project-gallery" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Visualisasi evaluasi pose estimation">
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 3"><img src="./assets/pose-estimation-workflow.png" alt="Diagram alur kerja sistem komparasi BlazePose dan YOLOv8-Pose" width="2960" height="1280" loading="lazy" decoding="async"><figcaption>Alur evaluasi dari video hingga tabel, grafik, dan CSV.</figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 3" hidden><img src="./assets/pose-estimation-chart.png" alt="Grafik error sudut BlazePose dan YOLOv8-Pose terhadap ground truth pada normal curl subjek 1" width="1350" height="630" loading="lazy" decoding="async"><figcaption>Error sudut per frame terhadap ground truth.</figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="3 dari 3" hidden><video controls muted playsinline preload="metadata" poster="./assets/pose-estimation-demo-poster.jpg" width="1458" height="946" aria-label="Demo analisis gerakan bicep curl"><source src="./assets/pose-estimation-demo.mp4" type="video/mp4">Browser Anda tidak mendukung video ini.</video><figcaption>Contoh pemantauan sudut siku dan repetisi pada rekaman bicep curl.</figcaption></figure>
-            <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Tampilan sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>3</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Tampilan berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="case-study case-retail" id="online-retail">
-        <header class="case-header">
-          <div><span class="case-index">Case file 03</span><span class="case-year">Analisis data · 2026</span></div>
-          <p class="case-status">Studi kasus publik</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Analisis transaksi</p>
-            <h3>Online Retail</h3>
-            <p class="case-summary">Saya memeriksa 541.909 baris transaksi untuk mencari tahu berapa banyak pelanggan yang punya invoice lain dalam 90 hari setelah invoice pertama yang terlihat di data.</p>
-            <div class="result-callout" aria-label="Hasil utama">
-              <strong>42,7%</strong>
-              <p>885 dari 2.075 pelanggan pada kohort Januari–Juni 2011 memiliki invoice non-pembatalan berikutnya dalam 90 hari.</p>
-            </div>
-            <dl class="case-facts">
-              <div><dt>Proses</dt><dd>Saya memeriksa data kosong, pembatalan, nilai nonpositif, dan baris identik sebelum membentuk kohort dengan SQL.</dd></div>
-              <div><dt>Temuan</dt><dd>Proporsi invoice lanjutan berbeda menurut bulan dan kelompok nilai invoice pertama.</dd></div>
-              <div><dt>Batasan</dt><dd>Ini mengukur aktivitas invoice, bukan retensi pembelian bersih. Pembatalan dan retur belum sepenuhnya dipasangkan dengan invoice asal.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi analisis Online Retail"><li>Python</li><li>Pandas</li><li>SQLite</li><li>Matplotlib</li></ul>
-            <a class="case-link" href="https://archive.ics.uci.edu/dataset/352/online+retail" target="_blank" rel="noreferrer">Sumber data: UCI Online Retail <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-gallery" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Grafik analisis Online Retail">
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 2"><img src="./assets/online-retail-by-month.png" alt="Persentase pelanggan dengan invoice lanjutan dalam 90 hari menurut bulan, Januari sampai Juni 2011" width="1980" height="1080" loading="lazy" decoding="async"><figcaption>Invoice lanjutan menurut bulan invoice pertama yang teramati. <a href="./assets/online-retail-by-month.png" target="_blank" rel="noreferrer">Lihat ukuran penuh ↗</a></figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 2" hidden><img src="./assets/online-retail-by-first-invoice.png" alt="Persentase invoice lanjutan menurut empat kelompok nilai invoice pertama" width="1980" height="1080" loading="lazy" decoding="async"><figcaption>Perbandingan menurut nilai invoice pertama. Hubungan ini bersifat deskriptif. <a href="./assets/online-retail-by-first-invoice.png" target="_blank" rel="noreferrer">Lihat ukuran penuh ↗</a></figcaption></figure>
-            <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Grafik sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>2</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Grafik berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="case-study case-jalanyuk" id="jalanyuk">
-        <header class="case-header">
-          <div><span class="case-index">Case file 04</span><span class="case-year">Proyek pribadi · 2026</span></div>
-          <p class="case-status">Prototipe</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Data lokasi & produk</p>
-            <h3>JalanYuk</h3>
-            <p class="case-summary">JalanYuk adalah prototipe untuk mencari destinasi dan menyusun rute dalam satu alur. Bagian tersulitnya bukan sekadar menampilkan tempat, tetapi memastikan sumber dan identitas setiap lokasi tetap jelas.</p>
-            <dl class="case-facts">
-              <div><dt>Data</dt><dd>Katalog memakai data OpenStreetMap, sedangkan pencarian tempat tambahan menggunakan Photon.</dd></div>
-              <div><dt>Kontribusi</dt><dd>Saya membangun pencarian, pin lokasi manual, perencanaan rute, serta cadangan data perjalanan terenkripsi.</dd></div>
-              <div><dt>Batasan</dt><dd>Cakupan katalog belum merata di seluruh Indonesia. Rute juga tetap perlu diperiksa sebelum digunakan di perjalanan.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi JalanYuk"><li>Next.js</li><li>OpenStreetMap</li><li>Photon</li><li>Data lokasi</li></ul>
-            <a class="case-link" href="https://github.com/codeBims/JalanYuk" target="_blank" rel="noreferrer">Lihat kode dan batasan produk <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="project-gallery" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Tampilan fitur JalanYuk">
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 2"><img src="./assets/jalanyuk-explore.png" alt="Halaman Jelajahi JalanYuk dengan pencarian dan katalog destinasi" width="1440" height="1000" loading="lazy" decoding="async"><figcaption>Jelajahi: katalog destinasi dengan sumber lokasi yang dapat ditelusuri.</figcaption></figure>
-            <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 2" hidden><img src="./assets/jalanyuk-route.png" alt="Halaman Rute Kustom JalanYuk dengan pilihan moda dan titik perjalanan" width="1440" height="1000" loading="lazy" decoding="async"><figcaption>Rute Kustom: pilih moda, titik awal, singgah, dan tujuan.</figcaption></figure>
-            <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Tampilan sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>2</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Tampilan berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="case-study case-confidential" id="telkom">
-        <header class="case-header">
-          <div><span class="case-index">Case file 05</span><span class="case-year">Telkom Indonesia · 2025</span></div>
-          <p class="case-status">Internal system</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Log & observability</p>
-            <h3>Monitoring operasional berbasis ELK Stack</h3>
-            <p class="case-summary">Saat magang di Telkom Indonesia, saya mengolah log pemeriksaan kontrol TI (ITGC) dan Kubernetes. Hasilnya disusun menjadi dashboard Kibana agar aktivitas operasional lebih mudah dipantau.</p>
-            <dl class="case-facts">
-              <div><dt>Input</dt><dd>Log operasional dari beberapa sumber dengan struktur yang belum seragam.</dd></div>
-              <div><dt>Proses</dt><dd>Saya melakukan parsing, menyusun field, memeriksa hasil tampilannya, lalu membuat dashboard.</dd></div>
-              <div><dt>Output</dt><dd>Dashboard monitoring dan keluaran log yang dapat dipakai pada tahap otomasi audit berikutnya.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi magang">
-              <li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Kubernetes logs</li>
-            </ul>
-          </div>
-          <div class="confidential-panel">
-            <div class="project-gallery project-gallery-photos" data-gallery tabindex="0" role="region" aria-roledescription="carousel" aria-label="Dokumentasi magang Telkom Indonesia">
-              <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="1 dari 4"><img src="./assets/telkom-dashboards.png" alt="Daftar dashboard monitoring ITGC dan Kubernetes yang dibuat saat magang di Telkom Indonesia" width="1286" height="709" loading="lazy" decoding="async"><figcaption>Daftar dashboard monitoring yang saya buat selama magang. <a href="./assets/telkom-dashboards.png" target="_blank" rel="noreferrer">Lihat ukuran penuh ↗</a></figcaption></figure>
-              <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="2 dari 4" hidden><img src="./assets/telkom-office.png" alt="Henry berfoto di depan identitas Telkom Indonesia" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Hari pertama magang di Telkom Indonesia.</figcaption></figure>
-              <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="3 dari 4" hidden><img src="./assets/telkom-team.png" alt="Suasana bersama peserta magang di Telkom Jatinegara" width="1280" height="960" loading="lazy" decoding="async"><figcaption>Suasana kerja bersama peserta magang di Telkom Jatinegara.</figcaption></figure>
-              <figure data-gallery-slide role="group" aria-roledescription="slide" aria-label="4 dari 4" hidden><img src="./assets/telkom-badge.png" alt="Kartu identitas dan lanyard Digistar Internship Telkom Indonesia" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Identitas peserta Digistar Internship.</figcaption></figure>
-              <div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Foto sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><p aria-live="polite"><span data-gallery-current>1</span><span aria-hidden="true"> / </span><span data-gallery-total>4</span></p><button class="gallery-autoplay" type="button" data-gallery-toggle>Jeda</button><button type="button" data-gallery-next aria-label="Foto berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
-            </div>
-            <p><strong>Catatan privasi.</strong> Tangkapan layar daftar dashboard ini ditampilkan dengan izin. Data log, nama host, dan isi dashboard internal tetap tidak saya publikasikan.</p>
-          </div>
-        </div>
-      </article>
-      <article class="case-study case-happiness" id="happiness">
-        <header class="case-header">
-          <div><span class="case-index">Case file 06</span><span class="case-year">Proyek kelompok · 2026</span></div>
-          <p class="case-status">Dashboard publik</p>
-        </header>
-        <div class="case-body">
-          <div class="case-copy">
-            <p class="case-kicker">Visualisasi data</p>
-            <h3>World Happiness Dashboard</h3>
-            <p class="case-summary">Dalam proyek kelompok ini, saya menyiapkan data World Happiness Report dan membuat dua grafik dengan Chart.js. Keduanya membantu pembaca membandingkan negara pada 2023 dan melihat perubahan skor dari tahun ke tahun.</p>
-            <dl class="case-facts">
-              <div><dt>Grafik batang</dt><dd>Perbandingan 15 negara dengan skor kebahagiaan tertinggi pada 2023.</dd></div>
-              <div><dt>Grafik garis</dt><dd>Perubahan skor kebahagiaan beberapa negara dari tahun ke tahun.</dd></div>
-              <div><dt>Peran</dt><dd>Persiapan data dan dua visualisasi di atas. Fitur dashboard lainnya dikerjakan bersama tim.</dd></div>
-            </dl>
-            <ul class="tags" aria-label="Teknologi World Happiness Dashboard"><li>Chart.js</li><li>JavaScript</li><li>World Happiness Report</li></ul>
-          </div>
-          <div class="happiness-evidence">
-            <p class="micro-label">Lihat hasilnya langsung</p>
-            <p>Grafik dan interaksinya dapat dicoba di dashboard kelompok.</p>
-            <div><span>01</span><strong>15 negara teratas</strong><small>Perbandingan skor tahun 2023</small></div>
-            <div><span>02</span><strong>Tren lintas tahun</strong><small>Grafik garis yang bisa dijelajahi</small></div>
-            <a class="button" href="https://visdatgokil.vercel.app/" target="_blank" rel="noopener noreferrer">Buka dashboard <span aria-hidden="true">↗</span></a>
-            <a class="case-link" href="https://github.com/adhihihi/Final-Project-Visdat" target="_blank" rel="noopener noreferrer">Lihat repositori kelompok <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </article>
-      </div>
-      <div id="panel-sertifikat" role="tabpanel" aria-labelledby="tab-sertifikat" class="portfolio-panel">
-    <section class="certificates" id="sertifikat" aria-labelledby="certificates-title">
-      <div class="section-heading">
-        <p class="section-label">Sertifikat</p>
-        <div>
-          <h2 id="certificates-title">Pelatihan yang pernah saya selesaikan.</h2>
-          <p>Berikut sertifikat Digital Talent Scholarship 2026 dari Komdigi. Sebagian besar berupa Micro Skill singkat, jadi durasinya saya tampilkan apa adanya. Klik kartu untuk melihat PDF asli.</p>
-        </div>
-      </div>
-      <div class="certificate-grid">
-        <a class="certificate-card" href="./assets/certificates/data-science.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/data-science.jpg" alt="Pratinjau sertifikat Pengenalan Data Science" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/ai-implementation.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-implementation.jpg" alt="Pratinjau sertifikat Dasar-Dasar Implementasi Kecerdasan Artifisial" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Dasar-Dasar Implementasi Kecerdasan Artifisial</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/azure-prompt.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/azure-prompt.jpg" alt="Pratinjau sertifikat rekayasa prompt dengan Azure OpenAI Service" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1,4 jam</small><strong>Menerapkan Rekayasa Prompt dengan Azure OpenAI Service</strong><em>Buka sertifikat ↗</em></span></a>
-        <a class="certificate-card" href="./assets/certificates/cloud-computing.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/cloud-computing.jpg" alt="Pratinjau sertifikat Introduction To Cloud Computing" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Introduction To Cloud Computing</strong><em>Buka sertifikat ↗</em></span></a>
-      </div>
-      <details class="certificate-more">
-        <summary>Lihat 8 sertifikat lainnya <span aria-hidden="true">+</span></summary>
-        <div class="certificate-grid">
-          <a class="certificate-card" href="./assets/certificates/network-administrator.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/network-administrator.jpg" alt="Pratinjau sertifikat Fundamental of Associate Network Administrator" width="674" height="477" loading="lazy"><span><small>Digital Talent Academy · 12 jam</small><strong>Fundamental of Associate Network Administrator – Nasional</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/ai-security.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ai-security.jpg" alt="Pratinjau sertifikat Dasar-dasar Keamanan AI" width="674" height="477" loading="lazy"><span><small>Micro Skill · 0,8 jam</small><strong>Dasar-dasar Keamanan AI</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/linux-lab.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/linux-lab.jpg" alt="Pratinjau sertifikat Membangun Lab Virtual dan Dasar Linux" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Membangun Lab Virtual &amp; Dasar Linux</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/programming.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/programming.jpg" alt="Pratinjau sertifikat Konsep Pemrograman" width="674" height="477" loading="lazy"><span><small>Micro Skill · 2 jam</small><strong>Konsep Pemrograman</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/generative-ai-education.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/generative-ai-education.jpg" alt="Pratinjau sertifikat Generative AI untuk Pendidikan" width="674" height="477" loading="lazy"><span><small>Micro Skill · 3 jam</small><strong>Generative AI untuk Pendidikan</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/ethical-hacking.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/ethical-hacking.jpg" alt="Pratinjau sertifikat Ethical Hacker For Dummies" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Ethical Hacker For Dummies</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/phishing-malware.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/phishing-malware.jpg" alt="Pratinjau sertifikat perlindungan dari phishing dan malware" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Tips Melindungi Diri dari Ancaman Phishing dan Malware</strong><em>Buka sertifikat ↗</em></span></a>
-          <a class="certificate-card" href="./assets/certificates/social-media.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/certificates/social-media.jpg" alt="Pratinjau sertifikat Social Media Management untuk Brand Digital" width="674" height="477" loading="lazy"><span><small>Micro Skill · 1 jam</small><strong>Social Media Management untuk Brand Digital</strong><em>Buka sertifikat ↗</em></span></a>
-        </div>
-      </details>
-    </section>
-      </div>
-      <div id="panel-keahlian" role="tabpanel" aria-labelledby="tab-keahlian" class="portfolio-panel">
-    <section class="capabilities" id="keahlian" aria-labelledby="capabilities-title">
-      <div class="section-heading">
-        <p class="section-label">Keahlian</p>
-        <div>
-          <h2 id="capabilities-title">Alat yang memang pernah saya pakai.</h2>
-          <p>Daftar ini berasal dari pekerjaan magang, tugas akhir, dan proyek pribadi saya, bukan sekadar teknologi yang pernah saya baca.</p>
-        </div>
-      </div>
-      <div class="capability-grid">
-        <article><p>01</p><h3>Analisis data</h3><ul><li>Python & Pandas</li><li>Jupyter & Google Colab</li><li>SQL: SQLite dan window functions</li><li>Excel: formula, grafik, dashboard</li><li>Power BI</li><li>Chart.js (World Happiness)</li></ul></article>
-        <article><p>02</p><h3>Monitoring</h3><ul><li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Dashboard monitoring (magang Telkom)</li></ul></article>
-        <article><p>03</p><h3>Evaluasi</h3><ul><li>Data cleaning</li><li>MAE & RMSE</li><li>Perbandingan dengan ground truth (tugas akhir)</li><li>Interpretasi hasil (tugas akhir)</li></ul></article>
-        <article><p>04</p><h3>Produk web</h3><ul><li>React & Vite (FitTrack)</li><li>HTML, CSS, JavaScript</li><li>Supabase (FitTrack)</li><li>Git & GitHub</li></ul></article>
-      </div>
-      <aside class="side-project">
-        <div><p class="micro-label">Proyek tambahan · 2025</p><h3>Cripto</h3></div>
-        <p>Eksperimen e-commerce sederhana yang saya bangun dengan HTML, CSS, dan JavaScript, lengkap dengan alur pemesanan melalui WhatsApp.</p>
-        <a class="case-link" href="https://cripto-ofcc.vercel.app/" target="_blank" rel="noreferrer">Buka situs <span aria-hidden="true">↗</span></a>
-      </aside>
-    </section>
-      </div>
-    </section>
-
-    <section class="experience" id="pengalaman" aria-labelledby="experience-title">
-      <p class="section-label">03 / Jejak</p>
-      <div>
-        <div class="section-intro">
-          <h2 id="experience-title">Perjalanan saya sejauh ini.</h2>
-          <p>Dari kuliah Informatika, magang di Telkom Indonesia, sampai pelatihan yang masih berjalan.</p>
-        </div>
-        <div class="timeline">
-          <article>
-            <p class="time">Jul–Agu 2025</p>
-            <div><p class="timeline-type">Pengalaman</p><h3>Telkom Indonesia</h3><p>Data Analyst Intern, DIT-INE</p></div>
-            <ul><li>Mengolah log ITGC dan Kubernetes menggunakan ELK Stack.</li><li>Menyusun beberapa dashboard Kibana untuk monitoring operasional.</li><li>Menyiapkan keluaran log bagi alur otomasi audit lanjutan.</li></ul>
-          </article>
-          <article>
-            <p class="time">2022–Sep 2026</p>
-            <div><p class="timeline-type">Pendidikan</p><h3>Telkom University</h3><p>S1 Informatika · IPK 3,21/4,00</p></div>
-            <p class="timeline-description">Untuk tugas akhir, saya membandingkan MediaPipe BlazePose dan YOLOv8-Pose dalam membaca gerakan bicep curl dari video.</p>
-          </article>
-          <article>
-            <p class="time">2026</p>
-            <div><p class="timeline-type">Pelatihan</p><h3>AWS AI Practitioner Program</h3><p>Yayasan Indonesia Emas Merdeka · masih berjalan</p></div>
-            <p class="timeline-description">Saat ini saya sedang mempelajari dasar kecerdasan buatan dan penerapannya pada layanan AWS.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="kontak" aria-labelledby="contact-title">
-      <div class="contact-main">
-        <p class="section-label">04 / Kontak</p>
-        <h2 id="contact-title">Ada data yang perlu dibuat lebih jelas?</h2>
-        <p>Saya terbuka untuk posisi junior atau fresh graduate, juga proyek freelance analitik yang sesuai dengan pengalaman saya.</p>
-        <a class="button button-light" href="mailto:abimkaizen@gmail.com">Mari ngobrol <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="contact-list" aria-label="Tautan kontak dan media sosial">
-        <a href="mailto:abimkaizen@gmail.com" aria-label="Email abimkaizen@gmail.com"><svg class="social-icon icon-gmail" aria-hidden="true"><use href="#icon-gmail"/></svg><span>Email</span><strong>abimkaizen@gmail.com</strong></a>
-        <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer" aria-label="LinkedIn Henry Abimanyu"><svg class="social-icon icon-linkedin" aria-hidden="true"><use href="#icon-linkedin"/></svg><span>LinkedIn</span><strong>Henry Abimanyu</strong></a>
-        <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span><strong>@hnryabim</strong></a>
-        <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span><strong>@codeBims</strong></a>
-        <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
-        <a href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7" download aria-label="Unduh CV Henry Abimanyu"><svg class="social-icon icon-download" aria-hidden="true"><use href="#icon-download"/></svg><span>Dokumen</span><strong>Unduh CV</strong></a>
-      </div>
-    </section>
-
-    <section class="comments" id="komentar" aria-labelledby="comments-title">
-      <div class="comments-intro">
-        <p class="section-label">05 / Komentar</p>
-        <h2 id="comments-title">Ada masukan atau pertanyaan?</h2>
-        <p>Tulis langsung di sini. Komentar Anda akan tampil untuk pengunjung lain; jika ingin membahas pekerjaan atau proyek, hubungi saya lewat kontak di atas.</p>
-        <div class="comments-social"><span>Temukan saya</span>
-          <a href="https://www.instagram.com/hnryabim/" target="_blank" rel="noreferrer" aria-label="Instagram @hnryabim"><svg class="social-icon icon-instagram" aria-hidden="true"><use href="#icon-instagram"/></svg><span>Instagram</span></a>
-          <a href="https://github.com/codeBims" target="_blank" rel="noreferrer" aria-label="GitHub @codeBims"><svg class="social-icon icon-github" aria-hidden="true"><use href="#icon-github"/></svg><span>GitHub</span></a>
-          <a href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" target="_blank" rel="noreferrer" aria-label="LinkedIn Henry Abimanyu"><svg class="social-icon icon-linkedin" aria-hidden="true"><use href="#icon-linkedin"/></svg><span>LinkedIn</span></a>
-          <a href="https://wa.me/6287877461799" target="_blank" rel="noreferrer" aria-label="WhatsApp Henry Abimanyu"><svg class="social-icon icon-whatsapp" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span></a>
-          <a href="mailto:abimkaizen@gmail.com" aria-label="Email abimkaizen@gmail.com"><svg class="social-icon icon-gmail" aria-hidden="true"><use href="#icon-gmail"/></svg><span>Email</span></a>
-        </div>
-      </div>
-      <div class="comments-box">
-        <h3>Komentar <span id="comment-count"></span></h3>
-        <form id="comment-form" novalidate>
-          <div class="comment-field"><label for="comment-name">Nama</label><input id="comment-name" name="name" type="text" maxlength="60" minlength="2" autocomplete="name" placeholder="Nama Anda" required></div>
-          <div class="comment-field"><label for="comment-body">Komentar</label><textarea id="comment-body" name="body" rows="5" maxlength="1000" minlength="3" placeholder="Tulis komentar Anda di sini..." required></textarea></div>
-          <div class="comment-trap" aria-hidden="true"><label for="comment-website">Website</label><input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <button type="submit" class="comment-submit">Kirim komentar <span aria-hidden="true">↗</span></button>
-          <p class="comment-note">Komentar langsung tampil untuk semua pengunjung. Jangan tulis informasi pribadi atau rahasia.</p>
-          <p id="comment-feedback" class="comment-feedback" role="status" aria-live="polite"></p>
-        </form>
-        <div id="guestbook-comments" class="guestbook-comments" role="region" aria-label="Daftar komentar, dapat digulir" tabindex="0" aria-live="polite"><p>Memuat komentar...</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div><strong>Henry Abimanyu Dewandani</strong><span>Junior Data Analyst · Bekasi, Jawa Barat</span></div>
-    <p>Portofolio <span id="year">2026</span></p>
-  </footer>
-
-  <script src="./comments-config.js"></script>
-  <script src="./i18n.js?v=20261103c"></script>
-  <script src="./app.js?v=20261103b"></script>
-  <script src="./comments.js?v=20261101c"></script>
-</body>
+<a class="skip-link" href="#konten"><span data-en="Skip to content" data-i18n="a9aeacef3a">Lewati ke konten</span></a>
+<svg aria-hidden="true" class="icon-library" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<symbol id="icon-gmail" viewbox="0 0 24 24"><path d="M3 6.5 12 13l9-6.5v11.8a1.7 1.7 0 0 1-1.7 1.7H4.7A1.7 1.7 0 0 1 3 18.3Z" fill="none" stroke="#4285f4" stroke-width="2.2"></path><path d="M3 6.5 12 13l9-6.5" fill="none" stroke="#ea4335" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path><path d="M3 8v10.3A1.7 1.7 0 0 0 4.7 20H6V9" fill="none" stroke="#34a853" stroke-width="2.2"></path><path d="M18 9v11h1.3a1.7 1.7 0 0 0 1.7-1.7V8" fill="none" stroke="#fbbc04" stroke-width="2.2"></path></symbol>
+<symbol id="icon-linkedin" viewbox="0 0 24 24"><path d="M5.2 8.6H2.4V21h2.8zM3.8 2.5a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3ZM21.6 13.9c0-3.75-2-5.5-4.7-5.5a4.05 4.05 0 0 0-3.65 2V8.6h-2.8V21h2.8v-6.15c0-1.62.31-3.18 2.3-3.18 1.96 0 1.98 1.84 1.98 3.29V21h2.8z"></path></symbol>
+<symbol id="icon-instagram" viewbox="0 0 24 24"><rect fill="none" height="18" rx="5" stroke="currentColor" stroke-width="2" width="18" x="3" y="3"></rect><circle cx="12" cy="12" fill="none" r="4.1" stroke="currentColor" stroke-width="2"></circle><circle cx="17.7" cy="6.5" r="1.15"></circle></symbol>
+<symbol id="icon-github" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.14-1.44 3.08-1.14 3.08-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.61 5.24-5.1 5.52.4.35.76 1.03.76 2.08v3.1c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"></path></symbol>
+<symbol id="icon-whatsapp" viewbox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.6 1 1-3.5-.3-.5A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4Z"></path></symbol>
+<symbol id="icon-download" viewbox="0 0 24 24"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></symbol>
+</svg>
+<header class="site-header">
+<a aria-label="Kembali ke atas" class="brand" data-en-aria-label="Back to top" href="#atas">
+<strong>HA<span>.</span></strong>
+<small><span data-en="Data portfolio" data-i18n="f9f647db12">Data portfolio</span></small>
+</a>
+<nav aria-label="Navigasi bagian" class="section-nav" data-en-aria-label="Section navigation"><a href="#karya"><span data-en="Work" data-i18n="e366fe4759">Karya</span></a><a href="#profil"><span data-en="About" data-i18n="669fe25a32">Profil</span></a><a href="#pengalaman"><span data-en="Background" data-i18n="8f5f827ad1">Jejak</span></a><a href="#kontak"><span data-en="Contact" data-i18n="73ea820029">Kontak</span></a></nav>
+<div class="header-tools">
+<button aria-label="Switch to English" class="utility-control" id="language-toggle" title="Switch to English" type="button">EN</button>
+<label class="theme-picker"><span class="sr-only"><span data-en="Color theme" data-i18n="483721440e">Tema tampilan</span></span><select id="theme-select"><option data-en="Device theme" data-i18n="theme-auto" value="auto">Ikuti perangkat</option><option data-en="Light" data-i18n="theme-light" value="light">Terang</option><option data-en="Dark" data-i18n="theme-dark" value="dark">Gelap</option></select></label>
+<a class="header-cta" download="" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7"><span data-en="Download CV" data-i18n="f8945f24ef">Unduh CV</span></a>
+</div>
+<div aria-hidden="true" class="scroll-progress"></div>
+</header>
+<main id="konten">
+<section class="hero" id="atas">
+<div class="hero-copy">
+<p class="availability"><span aria-hidden="true"></span><span data-en="Open to opportunities" data-i18n="843bde7efc">Tersedia untuk peluang kerja</span></p>
+<p class="eyebrow">Junior Data Analyst · Bekasi, Jawa Barat</p>
+<h1 class="hero-name"><span data-en="Henry Abimanyu." data-i18n="4747ec6036">Henry Abimanyu.</span></h1><p class="hero-statement"><span data-en="From raw data to a story you can understand." data-i18n="7f4e15020d">Dari data mentah ke cerita yang bisa dipahami.</span></p>
+<p class="lede"><span data-en="I turn transactions, operational logs, and movement recordings into analysis you can examine. An Informatics graduate with internship experience at Telkom Indonesia." data-i18n="58b65e0e09">Saya mengolah data transaksi, log operasional, dan rekaman gerakan menjadi analisis yang bisa diperiksa. Lulusan Informatika, dengan pengalaman magang di Telkom Indonesia.</span></p>
+<div class="hero-actions">
+<a class="button" href="#karya"><span data-en="Explore case studies" data-i18n="5b2aba796a">Jelajahi studi kasus</span></a>
+<a class="button button-quiet" download="" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7"><span data-en="Download CV" data-i18n="f8945f24ef">Unduh CV </span><span aria-hidden="true">↓</span></a>
+</div>
+</div>
+<aside aria-label="Profil singkat Henry" class="hero-profile" data-en-aria-label="Henry’s profile at a glance">
+<figure class="portrait">
+<img alt="Potret Henry Abimanyu dengan latar merah" data-en-alt="Portrait of Henry Abimanyu against a red background" data-full-src="./assets/henry-abimanyu.jpg" decoding="async" fetchpriority="high" height="2304" sizes="(max-width: 720px) 85vw, 400px" src="./assets/henry-abimanyu-800.webp" srcset="./assets/henry-abimanyu-400.webp 400w, ./assets/henry-abimanyu-800.webp 800w, ./assets/henry-abimanyu-1200.webp 1200w" width="1838"/>
+</figure>
+<div class="profile-note">
+<p class="micro-label"><span data-en="Current focus" data-i18n="0158b92e05">Fokus saat ini</span></p>
+<ul>
+<li>Operational analytics</li>
+<li>Dashboard &amp; reporting</li>
+<li>Monitoring &amp; observability</li>
+</ul>
+</div>
+</aside>
+<div aria-label="Bukti pekerjaan" class="proof-links" data-en-aria-label="Work evidence"><a href="#online-retail"><span>01</span><strong><span data-en="Transaction analysis" data-i18n="d613e31c61">Analisis transaksi</span></strong><span aria-hidden="true">↗</span></a><a href="#telkom"><span>02</span><strong><span data-en="Operational dashboards" data-i18n="e3b1619e17">Dashboard operasional</span></strong><span aria-hidden="true">↗</span></a><a href="#pose"><span>03</span><strong><span data-en="Model evaluation" data-i18n="e0bbe082aa">Evaluasi model</span></strong><span aria-hidden="true">↗</span></a></div>
+</section>
+<section aria-labelledby="portfolio-title" class="portfolio-hub" id="karya">
+<div class="section-heading">
+<p class="section-label"><span data-en="01 / Portfolio" data-i18n="0afd5d9922">01 / Portofolio</span></p>
+<div><h2 id="portfolio-title"><span data-en="Selected work, with the thinking behind it." data-i18n="116a578eb7">Pilihan karya, dengan proses di baliknya.</span></h2><p><span data-en="Three case studies showing how I work with data, test results, and explain their limitations." data-i18n="a4997a467c">Tiga studi kasus untuk melihat cara saya mengolah data, menguji hasil, dan menjelaskan batasannya.</span></p></div>
+</div><div class="featured-work"><a class="work-card" href="./projects/online-retail.html"><div class="work-image"><img alt="Online Retail" height="490" loading="lazy" src="./assets/online-retail-by-month.png" width="900"/></div><div class="work-card-copy"><p class="micro-label">SQL · Python</p><h3>Online Retail</h3><p><span data-en="What happens after the first invoice?" data-i18n="9048fe0607">Apa yang terjadi setelah invoice pertama?</span></p><small><span data-en="541,909 rows · 90-day cohort" data-i18n="32edd5ff5d">541.909 baris · kohort 90 hari</span></small><span class="card-action"><span data-en="Read case study" data-i18n="468e74c186">Baca studi kasus </span><span aria-hidden="true">↗</span></span></div></a><a class="work-card" href="./projects/telkom.html"><div class="work-image"><img alt="Telkom Indonesia" height="490" loading="lazy" src="./assets/telkom-dashboards.png" width="900"/></div><div class="work-card-copy"><p class="micro-label">Kibana · Logstash</p><h3>Telkom Indonesia</h3><p><span data-en="Making operational activity visible through logs." data-i18n="d435f70387">Membaca aktivitas operasional dari log.</span></p><small><span data-en="Internship · parsing &amp; dashboards" data-i18n="1db06308b2">Magang · parsing &amp; dashboard</span></small><span class="card-action"><span data-en="Read case study" data-i18n="468e74c186">Baca studi kasus </span><span aria-hidden="true">↗</span></span></div></a><a class="work-card" href="./projects/pose.html"><div class="work-image"><img alt="Pose estimation" data-en-alt="Pose estimation" height="490" loading="lazy" src="./assets/pose-estimation-chart.png" width="900"/></div><div class="work-card-copy"><p class="micro-label">Python · MAE &amp; RMSE</p><h3><span data-en="Pose estimation" data-i18n="0babb06a37">Pose estimation</span></h3><p><span data-en="How close are predictions to manual measurements?" data-i18n="f205fc94c3">Seberapa dekat prediksi dengan pengukuran manual?</span></p><small><span data-en="Thesis · two-model evaluation" data-i18n="f6e1461034">Tugas akhir · evaluasi dua model</span></small><span class="card-action"><span data-en="Read case study" data-i18n="468e74c186">Baca studi kasus </span><span aria-hidden="true">↗</span></span></div></a></div><details class="other-projects"><summary><span data-en="Web products &amp; other projects" data-i18n="48f229f12e">Produk web &amp; proyek lainnya </span><span aria-hidden="true">+</span></summary><div class="other-project-links"><a href="#fittrack"><span data-en="FitTrack · training logs &amp; progress" data-i18n="e50dcba4a8">FitTrack · catatan &amp; progres latihan </span><span aria-hidden="true">↗</span></a><a href="#jalanyuk"><span data-en="JalanYuk · trip planning prototype" data-i18n="1030e1f6e6">JalanYuk · prototipe perencanaan perjalanan </span><span aria-hidden="true">↗</span></a><a href="#happiness"><span data-en="World Happiness · team visualizations" data-i18n="b333773045">World Happiness · visualisasi kelompok </span><span aria-hidden="true">↗</span></a><aside class="side-project">
+<div><p class="micro-label"><span data-en="Additional project · 2025" data-i18n="e19aba42b9">Proyek tambahan · 2025</span></p><h3>Cripto</h3></div>
+<p><span data-en="A simple e-commerce experiment I built with HTML, CSS, and JavaScript, including an ordering flow through WhatsApp." data-i18n="16b7b02031">Eksperimen e-commerce sederhana yang saya bangun dengan HTML, CSS, dan JavaScript, lengkap dengan alur pemesanan melalui WhatsApp.</span></p>
+<a class="case-link" href="https://cripto-ofcc.vercel.app/" rel="noreferrer" target="_blank"><span data-en="Visit site" data-i18n="f47c0d35e0">Buka situs </span><span aria-hidden="true">↗</span></a>
+</aside></div></details>
+<div class="portfolio-panel" id="panel-proyek">
+<div class="explorer-heading"><h3><span data-en="Explore all projects" data-i18n="cdf456397b">Jelajahi semua proyek</span></h3><p><span data-en="Choose a project to see its summary and media." data-i18n="22abf4f71b">Pilih proyek untuk melihat ringkasan dan medianya.</span></p></div><div aria-label="Pilih studi kasus" class="case-switcher" data-en-aria-label="Choose a case study">
+<button aria-pressed="true" data-case="fittrack" type="button"><span>01</span> FitTrack</button>
+<button aria-pressed="false" data-case="pose" type="button"><span>02</span><span data-en="Pose estimation" data-i18n="0babb06a37"> Pose estimation</span></button>
+<button aria-pressed="false" data-case="online-retail" type="button"><span>03</span> Online Retail</button>
+<button aria-pressed="false" data-case="jalanyuk" type="button"><span>04</span> JalanYuk</button>
+<button aria-pressed="false" data-case="telkom" type="button"><span>05</span> Telkom</button>
+<button aria-pressed="false" data-case="happiness" type="button"><span>06</span> World Happiness</button>
+</div>
+<article class="case-study case-fittrack" id="fittrack">
+<header class="case-header">
+<div><span class="case-index">Case file 01</span><span class="case-year"><span data-en="Personal product · 2026" data-i18n="2a260855a4">Produk pribadi · 2026</span></span></div>
+<p class="case-status">Live product</p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker">Product analytics</p>
+<h3>FitTrack</h3>
+<p class="case-summary"><span data-en="I built FitTrack so workout records could be reviewed as progress. Users can log sessions, compare their history, and read charts, even while offline." data-i18n="1ea8b7a569">Saya membangun FitTrack agar catatan latihan bisa dilihat kembali sebagai progres. Pengguna dapat mencatat sesi, membandingkan riwayat, dan membaca grafiknya, termasuk saat sedang offline.</span></p>
+<dl class="case-facts">
+<div><dt><span data-en="Challenge" data-i18n="6f806bf77c">Tantangan</span></dt><dd><span data-en="Workout records were easy to lose and difficult to read as progress." data-i18n="dddd04f304">Catatan latihan mudah tercecer dan sulit dibaca kembali sebagai progres.</span></dd></div>
+<div><dt><span data-en="Approach" data-i18n="329cfdf6de">Pendekatan</span></dt><dd><span data-en="I brought together logging, history, progress charts, weekly volume, and estimated 1RM, an estimate of the maximum weight for one repetition." data-i18n="50b7671baf">Saya menyatukan pencatatan, riwayat, grafik progres, volume mingguan, dan estimasi 1RM, yaitu perkiraan beban maksimal untuk satu repetisi.</span></dd></div>
+<div><dt><span data-en="Contribution" data-i18n="bfb5f917e7">Kontribusi</span></dt><dd><span data-en="I designed the flow, built the application, and then tested how its analytics features behaved." data-i18n="512cf60a7f">Saya merancang alur, membangun aplikasinya, lalu menguji kembali perilaku fitur analitiknya.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi FitTrack" class="tags" data-en-aria-label="Project tools">
+<li>React</li><li>Vite</li><li>Supabase</li><li>Data visualization</li>
+</ul>
+<a class="case-link" href="https://fittrack-mocha-iota.vercel.app/" rel="noreferrer" target="_blank"><span data-en="Visit FitTrack" data-i18n="dd0ed348be">Kunjungi FitTrack </span><span aria-hidden="true">↗</span></a>
+</div>
+<div aria-label="Tampilan fitur FitTrack" aria-roledescription="carousel" class="project-gallery" data-en-aria-label="FitTrack feature gallery" data-gallery="" role="region" tabindex="0"><figure aria-label="3 dari 3" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Ringkasan latihan FitTrack di perangkat seluler" data-en-alt="FitTrack workout summary on mobile" decoding="async" height="711" loading="lazy" src="./assets/fittrack-workout-summary.jpg" width="329"/><figcaption><span data-en="Session summary and comparison." data-i18n="5aca13ed58">Ringkasan dan perbandingan sesi.</span></figcaption></figure>
+<figure aria-label="1 dari 3" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Tampilan hasil Quick Import dua set pada FitTrack" data-en-alt="FitTrack Quick Import review with two sets" decoding="async" height="625" loading="lazy" src="./assets/fittrack-quick-import.png" width="1110"/><figcaption><span data-en="Quick Import with a review step." data-i18n="20f0cfebd9">Quick Import dengan tahap peninjauan.</span></figcaption></figure>
+<figure aria-label="2 dari 3" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Tampilan pencatatan drop set pada FitTrack" data-en-alt="FitTrack drop set logging" decoding="async" height="729" loading="lazy" src="./assets/fittrack-drop-set.png" width="639"/><figcaption><span data-en="Drop set logging." data-i18n="631e979cc3">Pencatatan drop set.</span></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Tampilan sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">3</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Tampilan berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div>
+</div>
+</article>
+<article class="case-study case-pose" id="pose">
+<header class="case-header">
+<div><span class="case-index">Case file 02</span><span class="case-year"><span data-en="Final thesis · 2025–2026" data-i18n="a70a7c0ad3">Tugas akhir · 2025–2026</span></span></div>
+<p class="case-status">Model evaluation</p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker">Computer vision analysis</p>
+<h3><span data-en="Pose estimation evaluation for movement analysis" data-i18n="6a6a306b2c">Evaluasi pose estimation untuk analisis gerakan</span></h3>
+<p class="case-summary"><span data-en="In this thesis, I compared MediaPipe BlazePose and YOLOv8-Pose with manual ImageJ measurements on bicep curl videos." data-i18n="0c85b866b0">Dalam tugas akhir ini, saya membandingkan MediaPipe BlazePose dan YOLOv8-Pose dengan pengukuran manual dari ImageJ pada video bicep curl.</span></p>
+<div aria-label="Hasil terpilih" class="result-callout" data-en-aria-label="Selected result">
+<strong>8/8</strong>
+<p><span data-en="repetitions were detected by BlazePose in one of the test scenarios listed in my CV." data-i18n="50c8a0aa10">repetisi berhasil terdeteksi oleh BlazePose pada salah satu skenario pengujian yang tercantum di CV.</span></p>
+</div>
+<dl class="case-facts">
+<div><dt><span data-en="Metrics" data-i18n="b3750f4e13">Metrik</span></dt><dd><span data-en="MAE and RMSE to measure the difference between model predictions and manual measurements." data-i18n="bd0d8a8624">MAE dan RMSE untuk mengukur selisih prediksi model dari pengukuran manual.</span></dd></div>
+<div><dt>Output</dt><dd><span data-en="Elbow angle, repetition count, range of motion, angular velocity, and time under tension." data-i18n="6c47095d2f">Sudut siku, jumlah repetisi, range of motion, angular velocity, dan time under tension.</span></dd></div>
+<div><dt><span data-en="Finding" data-i18n="4cfe914b00">Temuan</span></dt><dd><span data-en="Normal curl, subject 1: BlazePose MAE 8.4° and YOLOv8-Pose MAE 8.6°." data-i18n="7334859307">Normal curl subjek 1: MAE BlazePose 8,4° dan YOLOv8-Pose 8,6°.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi tugas akhir" class="tags" data-en-aria-label="Project tools">
+<li>Python</li><li>Pandas</li><li>MediaPipe</li><li>YOLOv8-Pose</li><li>ImageJ</li>
+</ul>
+<a class="button button-quiet detail-link" href="./projects/pose.html"><span data-en="Read the full process" data-i18n="24ffdcc616">Baca proses lengkap </span><span aria-hidden="true">↗</span></a></div>
+<div aria-label="Visualisasi evaluasi pose estimation" aria-roledescription="carousel" class="project-gallery" data-en-aria-label="Pose estimation evaluation visuals" data-gallery="" role="region" tabindex="0">
+<figure aria-label="1 dari 3" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Diagram alur kerja sistem komparasi BlazePose dan YOLOv8-Pose" data-en-alt="BlazePose and YOLOv8-Pose evaluation workflow" decoding="async" height="1280" loading="lazy" src="./assets/pose-estimation-workflow.png" width="2960"/><figcaption><span data-en="Evaluation flow from video to tables, charts, and CSV." data-i18n="506b5d50ae">Alur evaluasi dari video hingga tabel, grafik, dan CSV.</span></figcaption></figure>
+<figure aria-label="2 dari 3" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Grafik error sudut BlazePose dan YOLOv8-Pose terhadap ground truth pada normal curl subjek 1" data-en-alt="Angle errors against manual reference for subject 1’s normal curl" decoding="async" height="630" loading="lazy" src="./assets/pose-estimation-chart.png" width="1350"/><figcaption><span data-en="Per-frame angle error against ground truth." data-i18n="5dfc0937ec">Error sudut per frame terhadap ground truth.</span></figcaption></figure>
+<figure aria-label="3 dari 3" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><video aria-label="Demo analisis gerakan bicep curl" controls="" data-en-aria-label="Bicep curl movement analysis demo" height="946" muted="" playsinline="" poster="./assets/pose-estimation-demo-poster.jpg" preload="metadata" width="1458"><source src="./assets/pose-estimation-demo.mp4" type="video/mp4"/><span data-en="Your browser does not support this video." data-i18n="d5636bf953">Browser Anda tidak mendukung video ini.</span></video><figcaption><span data-en="Example of elbow angle and repetition tracking in a bicep curl video." data-i18n="e92d228833">Contoh pemantauan sudut siku dan repetisi pada rekaman bicep curl.</span></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Tampilan sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">3</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Tampilan berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div>
+</div>
+</article>
+<article class="case-study case-retail" id="online-retail">
+<header class="case-header">
+<div><span class="case-index">Case file 03</span><span class="case-year"><span data-en="Data analysis · 2026" data-i18n="f209459ca7">Analisis data · 2026</span></span></div>
+<p class="case-status"><span data-en="Public case study" data-i18n="f44cc82cb3">Studi kasus publik</span></p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker"><span data-en="Transaction analysis" data-i18n="d613e31c61">Analisis transaksi</span></p>
+<h3>Online Retail</h3>
+<p class="case-summary"><span data-en="I examined 541,909 transaction rows to find how many customers had another invoice within 90 days of their first observed invoice." data-i18n="3f5d7eaa1c">Saya memeriksa 541.909 baris transaksi untuk mencari tahu berapa banyak pelanggan yang punya invoice lain dalam 90 hari setelah invoice pertama yang terlihat di data.</span></p>
+<div aria-label="Hasil utama" class="result-callout" data-en-aria-label="Main result">
+<strong><span data-en="42.7%" data-i18n="db38031f7f">42,7%</span></strong>
+<p><span data-en="885 of 2,075 customers in the January–June 2011 cohort had another non-cancellation invoice within 90 days." data-i18n="7c9f28bf2e">885 dari 2.075 pelanggan pada kohort Januari–Juni 2011 memiliki invoice non-pembatalan berikutnya dalam 90 hari.</span></p>
+</div>
+<dl class="case-facts">
+<div><dt><span data-en="Process" data-i18n="2023525f33">Proses</span></dt><dd><span data-en="I checked missing data, cancellations, nonpositive values, and identical rows before building the cohort with SQL." data-i18n="f72071a652">Saya memeriksa data kosong, pembatalan, nilai nonpositif, dan baris identik sebelum membentuk kohort dengan SQL.</span></dd></div>
+<div><dt><span data-en="Finding" data-i18n="4cfe914b00">Temuan</span></dt><dd><span data-en="The share with another invoice varied by month and first invoice value group." data-i18n="95e81aa6b8">Proporsi invoice lanjutan berbeda menurut bulan dan kelompok nilai invoice pertama.</span></dd></div>
+<div><dt><span data-en="Limitations" data-i18n="42e460c94e">Batasan</span></dt><dd><span data-en="This measures invoice activity, not net purchase retention. Cancellations and returns have not been fully matched to their original invoices." data-i18n="e90a5c99bc">Ini mengukur aktivitas invoice, bukan retensi pembelian bersih. Pembatalan dan retur belum sepenuhnya dipasangkan dengan invoice asal.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi analisis Online Retail" class="tags" data-en-aria-label="Project tools"><li>Python</li><li>Pandas</li><li>SQLite</li><li>Matplotlib</li></ul>
+<a class="case-link" href="https://archive.ics.uci.edu/dataset/352/online+retail" rel="noreferrer" target="_blank"><span data-en="Data source: UCI Online Retail" data-i18n="ce20005558">Sumber data: UCI Online Retail </span><span aria-hidden="true">↗</span></a>
+<a class="button button-quiet detail-link" href="./projects/online-retail.html"><span data-en="Read the full process" data-i18n="24ffdcc616">Baca proses lengkap </span><span aria-hidden="true">↗</span></a><a class="case-link" download="" href="./assets/online-retail/03_repeat_purchase.sql"><span data-en="Download the 90-day cohort SQL ↓" data-i18n="200cb8929b">Unduh SQL kohort 90 hari ↓</span></a></div>
+<div aria-label="Grafik analisis Online Retail" aria-roledescription="carousel" class="project-gallery" data-en-aria-label="Online Retail analysis charts" data-gallery="" role="region" tabindex="0">
+<figure aria-label="1 dari 2" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Persentase pelanggan dengan invoice lanjutan dalam 90 hari menurut bulan, Januari sampai Juni 2011" data-en-alt="Share of customers with a subsequent invoice within 90 days, by month from January to June 2011" decoding="async" height="1080" loading="lazy" src="./assets/online-retail-by-month.png" width="1980"/><figcaption><span data-en="Subsequent invoices by month of first observed invoice." data-i18n="3a1e100fe4">Invoice lanjutan menurut bulan invoice pertama yang teramati. </span><a href="./assets/online-retail-by-month.png" rel="noreferrer" target="_blank"><span data-en="View full size ↗" data-i18n="58f14e5460">Lihat ukuran penuh ↗</span></a></figcaption></figure>
+<figure aria-label="2 dari 2" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Persentase invoice lanjutan menurut empat kelompok nilai invoice pertama" data-en-alt="Subsequent invoice share by four first-invoice value groups" decoding="async" height="1080" loading="lazy" src="./assets/online-retail-by-first-invoice.png" width="1980"/><figcaption><span data-en="Comparison by first invoice value. This relationship is descriptive." data-i18n="0e38d37c36">Perbandingan menurut nilai invoice pertama. Hubungan ini bersifat deskriptif. </span><a href="./assets/online-retail-by-first-invoice.png" rel="noreferrer" target="_blank"><span data-en="View full size ↗" data-i18n="58f14e5460">Lihat ukuran penuh ↗</span></a></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Grafik sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">2</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Grafik berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div>
+</div>
+</article>
+<article class="case-study case-jalanyuk" id="jalanyuk">
+<header class="case-header">
+<div><span class="case-index">Case file 04</span><span class="case-year"><span data-en="Personal project · 2026" data-i18n="4049ca5b06">Proyek pribadi · 2026</span></span></div>
+<p class="case-status"><span data-en="Prototype" data-i18n="4936e1ee06">Prototipe</span></p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker"><span data-en="Location data &amp; product" data-i18n="4e5f9e758a">Data lokasi &amp; produk</span></p>
+<h3>JalanYuk</h3>
+<p class="case-summary"><span data-en="JalanYuk is a prototype for finding destinations and planning routes in one flow. The hardest part was not simply showing places, but keeping the source and identity of each location clear." data-i18n="b606161ac7">JalanYuk adalah prototipe untuk mencari destinasi dan menyusun rute dalam satu alur. Bagian tersulitnya bukan sekadar menampilkan tempat, tetapi memastikan sumber dan identitas setiap lokasi tetap jelas.</span></p>
+<dl class="case-facts">
+<div><dt><span data-en="Data" data-i18n="e5e429bcc9">Data</span></dt><dd><span data-en="The catalog uses OpenStreetMap data, while additional place searches use Photon." data-i18n="27585d76cd">Katalog memakai data OpenStreetMap, sedangkan pencarian tempat tambahan menggunakan Photon.</span></dd></div>
+<div><dt><span data-en="Contribution" data-i18n="bfb5f917e7">Kontribusi</span></dt><dd><span data-en="I built the search flow, manual location pins, route planning, and encrypted trip data backups." data-i18n="8d1a846199">Saya membangun pencarian, pin lokasi manual, perencanaan rute, serta cadangan data perjalanan terenkripsi.</span></dd></div>
+<div><dt><span data-en="Limitations" data-i18n="42e460c94e">Batasan</span></dt><dd><span data-en="The catalog does not yet cover Indonesia evenly. Routes still need to be checked before they are used for travel." data-i18n="bc82ebdd83">Cakupan katalog belum merata di seluruh Indonesia. Rute juga tetap perlu diperiksa sebelum digunakan di perjalanan.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi JalanYuk" class="tags" data-en-aria-label="Project tools"><li>Next.js</li><li>OpenStreetMap</li><li>Photon</li><li>Data lokasi</li></ul>
+<a class="case-link" href="https://github.com/codeBims/JalanYuk" rel="noreferrer" target="_blank"><span data-en="View code and product limitations" data-i18n="1dd48382f8">Lihat kode dan batasan produk </span><span aria-hidden="true">↗</span></a>
+</div>
+<div aria-label="Tampilan fitur JalanYuk" aria-roledescription="carousel" class="project-gallery" data-en-aria-label="JalanYuk feature gallery" data-gallery="" role="region" tabindex="0">
+<figure aria-label="1 dari 2" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Halaman Jelajahi JalanYuk dengan pencarian dan katalog destinasi" data-en-alt="JalanYuk Explore page with search and destination catalogue" decoding="async" height="1000" loading="lazy" src="./assets/jalanyuk-explore.png" width="1440"/><figcaption><span data-en="Explore: a destination catalog with traceable place sources." data-i18n="4ed5cb3d76">Jelajahi: katalog destinasi dengan sumber lokasi yang dapat ditelusuri.</span></figcaption></figure>
+<figure aria-label="2 dari 2" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Halaman Rute Kustom JalanYuk dengan pilihan moda dan titik perjalanan" data-en-alt="JalanYuk custom route page with transport modes and waypoints" decoding="async" height="1000" loading="lazy" src="./assets/jalanyuk-route.png" width="1440"/><figcaption><span data-en="Custom route: choose travel mode, start, stops, and destination." data-i18n="46aec9f778">Rute Kustom: pilih moda, titik awal, singgah, dan tujuan.</span></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Tampilan sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">2</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Tampilan berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div>
+</div>
+</article>
+<article class="case-study case-confidential" id="telkom">
+<header class="case-header">
+<div><span class="case-index">Case file 05</span><span class="case-year">Telkom Indonesia · 2025</span></div>
+<p class="case-status">Internal system</p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker"><span data-en="Logs &amp; observability" data-i18n="c153c17e02">Log &amp; observability</span></p>
+<h3><span data-en="Operational monitoring with ELK Stack" data-i18n="44e9719fcd">Monitoring operasional berbasis ELK Stack</span></h3>
+<p class="case-summary"><span data-en="During my Telkom Indonesia internship, I processed IT control (ITGC) and Kubernetes logs. I organized the results in Kibana dashboards to make operational activity easier to monitor." data-i18n="c55eabd143">Saat magang di Telkom Indonesia, saya mengolah log pemeriksaan kontrol TI (ITGC) dan Kubernetes. Hasilnya disusun menjadi dashboard Kibana agar aktivitas operasional lebih mudah dipantau.</span></p>
+<dl class="case-facts">
+<div><dt>Input</dt><dd><span data-en="Operational logs from several sources with inconsistent structures." data-i18n="8681204b5d">Log operasional dari beberapa sumber dengan struktur yang belum seragam.</span></dd></div>
+<div><dt><span data-en="Process" data-i18n="2023525f33">Proses</span></dt><dd><span data-en="I parsed the logs, organized the fields, checked the resulting views, and then built the dashboard." data-i18n="3f486504ba">Saya melakukan parsing, menyusun field, memeriksa hasil tampilannya, lalu membuat dashboard.</span></dd></div>
+<div><dt>Output</dt><dd><span data-en="Monitoring dashboards and log output that could be used in the next audit automation stage." data-i18n="a5da38e8de">Dashboard monitoring dan keluaran log yang dapat dipakai pada tahap otomasi audit berikutnya.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi magang" class="tags" data-en-aria-label="Project tools">
+<li>Elasticsearch</li><li>Logstash</li><li>Kibana</li><li>Kubernetes logs</li>
+</ul>
+<a class="button button-quiet detail-link" href="./projects/telkom.html"><span data-en="Read the full process" data-i18n="24ffdcc616">Baca proses lengkap </span><span aria-hidden="true">↗</span></a></div>
+<div class="confidential-panel">
+<div aria-label="Dokumentasi magang Telkom Indonesia" aria-roledescription="carousel" class="project-gallery project-gallery-photos" data-en-aria-label="Telkom Indonesia internship gallery" data-gallery="" role="region" tabindex="0">
+<figure aria-label="1 dari 4" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Daftar dashboard monitoring ITGC dan Kubernetes yang dibuat saat magang di Telkom Indonesia" data-en-alt="List of ITGC and Kubernetes monitoring dashboards built during the Telkom Indonesia internship" decoding="async" height="709" loading="lazy" src="./assets/telkom-dashboards.png" width="1286"/><figcaption><span data-en="Monitoring dashboards I built during my internship." data-i18n="0f00ec9cce">Daftar dashboard monitoring yang saya buat selama magang. </span><a href="./assets/telkom-dashboards.png" rel="noreferrer" target="_blank"><span data-en="View full size ↗" data-i18n="58f14e5460">Lihat ukuran penuh ↗</span></a></figcaption></figure>
+<figure aria-label="2 dari 4" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Henry berfoto di depan identitas Telkom Indonesia" data-en-alt="Henry at the Telkom Indonesia office" data-full-src="./assets/telkom-office.png" decoding="async" height="1280" loading="lazy" sizes="(max-width: 980px) 90vw, 650px" src="./assets/telkom-office-800.webp" srcset="./assets/telkom-office-400.webp 400w, ./assets/telkom-office-800.webp 800w, ./assets/telkom-office-1200.webp 960w" width="960"/><figcaption><span data-en="First day of my internship at Telkom Indonesia." data-i18n="abf785137c">Hari pertama magang di Telkom Indonesia.</span></figcaption></figure>
+<figure aria-label="3 dari 4" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Suasana bersama peserta magang di Telkom Jatinegara" data-en-alt="Fellow interns working at Telkom Jatinegara" data-full-src="./assets/telkom-team.png" decoding="async" height="960" loading="lazy" sizes="(max-width: 980px) 90vw, 650px" src="./assets/telkom-team-800.webp" srcset="./assets/telkom-team-400.webp 400w, ./assets/telkom-team-800.webp 800w, ./assets/telkom-team-1200.webp 1200w" width="1280"/><figcaption><span data-en="Working with fellow interns at Telkom Jatinegara." data-i18n="2c105fa617">Suasana kerja bersama peserta magang di Telkom Jatinegara.</span></figcaption></figure>
+<figure aria-label="4 dari 4" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Kartu identitas dan lanyard Digistar Internship Telkom Indonesia" data-en-alt="Telkom Indonesia Digistar internship badge and lanyard" data-full-src="./assets/telkom-badge.png" decoding="async" height="1280" loading="lazy" sizes="(max-width: 980px) 90vw, 650px" src="./assets/telkom-badge-800.webp" srcset="./assets/telkom-badge-400.webp 400w, ./assets/telkom-badge-800.webp 800w, ./assets/telkom-badge-1200.webp 960w" width="960"/><figcaption><span data-en="Digistar Internship participant badge." data-i18n="7ef30ccf99">Identitas peserta Digistar Internship.</span></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Foto sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">4</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Foto berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div>
+<p><strong><span data-en="Privacy note." data-i18n="abfe0074d8">Catatan privasi.</span></strong><span data-en="This dashboard list screenshot is shown with permission. I do not publish internal log data, host names, or dashboard contents." data-i18n="7f1aaf971c"> Tangkapan layar daftar dashboard ini ditampilkan dengan izin. Data log, nama host, dan isi dashboard internal tetap tidak saya publikasikan.</span></p>
+</div>
+</div>
+</article>
+<article class="case-study case-happiness" id="happiness">
+<header class="case-header">
+<div><span class="case-index">Case file 06</span><span class="case-year"><span data-en="Group project · 2026" data-i18n="f8ba30c9df">Proyek kelompok · 2026</span></span></div>
+<p class="case-status"><span data-en="Public dashboard" data-i18n="d672a1d2a5">Dashboard publik</span></p>
+</header>
+<div class="case-body">
+<div class="case-copy">
+<p class="case-kicker"><span data-en="Data visualization" data-i18n="fa8f85d0b8">Visualisasi data</span></p>
+<h3>World Happiness Dashboard</h3>
+<p class="case-summary"><span data-en="In this group project, I prepared World Happiness Report data and built two charts with Chart.js. They help readers compare countries in 2023 and see how scores changed over time." data-i18n="3c89a05ba0">Dalam proyek kelompok ini, saya menyiapkan data World Happiness Report dan membuat dua grafik dengan Chart.js. Keduanya membantu pembaca membandingkan negara pada 2023 dan melihat perubahan skor dari tahun ke tahun.</span></p>
+<dl class="case-facts">
+<div><dt><span data-en="Bar chart" data-i18n="d168bb1c0b">Grafik batang</span></dt><dd><span data-en="Comparison of the 15 countries with the highest happiness scores in 2023." data-i18n="5eab60053e">Perbandingan 15 negara dengan skor kebahagiaan tertinggi pada 2023.</span></dd></div>
+<div><dt><span data-en="Line chart" data-i18n="1c55c89560">Grafik garis</span></dt><dd><span data-en="Changes in happiness scores for several countries over time." data-i18n="78136b8fc1">Perubahan skor kebahagiaan beberapa negara dari tahun ke tahun.</span></dd></div>
+<div><dt><span data-en="My role" data-i18n="05c955f4d7">Peran</span></dt><dd><span data-en="Data preparation and the two charts above. The other dashboard features were built with the team." data-i18n="9ac6b170f1">Persiapan data dan dua visualisasi di atas. Fitur dashboard lainnya dikerjakan bersama tim.</span></dd></div>
+</dl>
+<ul aria-label="Teknologi World Happiness Dashboard" class="tags" data-en-aria-label="Project tools"><li>Chart.js</li><li>JavaScript</li><li>World Happiness Report</li></ul>
+</div>
+<div class="happiness-evidence"><div aria-label="Grafik World Happiness" aria-roledescription="carousel" class="project-gallery" data-en-aria-label="World Happiness charts" data-gallery="" role="region" tabindex="0">
+<figure aria-label="1 dari 2" aria-roledescription="slide" data-gallery-slide="" role="group"><img alt="Top 15 countries in 2023" decoding="async" height="600" loading="lazy" src="./assets/happiness-top15.svg" width="1000"/><figcaption><span data-en="Top 15 countries in 2023, using the team dashboard data." data-i18n="a63b4edbb3">15 negara teratas pada 2023, berdasarkan data dashboard kelompok.</span></figcaption></figure>
+<figure aria-label="2 dari 2" aria-roledescription="slide" data-gallery-slide="" hidden="" role="group"><img alt="Happiness trends over time" decoding="async" height="600" loading="lazy" src="./assets/happiness-trend.svg" width="1000"/><figcaption><span data-en="Four time series from the team dashboard data." data-i18n="054688dbf3">Tren empat seri dari data dashboard kelompok.</span></figcaption></figure>
+<div class="gallery-controls"><button aria-label="Grafik sebelumnya" data-gallery-prev="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><p aria-live="polite"><span data-gallery-current="">1</span><span aria-hidden="true"> / </span><span data-gallery-total="">2</span></p><button class="gallery-autoplay" data-gallery-toggle="" type="button">Jeda</button><button aria-label="Grafik berikutnya" data-gallery-next="" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+</div><p><span data-en="A preview from the team dashboard data. Explore the interactive charts on the original site." data-i18n="791d87b616">Pratinjau dari data dashboard kelompok. Grafik interaktif tersedia di situs aslinya.</span></p><a class="button" href="https://visdatgokil.vercel.app/" rel="noopener noreferrer" target="_blank"><span data-en="Open the team dashboard ↗" data-i18n="f8e376ef29">Buka dashboard kelompok ↗</span></a><a class="case-link" href="https://github.com/adhihihi/Final-Project-Visdat" rel="noopener noreferrer" target="_blank"><span data-en="View team repository ↗" data-i18n="acbead1177">Lihat repositori kelompok ↗</span></a></div>
+</div>
+</article>
+</div>
+</section><section aria-labelledby="positioning-title" class="positioning" id="profil">
+<p class="section-label"><span data-en="02 / About" data-i18n="5d26e38a80">02 / Profil</span></p>
+<div class="positioning-photo-wrap">
+<div class="about-photo">
+<img alt="Henry Abimanyu mengenakan selempang kelulusan Telkom University" data-en-alt="Henry wearing his Telkom University graduation sash" data-full-src="./assets/henry-graduation.png" height="709" loading="lazy" sizes="(max-width: 720px) 85vw, 400px" src="./assets/henry-graduation-800.webp" srcset="./assets/henry-graduation-400.webp 400w, ./assets/henry-graduation-800.webp 515w" width="515"/>
+</div>
+<p><span data-en="Graduation 2026" data-i18n="be5cd0ecb4">Kelulusan 2026</span></p>
+</div>
+<div class="positioning-copy">
+<h2 id="positioning-title"><span data-en="I start with the problem that needs answering." data-i18n="c4ae10a3b7">Saya mulai dari masalah yang ingin dijawab.</span></h2>
+<p class="intro-text"><span data-en="The data may be operational logs, transactions, or recordings of human movement. Whatever the format, I start by understanding the context, organizing the data, and choosing measurements that are genuinely useful." data-i18n="657537d3dc">Datanya bisa berupa log operasional, transaksi, atau rekaman gerakan tubuh. Apa pun bentuknya, saya mulai dengan memahami konteks, merapikan datanya, lalu memilih cara ukur yang benar-benar membantu.</span></p>
+<div class="principles">
+<article><span>01</span><h3><span data-en="Organize" data-i18n="2757e2fb89">Rapikan</span></h3><p><span data-en="I organize raw data first so the problem becomes visible and the analysis does not mislead." data-i18n="7d2f91ff73">Data mentah saya susun dulu supaya masalahnya terlihat dan analisisnya tidak menyesatkan.</span></p></article>
+<article><span>02</span><h3><span data-en="Test" data-i18n="08a39c843e">Uji</span></h3><p><span data-en="I choose metrics based on the need, including MAE and RMSE when evaluating models." data-i18n="2d16d6d316">Saya memilih metrik sesuai kebutuhan, termasuk MAE dan RMSE saat mengevaluasi model.</span></p></article>
+<article><span>03</span><h3><span data-en="Explain" data-i18n="b5d75afd9e">Ceritakan</span></h3><p><span data-en="I turn the final results into dashboards, charts, or summaries that are quick to understand." data-i18n="7997f2bc20">Hasil akhirnya saya ubah menjadi dashboard, grafik, atau ringkasan yang cepat dipahami.</span></p></article>
+</div>
+</div>
+</section>
+<section aria-labelledby="experience-title" class="experience" id="pengalaman">
+<p class="section-label"><span data-en="03 / Background" data-i18n="dce1ad1cbb">03 / Jejak</span></p>
+<div>
+<div class="section-intro">
+<h2 id="experience-title"><span data-en="My journey so far." data-i18n="b4f3d7e3aa">Perjalanan saya sejauh ini.</span></h2>
+<p><span data-en="From studying Informatics and interning at Telkom Indonesia to training that is still in progress." data-i18n="609362db8e">Dari kuliah Informatika, magang di Telkom Indonesia, sampai pelatihan yang masih berjalan.</span></p>
+</div>
+<div class="timeline">
+<article>
+<p class="time"><span data-en="Jul–Aug 2025" data-i18n="a02d5819fa">Jul–Agu 2025</span></p>
+<div><p class="timeline-type"><span data-en="Experience" data-i18n="bd3c95dd7d">Pengalaman</span></p><h3>Telkom Indonesia</h3><p>Data Analyst Intern, DIT-INE</p></div>
+<ul><li><span data-en="Processed ITGC and Kubernetes logs using the ELK Stack." data-i18n="42e69559e8">Mengolah log ITGC dan Kubernetes menggunakan ELK Stack.</span></li><li><span data-en="Built several Kibana dashboards for operational monitoring." data-i18n="54929d405e">Menyusun beberapa dashboard Kibana untuk monitoring operasional.</span></li><li><span data-en="Prepared log output for subsequent audit automation." data-i18n="0864f0542f">Menyiapkan keluaran log bagi alur otomasi audit lanjutan.</span></li></ul>
+</article>
+<article>
+<p class="time"><span data-en="2022–Sep 2026" data-i18n="1e027a7405">2022–Sep 2026</span></p>
+<div><p class="timeline-type"><span data-en="Education" data-i18n="a1cefd01fb">Pendidikan</span></p><h3>Telkom University</h3><p><span data-en="BSc Informatics · GPA 3.21/4.00" data-i18n="ca995a20a9">S1 Informatika · IPK 3,21/4,00</span></p></div>
+<p class="timeline-description"><span data-en="For my thesis, I compared MediaPipe BlazePose and YOLOv8-Pose in reading bicep curl movements from video." data-i18n="fbe214a03c">Untuk tugas akhir, saya membandingkan MediaPipe BlazePose dan YOLOv8-Pose dalam membaca gerakan bicep curl dari video.</span></p>
+</article>
+<article>
+<p class="time">2026</p>
+<div><p class="timeline-type"><span data-en="Training" data-i18n="ca80f6baa8">Pelatihan</span></p><h3>AWS AI Practitioner Program</h3><p><span data-en="Yayasan Indonesia Emas Merdeka · in progress" data-i18n="1848129710">Yayasan Indonesia Emas Merdeka · masih berjalan</span></p></div>
+<p class="timeline-description"><span data-en="I am currently studying AI fundamentals and how they are applied in AWS services." data-i18n="47e8f6bb60">Saat ini saya sedang mempelajari dasar kecerdasan buatan dan penerapannya pada layanan AWS.</span></p>
+</article>
+</div>
+</div>
+</section><section class="credentials" id="bekal"><div class="section-heading"><p class="section-label"><span data-en="My toolkit" data-i18n="5bd421e68a">Bekal kerja</span></p><h2><span data-en="The tools, and where I use them." data-i18n="4c2c4349e3">Alatnya ada. Ini tempat saya memakainya.</span></h2></div><div class="credential-content">
+<section aria-labelledby="capabilities-title" class="capabilities" id="keahlian">
+<div class="section-heading">
+<p class="section-label"><span data-en="Skills" data-i18n="b5804e4415">Keahlian</span></p>
+<div>
+<h2 id="capabilities-title"><span data-en="Tools I have actually used." data-i18n="5c65508b96">Alat yang memang pernah saya pakai.</span></h2>
+<p><span data-en="This list comes from my internship, thesis, and personal projects, not just technologies I have read about." data-i18n="b290d3fa6b">Daftar ini berasal dari pekerjaan magang, tugas akhir, dan proyek pribadi saya, bukan sekadar teknologi yang pernah saya baca.</span></p>
+</div>
+</div>
+<div class="capability-grid">
+<article><p>01</p><h3><span data-en="Data analysis" data-i18n="fafa81dc9b">Analisis data</span></h3><ul><li><a href="#online-retail">Python &amp; Pandas</a></li><li>Jupyter &amp; Google Colab</li><li><a href="#online-retail"><span data-en="SQL: SQLite and window functions" data-i18n="37a9c3a6df">SQL: SQLite dan window functions</span></a></li><li><span data-en="Excel: formulas, charts, dashboards" data-i18n="a98c979fc0">Excel: formula, grafik, dashboard</span></li><li><a href="#happiness">Chart.js (World Happiness)</a></li><li>Power BI</li></ul></article>
+<article><p>02</p><h3><span data-en="Monitoring" data-i18n="a814345897">Monitoring</span></h3><ul><li><a href="#telkom">Elasticsearch</a></li><li><a href="#telkom">Logstash</a></li><li><a href="#telkom">Kibana</a></li><li><a href="#telkom"><span data-en="Monitoring dashboard (Telkom internship)" data-i18n="abc4e87d69">Dashboard monitoring (magang Telkom)</span></a></li></ul></article>
+<article><p>03</p><h3><span data-en="Evaluation" data-i18n="acbfc80f46">Evaluasi</span></h3><ul><li><a href="#online-retail">Data cleaning</a></li><li><a href="#pose">MAE &amp; RMSE</a></li><li><a href="#pose"><span data-en="Comparison with ground truth (thesis)" data-i18n="6fb60993e4">Perbandingan dengan ground truth (tugas akhir)</span></a></li><li><a href="#pose"><span data-en="Result interpretation (thesis)" data-i18n="1926b7db99">Interpretasi hasil (tugas akhir)</span></a></li></ul></article>
+<article><p>04</p><h3><span data-en="Web products" data-i18n="c00b767912">Produk web</span></h3><ul><li><a href="#fittrack">React &amp; Vite (FitTrack)</a></li><li><a href="#fittrack">HTML, CSS, JavaScript</a></li><li><a href="#fittrack">Supabase (FitTrack)</a></li><li><a href="#fittrack">Git &amp; GitHub</a></li></ul></article>
+</div>
+</section>
+</div><div class="credential-content">
+<section aria-labelledby="certificates-title" class="certificates" id="sertifikat"><h3><span data-en="Training &amp; certificates" data-i18n="71bfdc3d9f">Pelatihan &amp; sertifikat</span></h3><p><span data-en="Training duration is shown on each card. Open a card to view the original certificate." data-i18n="41546f7ffd">Durasi pelatihan dicantumkan di setiap kartu. Klik untuk membuka sertifikat asli.</span></p>
+<div class="section-heading">
+<p class="section-label"><span data-en="Certificates" data-i18n="bf262641d2">Sertifikat</span></p>
+<div>
+<h2 id="certificates-title"><span data-en="Training I have completed." data-i18n="87bed139e8">Pelatihan yang pernah saya selesaikan.</span></h2>
+<p><span data-en="These are my Digital Talent Scholarship 2026 certificates from Komdigi. Most are short Micro Skills, so I show their duration as-is. Select a card to view the original PDF." data-i18n="2094d44294">Berikut sertifikat Digital Talent Scholarship 2026 dari Komdigi. Sebagian besar berupa Micro Skill singkat, jadi durasinya saya tampilkan apa adanya. Klik kartu untuk melihat PDF asli.</span></p>
+</div>
+</div>
+<div class="certificate-grid">
+<a class="certificate-card" href="./assets/certificates/data-science.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Pengenalan Data Science" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/data-science.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong><span data-en="Introduction to Data Science and Its Applications Across Sectors" data-i18n="d7c611c6cf">Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/ai-implementation.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Dasar-Dasar Implementasi Kecerdasan Artifisial" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/ai-implementation.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong><span data-en="Fundamentals of Artificial Intelligence Implementation" data-i18n="20eb6e0125">Dasar-Dasar Implementasi Kecerdasan Artifisial</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/azure-prompt.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat rekayasa prompt dengan Azure OpenAI Service" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/azure-prompt.jpg" width="674"/><span><small><span data-en="Micro Skill · 1.4 hours" data-i18n="9f39e5776e">Micro Skill · 1,4 jam</span></small><strong><span data-en="Applying Prompt Engineering with Azure OpenAI Service" data-i18n="9a239968f0">Menerapkan Rekayasa Prompt dengan Azure OpenAI Service</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/cloud-computing.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Introduction To Cloud Computing" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/cloud-computing.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong>Introduction To Cloud Computing</strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+</div>
+<details class="certificate-more">
+<summary><span data-en="View 8 more certificates" data-i18n="e0bce135c3">Lihat 8 sertifikat lainnya </span><span aria-hidden="true">+</span></summary>
+<div class="certificate-grid">
+<a class="certificate-card" href="./assets/certificates/network-administrator.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Fundamental of Associate Network Administrator" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/network-administrator.jpg" width="674"/><span><small><span data-en="Digital Talent Academy · 12 hours" data-i18n="b53f9692f6">Digital Talent Academy · 12 jam</span></small><strong><span data-en="Fundamental of Associate Network Administrator – National" data-i18n="09902ec452">Fundamental of Associate Network Administrator – Nasional</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/ai-security.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Dasar-dasar Keamanan AI" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/ai-security.jpg" width="674"/><span><small><span data-en="Micro Skill · 0.8 hours" data-i18n="881e658289">Micro Skill · 0,8 jam</span></small><strong><span data-en="AI Security Fundamentals" data-i18n="bdabf8b082">Dasar-dasar Keamanan AI</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/linux-lab.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Membangun Lab Virtual dan Dasar Linux" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/linux-lab.jpg" width="674"/><span><small><span data-en="Micro Skill · 2 hours" data-i18n="ca25052366">Micro Skill · 2 jam</span></small><strong><span data-en="Building a Virtual Lab &amp; Linux Fundamentals" data-i18n="11428fdae4">Membangun Lab Virtual &amp; Dasar Linux</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/programming.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Konsep Pemrograman" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/programming.jpg" width="674"/><span><small><span data-en="Micro Skill · 2 hours" data-i18n="ca25052366">Micro Skill · 2 jam</span></small><strong><span data-en="Programming Concepts" data-i18n="37f19183e3">Konsep Pemrograman</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/generative-ai-education.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Generative AI untuk Pendidikan" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/generative-ai-education.jpg" width="674"/><span><small><span data-en="Micro Skill · 3 hours" data-i18n="0b45dc7a6a">Micro Skill · 3 jam</span></small><strong><span data-en="Generative AI for Education" data-i18n="29350cc40f">Generative AI untuk Pendidikan</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/ethical-hacking.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Ethical Hacker For Dummies" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/ethical-hacking.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong>Ethical Hacker For Dummies</strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/phishing-malware.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat perlindungan dari phishing dan malware" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/phishing-malware.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong><span data-en="Protecting Yourself from Phishing and Malware" data-i18n="cf5508a69f">Tips Melindungi Diri dari Ancaman Phishing dan Malware</span></strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+<a class="certificate-card" href="./assets/certificates/social-media.pdf" rel="noopener noreferrer" target="_blank"><img alt="Pratinjau sertifikat Social Media Management untuk Brand Digital" data-en-alt="Training certificate preview" height="477" loading="lazy" src="./assets/certificates/social-media.jpg" width="674"/><span><small><span data-en="Micro Skill · 1 hour" data-i18n="42ed6f90f3">Micro Skill · 1 jam</span></small><strong>Social Media Management untuk Brand Digital</strong><em><span data-en="View certificate ↗" data-i18n="bcf624fae9">Buka sertifikat ↗</span></em></span></a>
+</div>
+</details>
+</section>
+</div></section>
+<section aria-labelledby="contact-title" class="contact" id="kontak">
+<div class="contact-main">
+<p class="section-label"><span data-en="04 / Contact" data-i18n="3c39f38745">04 / Kontak</span></p>
+<h2 id="contact-title"><span data-en="Have data that needs to be made clearer?" data-i18n="51374d93ca">Ada data yang perlu dibuat lebih jelas?</span></h2>
+<p><span data-en="I am open to junior or graduate roles, as well as freelance analytics projects that match my experience." data-i18n="f47b9d7bc1">Saya terbuka untuk posisi junior atau fresh graduate, juga proyek freelance analitik yang sesuai dengan pengalaman saya.</span></p>
+<a class="button button-light" href="mailto:abimkaizen@gmail.com"><span data-en="Let’s talk" data-i18n="5336df8d47">Mari ngobrol </span><span aria-hidden="true">↗</span></a>
+</div>
+<div aria-label="Tautan kontak dan media sosial" class="contact-list" data-en-aria-label="Contact and social links">
+<a aria-label="Email abimkaizen@gmail.com" href="mailto:abimkaizen@gmail.com"><svg aria-hidden="true" class="social-icon icon-gmail"><use href="#icon-gmail"></use></svg><span>Email</span><strong>abimkaizen@gmail.com</strong></a>
+<a aria-label="LinkedIn Henry Abimanyu" href="https://www.linkedin.com/in/henry-abimanyu-563ba72a8/" rel="noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon icon-linkedin"><use href="#icon-linkedin"></use></svg><span>LinkedIn</span><strong>Henry Abimanyu</strong></a>
+<a aria-label="Instagram @hnryabim" href="https://www.instagram.com/hnryabim/" rel="noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon icon-instagram"><use href="#icon-instagram"></use></svg><span>Instagram</span><strong>@hnryabim</strong></a>
+<a aria-label="GitHub @codeBims" href="https://github.com/codeBims" rel="noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon icon-github"><use href="#icon-github"></use></svg><span>GitHub</span><strong>@codeBims</strong></a>
+<a aria-label="WhatsApp Henry Abimanyu" href="https://wa.me/6287877461799" rel="noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon icon-whatsapp"><use href="#icon-whatsapp"></use></svg><span>WhatsApp</span><strong>+62 878-7746-1799</strong></a>
+<a aria-label="Unduh CV Henry Abimanyu" data-en-aria-label="Download Henry Abimanyu’s CV" download="" href="./assets/CV-Henry-Abimanyu.pdf?v=20261103v7"><svg aria-hidden="true" class="social-icon icon-download"><use href="#icon-download"></use></svg><span><span data-en="Document" data-i18n="a809e9504f">Dokumen</span></span><strong><span data-en="Download CV" data-i18n="f8945f24ef">Unduh CV</span></strong></a>
+</div>
+</section>
+<section aria-labelledby="comments-title" class="comments" id="komentar">
+<div class="comments-intro">
+<p class="section-label"><span data-en="05 / Comments" data-i18n="14384fee64">05 / Komentar</span></p>
+<h2 id="comments-title"><span data-en="Have feedback or a question?" data-i18n="f699d3823b">Ada masukan atau pertanyaan?</span></h2>
+<p><span data-en="Have a question about my work? Leave a comment here. For opportunities, use the contact links above." data-i18n="da33b04b57">Ada yang ingin ditanyakan tentang proyek saya? Tinggalkan komentar di sini. Untuk peluang kerja, gunakan kontak di atas.</span></p>
+</div>
+<div class="comments-box">
+<h3><span data-en="Comments" data-i18n="6525b7606d">Komentar </span><span id="comment-count"></span></h3>
+<form id="comment-form" novalidate="">
+<div class="comment-field"><label for="comment-name"><span data-en="Name" data-i18n="79d12c107a">Nama</span></label><input autocomplete="name" id="comment-name" maxlength="60" minlength="2" name="name" placeholder="Nama Anda" required="" type="text"/></div>
+<div class="comment-field"><label for="comment-body"><span data-en="Comments" data-i18n="6525b7606d">Komentar</span></label><textarea id="comment-body" maxlength="1000" minlength="3" name="body" placeholder="Tulis komentar Anda di sini..." required="" rows="5"></textarea></div>
+<div aria-hidden="true" class="comment-trap"><label for="comment-website">Website</label><input autocomplete="off" id="comment-website" name="website" tabindex="-1" type="text"/></div>
+<button class="comment-submit" type="submit"><span data-en="Post comment" data-i18n="f39f549c75">Kirim komentar </span><span aria-hidden="true">↗</span></button>
+<p class="comment-note"><span data-en="Comments appear publicly right away. Do not include personal or confidential information." data-i18n="406dde7c26">Komentar langsung tampil untuk semua pengunjung. Jangan tulis informasi pribadi atau rahasia.</span></p>
+<p aria-live="polite" class="comment-feedback" id="comment-feedback" role="status"></p>
+</form>
+<p id="comments-status" role="status"></p><div aria-label="Daftar komentar, dapat digulir" class="guestbook-comments" data-en-aria-label="Scrollable comments" id="guestbook-comments" role="region" tabindex="0"></div><div class="comment-list-actions"><button class="button button-quiet" hidden="" id="comments-retry" type="button"><span data-en="Try again" data-i18n="3a4d28a11e">Coba lagi</span></button><button class="button button-quiet" hidden="" id="comments-more" type="button"><span data-en="Load more comments" data-i18n="47639ac833">Muat komentar lainnya</span></button></div>
+</div>
+</section>
+</main>
+<footer>
+<div><strong>Henry Abimanyu Dewandani</strong><span>Junior Data Analyst · Bekasi, Jawa Barat</span></div>
+<p><span data-en="Portfolio" data-i18n="c1386337a8">Portofolio </span><span id="year">2026</span></p>
+</footer>
+<dialog aria-labelledby="media-title" id="media-dialog"><div class="media-dialog-toolbar"><h2 id="media-title"><span data-en="A closer look" data-i18n="27f62893cc">Lihat lebih dekat</span></h2><button class="button button-quiet" data-close-media="" type="button">Tutup ×</button></div><div class="media-scroll"><img alt="" id="media-image"/></div><p id="media-caption"></p></dialog><script src="./comments-config.js"></script>
+<script src="./i18n.js?v=20261115r3"></script>
+<script src="./app.js?v=20261115r3"></script>
+<script src="./comments.js?v=20261115r3"></script>
+<script src="./analytics-config.js?v=20261115r3"></script><script src="./analytics.js?v=20261115r3"></script></body>
 </html>

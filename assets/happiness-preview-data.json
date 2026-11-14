@@ -1,0 +1,352 @@
+{
+  "source": "https://github.com/adhihihi/Final-Project-Visdat/blob/main/app_data_temp.json",
+  "retrieved": "2026-11-15",
+  "top15": [
+    {
+      "Country name": "Finland",
+      "Life Ladder": 7.699
+    },
+    {
+      "Country name": "Iceland",
+      "Life Ladder": 7.562
+    },
+    {
+      "Country name": "Denmark",
+      "Life Ladder": 7.504
+    },
+    {
+      "Country name": "Costa Rica",
+      "Life Ladder": 7.384
+    },
+    {
+      "Country name": "Netherlands",
+      "Life Ladder": 7.255
+    },
+    {
+      "Country name": "Norway",
+      "Life Ladder": 7.249
+    },
+    {
+      "Country name": "Sweden",
+      "Life Ladder": 7.161
+    },
+    {
+      "Country name": "Kuwait",
+      "Life Ladder": 7.13
+    },
+    {
+      "Country name": "Australia",
+      "Life Ladder": 7.025
+    },
+    {
+      "Country name": "Luxembourg",
+      "Life Ladder": 7.016
+    },
+    {
+      "Country name": "Mexico",
+      "Life Ladder": 7.006
+    },
+    {
+      "Country name": "New Zealand",
+      "Life Ladder": 6.976
+    },
+    {
+      "Country name": "Switzerland",
+      "Life Ladder": 6.969
+    },
+    {
+      "Country name": "Saudi Arabia",
+      "Life Ladder": 6.953
+    },
+    {
+      "Country name": "Belgium",
+      "Life Ladder": 6.944
+    }
+  ],
+  "trend": {
+    "Indonesia": [
+      {
+        "year": 2006,
+        "score": 4.947
+      },
+      {
+        "year": 2007,
+        "score": 5.101
+      },
+      {
+        "year": 2008,
+        "score": 4.815
+      },
+      {
+        "year": 2009,
+        "score": 5.472
+      },
+      {
+        "year": 2010,
+        "score": 5.457
+      },
+      {
+        "year": 2011,
+        "score": 5.173
+      },
+      {
+        "year": 2012,
+        "score": 5.368
+      },
+      {
+        "year": 2013,
+        "score": 5.292
+      },
+      {
+        "year": 2014,
+        "score": 5.597
+      },
+      {
+        "year": 2015,
+        "score": 5.043
+      },
+      {
+        "year": 2016,
+        "score": 5.136
+      },
+      {
+        "year": 2017,
+        "score": 5.098
+      },
+      {
+        "year": 2018,
+        "score": 5.34
+      },
+      {
+        "year": 2019,
+        "score": 5.347
+      },
+      {
+        "year": 2020,
+        "score": 4.828
+      },
+      {
+        "year": 2021,
+        "score": 5.433
+      },
+      {
+        "year": 2022,
+        "score": 5.585
+      },
+      {
+        "year": 2023,
+        "score": 5.695
+      }
+    ],
+    "Finland": [
+      {
+        "year": 2006,
+        "score": 7.672
+      },
+      {
+        "year": 2008,
+        "score": 7.671
+      },
+      {
+        "year": 2010,
+        "score": 7.393
+      },
+      {
+        "year": 2011,
+        "score": 7.354
+      },
+      {
+        "year": 2012,
+        "score": 7.42
+      },
+      {
+        "year": 2013,
+        "score": 7.445
+      },
+      {
+        "year": 2014,
+        "score": 7.385
+      },
+      {
+        "year": 2015,
+        "score": 7.448
+      },
+      {
+        "year": 2016,
+        "score": 7.66
+      },
+      {
+        "year": 2017,
+        "score": 7.788
+      },
+      {
+        "year": 2018,
+        "score": 7.858
+      },
+      {
+        "year": 2019,
+        "score": 7.78
+      },
+      {
+        "year": 2020,
+        "score": 7.889
+      },
+      {
+        "year": 2021,
+        "score": 7.794
+      },
+      {
+        "year": 2022,
+        "score": 7.729
+      },
+      {
+        "year": 2023,
+        "score": 7.699
+      }
+    ],
+    "Singapore": [
+      {
+        "year": 2006,
+        "score": 6.463
+      },
+      {
+        "year": 2007,
+        "score": 6.834
+      },
+      {
+        "year": 2008,
+        "score": 6.642
+      },
+      {
+        "year": 2009,
+        "score": 6.145
+      },
+      {
+        "year": 2010,
+        "score": 6.531
+      },
+      {
+        "year": 2011,
+        "score": 6.561
+      },
+      {
+        "year": 2013,
+        "score": 6.533
+      },
+      {
+        "year": 2014,
+        "score": 7.062
+      },
+      {
+        "year": 2015,
+        "score": 6.62
+      },
+      {
+        "year": 2016,
+        "score": 6.033
+      },
+      {
+        "year": 2017,
+        "score": 6.378
+      },
+      {
+        "year": 2018,
+        "score": 6.375
+      },
+      {
+        "year": 2019,
+        "score": 6.378
+      },
+      {
+        "year": 2021,
+        "score": 6.587
+      },
+      {
+        "year": 2022,
+        "score": 6.333
+      },
+      {
+        "year": 2023,
+        "score": 6.654
+      }
+    ],
+    "World Average": [
+      {
+        "year": 2005,
+        "score": 6.446
+      },
+      {
+        "year": 2006,
+        "score": 5.197
+      },
+      {
+        "year": 2007,
+        "score": 5.418
+      },
+      {
+        "year": 2008,
+        "score": 5.419
+      },
+      {
+        "year": 2009,
+        "score": 5.458
+      },
+      {
+        "year": 2010,
+        "score": 5.497
+      },
+      {
+        "year": 2011,
+        "score": 5.424
+      },
+      {
+        "year": 2012,
+        "score": 5.444
+      },
+      {
+        "year": 2013,
+        "score": 5.393
+      },
+      {
+        "year": 2014,
+        "score": 5.386
+      },
+      {
+        "year": 2015,
+        "score": 5.401
+      },
+      {
+        "year": 2016,
+        "score": 5.396
+      },
+      {
+        "year": 2017,
+        "score": 5.46
+      },
+      {
+        "year": 2018,
+        "score": 5.499
+      },
+      {
+        "year": 2019,
+        "score": 5.571
+      },
+      {
+        "year": 2020,
+        "score": 5.728
+      },
+      {
+        "year": 2021,
+        "score": 5.636
+      },
+      {
+        "year": 2022,
+        "score": 5.499
+      },
+      {
+        "year": 2023,
+        "score": 5.621
+      }
+    ]
+  }
+}

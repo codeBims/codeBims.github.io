@@ -4,11 +4,15 @@
   const count = document.getElementById('comment-count');
   const feedback = document.getElementById('comment-feedback');
   const config = window.PORTFOLIO_COMMENTS;
+  const status = document.getElementById('comments-status');
+  const retry = document.getElementById('comments-retry');
+  const more = document.getElementById('comments-more');
+  let loaded = [], busy = false, generation = 0;
   if (!form || !list) return;
 
   if (!config?.url || !config?.publishableKey) {
     form.querySelector('button[type="submit"]').disabled = true;
-    list.firstElementChild.textContent = 'Komentar sedang disiapkan.';
+    status.textContent = 'Komentar sedang disiapkan.';
     feedback.textContent = 'Pengiriman komentar belum tersedia.';
     return;
   }
@@ -19,7 +23,7 @@
 
   function showComments(comments) {
     list.replaceChildren();
-    count.textContent = `(${comments.length}${comments.length === 50 ? '+' : ''})`;
+    count.textContent = `(${comments.length}${!more.hidden ? '+' : ''})`;
     if (!comments.length) {
       const empty = document.createElement('p');
       empty.textContent = tr('Belum ada komentar yang diterbitkan.', 'No comments have been posted yet.');
@@ -49,15 +53,31 @@
     });
   }
 
-  async function loadComments() {
+  async function loadComments(append = false) {
+    if (busy && append) return false;
+    const request = ++generation;
+    busy = true;
+    more.disabled = true;
+    retry.hidden = true;
+    status.textContent = tr('Memuat komentar...', 'Loading comments...');
     try {
-      const response = await fetch(`${endpoint}?select=name,body,created_at&approved=eq.true&order=created_at.desc&limit=50`, { headers: { apikey: config.publishableKey } });
+      const response = await fetch(`${endpoint}?select=id,name,body,created_at&approved=eq.true&order=created_at.desc,id.desc&limit=21&offset=${append ? loaded.length : 0}`, { headers: { apikey: config.publishableKey } });
       if (!response.ok) throw new Error('Gagal memuat komentar');
-      showComments(await response.json());
+      const rows = await response.json();
+      if (request !== generation) return false;
+      more.hidden = rows.length <= 20;
+      const merged = append ? [...loaded, ...rows.slice(0,20)] : rows.slice(0,20);
+      loaded = [...new Map(merged.map(row => [row.id,row])).values()];
+      showComments(loaded);
+      status.textContent = '';
       return true;
     } catch {
-      list.firstElementChild.textContent = tr('Komentar belum dapat dimuat. Coba lagi nanti.', 'Comments could not be loaded. Try again later.');
+      if (request !== generation) return false;
+      status.textContent = tr('Komentar belum dapat dimuat. Coba lagi nanti.', 'Comments could not be loaded. Try again later.');
+      retry.hidden = false;
       return false;
+    } finally {
+      if (request === generation) { busy = false; more.disabled = false; }
     }
   }
 
@@ -95,5 +115,7 @@
   });
 
   loadComments();
-  window.addEventListener('portfolio-language-change', loadComments);
+  retry.addEventListener('click', () => loadComments());
+  more.addEventListener('click', () => loadComments(true));
+  window.addEventListener('portfolio-language-change', () => { if (loaded.length) showComments(loaded); else loadComments(); });
 })();

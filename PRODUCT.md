@@ -1,0 +1,15 @@
+# Product truth
+
+Audience: recruiters for junior Data Analyst roles, analytics clients, and technical/general readers. Primary tasks: understand Henry's role, inspect work and its limitations, download the CV, and contact Henry.
+
+Author: Henry Abimanyu Dewandani, Bekasi, Jawa Barat. Informatics graduate, Telkom University, GPA 3.21/4.00. Internship: Telkom Indonesia, July–August 2025. The CV PDF already approved for public use remains the source for personal history. Confirm training completion status before changing it.
+
+Selected cases: Online Retail invoice activity, Telkom operational log dashboards, pose model evaluation. FitTrack, JalanYuk, World Happiness, and Cripto remain discoverable as additional work. Personal, internship, thesis, and team contributions must stay explicit.
+
+No invented business impact. Online Retail: 885/2,075 customers (42.7%) in the January–June 2011 cohort had another non-C invoice within 90 days. This is invoice activity, not net purchase retention. Pose: 8/8 repetitions refers to one scenario; the 8.4°/8.6° MAE comparison refers to subject 1's normal curl. Telkom's dashboard-list screenshot has publication permission; do not publish additional internal logs or dashboards without corresponding permission. World Happiness previews use the group's published JSON and describe Henry's two chart contributions.
+
+Visual direction: warm paper, restrained red, serif headings and sans body copy. Centered section introductions, left-aligned long text. No em dash in editorial copy. No scroll hijacking, automatic audio, or decorative armor overlays. Motion must respect reduced motion and viewport visibility.
+
+Implementation: plain HTML/CSS/JavaScript, GitHub Pages. Keep the existing deployment and CV paths stable. Independent detail pages share scripts/styles. Indonesian and English use explicit translation attributes. Public comments retain their existing Supabase project and publication policy.
+
+Analytics: prepared for Umami but disabled until the owner supplies public tracking configuration. No actual visitor statistics or user-test results exist for the new version yet.
