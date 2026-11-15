@@ -14,6 +14,7 @@ function selectCase(id, push = false) {
   caseButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.case === id)));
   caseIds.forEach(key => { document.getElementById(key).hidden = key !== id; });
   galleries.forEach(gallery => gallery.sync());
+  if (push) window.dispatchEvent(new CustomEvent('portfolio-case-change', { detail: id }));
   if (push && hashId() !== id) history.pushState(null, '', `#${id}`);
 }
 caseButtons.forEach(button => button.addEventListener('click', () => selectCase(button.dataset.case, true)));

@@ -3,17 +3,19 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
 from collections import Counter
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__()
-        self.path, self.ids, self.refs = path, [], []
+        self.path, self.ids, self.refs, self.transitions = path, [], [], []
         self.feed(path.read_text(encoding='utf-8'))
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if attrs.get('id'): self.ids.append(attrs['id'])
-        for key in ('href', 'src', 'poster', 'data-full-src'):
+        self.transitions.extend(re.findall(r'view-transition-name:\s*([\w-]+)', attrs.get('style', '')))
+        for key in ('href', 'src', 'poster', 'data-full-src', 'data-chapter-image'):
             if attrs.get(key): self.refs.append(attrs[key])
         for part in attrs.get('srcset', '').split(','):
             if part.strip(): self.refs.append(part.strip().split()[0])
@@ -23,6 +25,8 @@ errors = []
 for path, page in pages.items():
     for value, count in Counter(page.ids).items():
         if count > 1: errors.append(f'{path.name}: duplicate ID {value}')
+    for value, count in Counter(page.transitions).items():
+        if count > 1: errors.append(f'{path.name}: duplicate shared element {value}')
     for ref in page.refs:
         url = urlsplit(ref)
         if url.scheme or url.netloc: continue
@@ -32,4 +36,4 @@ for path, page in pages.items():
         elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
             errors.append(f'{path.name}: missing anchor {ref}')
 assert not errors, '\n'.join(errors)
-print(f'PASS: {len(pages)} HTML pages; all local assets/anchors resolve; unique IDs.')
+print(f'PASS: {len(pages)} HTML pages; all local assets/anchors resolve; unique IDs and shared elements.')

@@ -10,6 +10,8 @@ No invented business impact. Online Retail: 885/2,075 customers (42.7%) in the J
 
 Visual direction: warm paper, restrained red, serif headings and sans body copy. Centered section introductions, left-aligned long text. No em dash in editorial copy. No scroll hijacking, automatic audio, or decorative armor overlays. Motion must respect reduced motion and viewport visibility.
 
+Interactive storytelling: a synthetic 36-point hero figure illustrates raw, organized and readable data. Retail stages preserve the published cohort definitions. Telkom's eight example log lines are generated demonstration data, explicitly separate from production logs. The original thesis video has a time control; the 8.4/8.6 degree MAE comparison summarizes the stated scenario, not synchronized per-frame measurements. Journey photos/years follow the visible chapter. Native shared-element page transitions progressively enhance ordinary links, without intercepting navigation or downloads.
+
 Implementation: plain HTML/CSS/JavaScript, GitHub Pages. Keep the existing deployment and CV paths stable. Independent detail pages share scripts/styles. Indonesian and English use explicit translation attributes. Public comments retain their existing Supabase project and publication policy.
 
 Analytics: prepared for Umami but disabled until the owner supplies public tracking configuration. No actual visitor statistics or user-test results exist for the new version yet.
