@@ -1,6 +1,6 @@
 (() => {
   const M = window.PortfolioModels;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.PortfolioEffects?.media || matchMedia('(prefers-reduced-motion: reduce)');
   const text = (id,en) => document.documentElement.lang === 'en' ? en : id;
   const ease = 'cubic-bezier(.2,.8,.2,1)';
   function enter(el) {
@@ -123,5 +123,4 @@
     try {await navigator.clipboard.writeText('abimkaizen@gmail.com');output.textContent=text('Alamat email tersalin.','Email address copied.');}
     catch {output.textContent=text('Alamat email: abimkaizen@gmail.com','Email address: abimkaizen@gmail.com');}
   });
-  window.addEventListener('portfolio-case-change',event=>enter(document.getElementById(event.detail)?.querySelector('.case-body')));
 })();

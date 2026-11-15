@@ -1,0 +1,33 @@
+const assert = require('node:assert/strict');
+const vm = require('node:vm');
+const fs = require('node:fs');
+const source = fs.readFileSync(require('node:path').join(__dirname,'../effects-policy.js'),'utf8');
+function setup({reduced=false,saved=null,storageFails=false}={}) {
+  const system = new EventTarget(); system.matches = reduced;
+  const window = new EventTarget(), handlers = {}, writes = [];
+  const button = {attributes:{},setAttribute(k,v){this.attributes[k]=v;},addEventListener(k,v){handlers[k]=v;}};
+  const document = {documentElement:{lang:'id',dataset:{}},querySelectorAll:()=>[button]};
+  const localStorage = {getItem(){if(storageFails)throw Error('denied');return saved;},setItem(k,v){if(storageFails)throw Error('denied');writes.push([k,v]);}};
+  vm.runInNewContext(source,{matchMedia:()=>system,window,document,localStorage,Event,EventTarget});
+  return {system,window,button,document,handlers,writes,media:window.PortfolioEffects.media};
+}
+const active=setup();
+assert.equal(active.media.matches,false);
+let changes=0;active.media.addEventListener('change',()=>changes++);
+active.handlers.click();
+assert.equal(active.media.matches,true);
+assert.equal(active.document.documentElement.dataset.effects,'paused');
+assert.equal(active.button.attributes['aria-pressed'],'false');
+assert.deepEqual(active.writes[0],['portfolio-effects','paused']);
+active.handlers.click();assert.equal(active.media.matches,false);assert.equal(changes,2);
+active.system.matches=true;active.system.dispatchEvent(new Event('change'));
+assert.equal(active.media.matches,true);assert.equal(active.button.disabled,true);
+active.system.matches=false;active.system.dispatchEvent(new Event('change'));
+assert.equal(active.media.matches,false);assert.equal(active.button.disabled,false);
+active.document.documentElement.lang='en';active.window.dispatchEvent(new Event('portfolio-language-change'));
+assert.equal(active.button.attributes['aria-label'],'Visual effects');
+assert.equal(active.button.title,'Pause visual effects');
+assert.equal(setup({saved:'paused'}).media.matches,true);
+assert.equal(setup({reduced:true}).media.matches,true);
+const denied=setup({storageFails:true});denied.handlers.click();assert.equal(denied.media.matches,true);
+console.log('PASS: shared motion policy, persistence, device priority, language and denied storage');

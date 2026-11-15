@@ -8,3 +8,5 @@ Before publishing: `python scripts/check_site.py`, `node --check app.js`, `node 
 Product facts and claim boundaries: [PRODUCT.md](PRODUCT.md). Analytics activation: [ANALYTICS.md](ANALYTICS.md). User test protocol: [USER_TEST_PLAN.md](USER_TEST_PLAN.md).
 
 Interactive figures: also run `node scripts/check_motion.cjs` and `node --check motion.js`. Video seeking requires a preview server supporting HTTP byte ranges, as GitHub Pages does; Python's basic `http.server` alone does not reproduce that behavior. Shared-element transitions use native CSS with ordinary navigation as the fallback. Respect the device's reduced-motion setting when reviewing automatic motion.
+
+Exhibition styling: `immersive.css` and `immersive.js` share `effects-policy.js` with the existing gallery/figure scripts. Check `node scripts/check_effects.cjs`, `node --check effects-policy.js` and `node --check immersive.js`. The header's motion control stores the visitor's pause choice, while device reduced motion always wins. Manrope/Newsreader fonts are served locally with source/checksum/license records in `assets/fonts/`.

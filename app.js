@@ -1,5 +1,5 @@
 const tr = (id, en) => document.documentElement.lang === 'en' ? en : id;
-const motion = matchMedia('(prefers-reduced-motion: reduce)');
+const motion = window.PortfolioEffects?.media || matchMedia('(prefers-reduced-motion: reduce)');
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 const caseButtons = [...document.querySelectorAll('[data-case]')];
@@ -11,10 +11,11 @@ const galleries = [];
 function hashId() { try { return decodeURIComponent(location.hash.slice(1)); } catch { return ''; } }
 function selectCase(id, push = false) {
   if (!caseIds.includes(id)) return;
+  const changed = document.querySelector('[data-case][aria-pressed="true"]')?.dataset.case !== id;
   caseButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.case === id)));
   caseIds.forEach(key => { document.getElementById(key).hidden = key !== id; });
   galleries.forEach(gallery => gallery.sync());
-  if (push) window.dispatchEvent(new CustomEvent('portfolio-case-change', { detail: id }));
+  if (changed) window.dispatchEvent(new CustomEvent('portfolio-case-change', { detail: id }));
   if (push && hashId() !== id) history.pushState(null, '', `#${id}`);
 }
 caseButtons.forEach(button => button.addEventListener('click', () => selectCase(button.dataset.case, true)));
@@ -143,5 +144,6 @@ if (!motion.matches && 'IntersectionObserver' in window) {
     if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
   }), { threshold: .05 });
   document.documentElement.classList.add('motion-ready');
-  document.querySelectorAll('.work-card, .positioning-copy, .timeline article, .case-narrative article, .contact-main').forEach(el => { el.dataset.reveal=''; observer.observe(el); });
+  let cardOrder = 0;
+  document.querySelectorAll('.work-card, .section-heading, .section-intro, .explorer-heading, .positioning-photo-wrap, .positioning-copy, .timeline article, .case-narrative article, .contact-main').forEach(el => { el.dataset.reveal=''; el.style.setProperty('--reveal-delay',`${el.matches('.work-card') ? cardOrder++%3*100 : 0}ms`); observer.observe(el); });
 }
