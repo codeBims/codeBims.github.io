@@ -32,3 +32,11 @@ Public smoke check: GitHub Pages deployment succeeded. The public homepage loade
 - Existing Telkom next-slide control, original video and related case selection were exercised. No public test comments were submitted; analytics remains disabled. Physical iOS/Android devices and field performance remain untested.
 
 Public verification for this motion pass is recorded after deployment.
+
+## Pantau Asap case, 15 November 2026
+
+Added project 07 to the selector and additional-project links, using three real dated screenshots compressed to WebP (85,312 bytes total). The app and repository remain private; the portfolio offers previews and a contact link. Its data limitations and Indonesian/English copy were checked against the project's current README and implementation.
+
+Local browser checks: direct hash selection, switching between projects, discovery through the additional-project disclosure, all three slides, keyboard wraparound, enlargement/Escape/focus return, Indonesian/dark desktop and English/light phone appearance. All three full images loaded. At 361 and 430 CSS-pixel phone widths, no page overflow was observed. No JavaScript errors appeared in the exercised flows.
+
+An isolated local fixture with reduced motion disabled showed automatic advancement from slide 1 to slide 3; an explicitly paused slide stayed at 1 across subsequent checks. The fixture and instrumented script were removed before publication. Normal reduced-motion controls stayed hidden. Existing project selection and model checks still pass. Physical device testing was not performed; no Pantau Asap production settings or public comments were changed.

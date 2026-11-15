@@ -1,0 +1,29 @@
+{
+  "project": "Pantau Asap",
+  "type": "Actual application screenshots",
+  "owner": "Henry Abimanyu Dewandani",
+  "note": "Development documentation, not a live environmental data feed.",
+  "images": [
+    {
+      "file": "weather.webp",
+      "source_file": "v3.10-desktop-resumed.jpg",
+      "documented_date": "2026-11-12",
+      "width": 1265,
+      "height": 712
+    },
+    {
+      "file": "overview-mobile.webp",
+      "source_file": "v3.13-production-overview.jpg",
+      "documented_date": "2026-11-14",
+      "width": 375,
+      "height": 844
+    },
+    {
+      "file": "forecast-mobile.webp",
+      "source_file": "v3.13-production-rain.jpg",
+      "documented_date": "2026-11-14",
+      "width": 375,
+      "height": 844
+    }
+  ]
+}

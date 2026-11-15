@@ -4,7 +4,9 @@ Audience: recruiters for junior Data Analyst roles, analytics clients, and techn
 
 Author: Henry Abimanyu Dewandani, Bekasi, Jawa Barat. Informatics graduate, Telkom University, GPA 3.21/4.00. Internship: Telkom Indonesia, July–August 2025. The CV PDF already approved for public use remains the source for personal history. Confirm training completion status before changing it.
 
-Selected cases: Online Retail invoice activity, Telkom operational log dashboards, pose model evaluation. FitTrack, JalanYuk, World Happiness, and Cripto remain discoverable as additional work. Personal, internship, thesis, and team contributions must stay explicit.
+Selected cases: Online Retail invoice activity, Telkom operational log dashboards, pose model evaluation. FitTrack, JalanYuk, Pantau Asap, World Happiness, and Cripto remain discoverable as additional work. Personal, internship, thesis, and team contributions must stay explicit.
+
+Pantau Asap is Henry's personal environmental dashboard. Its BMKG weather forecasts, station PM2.5 observations and satellite hotspot detections have different units, coverage and timestamps. PM2.5 does not represent every village; hotspots are not confirmed fire counts. The PM2.5 prediction model is disabled. Both app and repository remain private: show genuine dated screenshots and a contact action, without changing access or promising a public demo. Screenshot provenance is in assets/pantau-asap/provenance.json.
 
 No invented business impact. Online Retail: 885/2,075 customers (42.7%) in the January–June 2011 cohort had another non-C invoice within 90 days. This is invoice activity, not net purchase retention. Pose: 8/8 repetitions refers to one scenario; the 8.4°/8.6° MAE comparison refers to subject 1's normal curl. Telkom's dashboard-list screenshot has publication permission; do not publish additional internal logs or dashboards without corresponding permission. World Happiness previews use the group's published JSON and describe Henry's two chart contributions.
 

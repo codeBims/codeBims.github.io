@@ -57,9 +57,12 @@ main section[id], main > section[id], .case-study[id] { scroll-margin-top: 16px;
 .case-copy h3 { font-size: clamp(2rem,3.2vw,3rem); line-height: 1.08; }
 .case-fittrack { --case-accent: #9a4518; }
 .case-jalanyuk { --case-accent: #14675e; }
+.case-pantau { --case-accent: #286446; }
+.project-access-note { margin-top: 1rem; color: var(--muted); font-size: .8rem; line-height: 1.6; }
 .case-pose { --case-accent: #a31e2c; }
 :root[data-theme="dark"] .case-fittrack { --case-accent: #f4b083; }
 :root[data-theme="dark"] .case-jalanyuk { --case-accent: #85d1c4; }
+:root[data-theme="dark"] .case-pantau { --case-accent: #b5dfbc; }
 :root[data-theme="dark"] .case-pose { --case-accent: #f89b9e; }
 .case-confidential { background: #1b222b; }
 .case-kicker, .case-facts dt { color: var(--case-accent); }
