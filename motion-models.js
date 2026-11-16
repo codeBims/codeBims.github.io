@@ -27,7 +27,12 @@
       return { x: 57 + column * 76, y: 208 - row * 19 };
     });
   }
-  const api = { sampleLogs, parseLog, summarizeLogs, grainPositions, retail: { rows:541909, invoices:18532, customers:4338, cohort:2075, subsequent:885 }, mae: { blaze:8.4, yolo:8.6 } };
+  function galleryNeighbors(index, count) {
+    if (count < 2) return { previous:null, next:null };
+    const current = ((index % count) + count) % count;
+    return { previous:(current+count-1)%count, next:(current+1)%count };
+  }
+  const api = { sampleLogs, parseLog, summarizeLogs, grainPositions, galleryNeighbors, retail: { rows:541909, invoices:18532, customers:4338, cohort:2075, subsequent:885 }, mae: { blaze:8.4, yolo:8.6 } };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else window.PortfolioModels = api;
 })();

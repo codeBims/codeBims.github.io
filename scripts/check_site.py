@@ -9,10 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__()
-        self.path, self.ids, self.refs, self.transitions = path, [], [], []
+        self.path, self.ids, self.refs, self.transitions, self.scripts = path, [], [], [], []
         self.feed(path.read_text(encoding='utf-8'))
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'script' and attrs.get('src'): self.scripts.append(Path(urlsplit(attrs['src']).path).name)
         if attrs.get('id'): self.ids.append(attrs['id'])
         self.transitions.extend(re.findall(r'view-transition-name:\s*([\w-]+)', attrs.get('style', '')))
         for key in ('href', 'src', 'poster', 'data-full-src', 'data-chapter-image'):
@@ -23,6 +24,10 @@ class Page(HTMLParser):
 pages = {p.resolve(): Page(p) for p in [ROOT/'index.html', *(ROOT/'projects').glob('*.html')]}
 errors = []
 for path, page in pages.items():
+    if 'app.js' in page.scripts:
+        for dependency in ('effects-policy.js', 'motion-models.js'):
+            if dependency not in page.scripts or page.scripts.index(dependency) > page.scripts.index('app.js'):
+                errors.append(f'{path.name}: {dependency} must load before app.js')
     for value, count in Counter(page.ids).items():
         if count > 1: errors.append(f'{path.name}: duplicate ID {value}')
     for value, count in Counter(page.transitions).items():
@@ -36,4 +41,4 @@ for path, page in pages.items():
         elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
             errors.append(f'{path.name}: missing anchor {ref}')
 assert not errors, '\n'.join(errors)
-print(f'PASS: {len(pages)} HTML pages; all local assets/anchors resolve; unique IDs and shared elements.')
+print(f'PASS: {len(pages)} HTML pages; local assets/anchors, unique IDs, shared elements and script dependency order.')

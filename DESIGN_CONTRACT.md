@@ -9,3 +9,10 @@ Choreography: grouped title entrance, slow hero orbits, bounded decorative depth
 Respect device reduced motion by default, with brief opacity-only interaction feedback. The persistent header animation picker allows an explicit full-effects opt-in or pauses decorative effects and automatic galleries together. Pause background animation while the document or hero is out of view. Without JavaScript, content remains readable in its final layout. Keep touch controls at least 44 px and all original deep links, keyboard paths and media controls working.
 
 Verify both themes and languages, phone/tablet/desktop widths, project selection, galleries, video, media modal, motion preference persistence and public deployment. Viewport simulation is not physical device testing. No performance score is claimed without measurement.
+
+
+## Sculpted exhibition, 16 November 2026
+
+Extend the established palette and genuine media with six coordinated effects: layered hero data planes that converge with the selected stage; aperture-based project entrances; original decorative pulse/contour/log/wind motifs per project; a center gallery with adjacent-image glimpses; a scroll-drawn route joining the main sections; and stationary tactile controls. Decorative motifs are illustrations, never measurements or extra project results. No additional external visual reference or asset is required for this extension.
+
+Keep the main screenshot proportional and unobstructed, preserve captions, video controls and enlargement. Gallery side glimpses are decorative; existing 44-pixel controls handle navigation. Keep the route in the content gutter, reduce its width and hero layers on phones, and move only decorative elements during scrolling. Animate visible scenes only, stop background animation when hidden, and use the existing device/full/pause policy. Content remains readable with JavaScript or effects disabled.

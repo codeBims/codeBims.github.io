@@ -18,11 +18,23 @@
 
   document.querySelectorAll('[data-instrument]').forEach(instrument => {
     const grains = [...instrument.querySelectorAll('[data-grain]')];
+    const front = instrument.querySelector('svg'); front.classList.add('instrument-front');
+    const volume = document.createElement('div'); volume.className = 'instrument-volume';
+    front.before(volume);
+    const depthGrains = ['back','middle'].map(layer => {
+      const plane = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      plane.setAttribute('viewBox','0 0 500 250'); plane.setAttribute('aria-hidden','true');
+      plane.classList.add('instrument-plane',`instrument-plane-${layer}`);
+      const points = grains.map(grain => { const point=grain.cloneNode();point.removeAttribute('data-grain');point.setAttribute('class','depth-grain');plane.append(point);return point; });
+      volume.append(plane); return points;
+    });
+    volume.append(front);
+    const grainLayers=[grains,...depthGrains];
     const buttons = [...instrument.querySelectorAll('[data-instrument-step]')];
     const toggle = instrument.querySelector('[data-instrument-toggle]');
     let stage = 0, paused = false, visible = false, hovering = false, focused = false, timer, frame;
     let positions = M.grainPositions(0);
-    function paint(points) { points.forEach((p,i) => { grains[i].setAttribute('cx',p.x); grains[i].setAttribute('cy',p.y); }); }
+    function paint(points) { points.forEach((p,i) => { grainLayers.forEach(layer=>{layer[i].setAttribute('cx',p.x);layer[i].setAttribute('cy',p.y);}); }); }
     function labels() { toggle.textContent = paused ? text('Putar','Play') : text('Jeda','Pause'); toggle.setAttribute('aria-pressed',String(!paused)); toggle.setAttribute('aria-label',paused ? text('Putar ilustrasi otomatis','Play the automatic illustration') : text('Jeda ilustrasi otomatis','Pause the automatic illustration')); toggle.hidden = reduced.matches; }
     function schedule() {
       clearTimeout(timer);
@@ -33,7 +45,7 @@
       cancelAnimationFrame(frame); stage = next; instrument.dataset.stage = stage;
       buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i===stage)));
       const target=M.grainPositions(stage), from=positions.map(p=>({...p}));
-      if (reduced.matches || (!visible && !manual)) { positions=target; paint(positions); if(manual)enter(instrument.querySelector('svg')); schedule(); return; }
+      if (reduced.matches || (!visible && !manual)) { positions=target; paint(positions); if(manual)enter(front); schedule(); return; }
       const start=performance.now();
       function tick(now) {
         const progress=Math.min(1,(now-start)/950), e=1-Math.pow(1-progress,4);

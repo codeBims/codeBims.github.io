@@ -29,6 +29,14 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const thumbnails = document.createElement('div'); thumbnails.className = 'gallery-thumbnails';
   const zoom = document.createElement('button'); zoom.type = 'button'; zoom.className = 'gallery-zoom';
   gallery.insertBefore(zoom, gallery.firstChild); gallery.append(thumbnails);
+  const stage = document.createElement('div'); stage.className = 'gallery-stage';
+  gallery.insertBefore(stage, slides[0]); slides.forEach(slide => stage.append(slide));
+  const previews = ['previous','next'].map(side => {
+    const preview = document.createElement('div'); preview.className = `gallery-preview gallery-preview-${side}`;
+    preview.setAttribute('aria-hidden','true');
+    const image = document.createElement('img'); image.alt = ''; image.loading = 'lazy';
+    preview.append(image); stage.append(preview); return {preview,image,side};
+  });
   let index = 0, inView = false, hovered = false, focused = false, paused = false, timer, touch;
   const canRun = () => !paused && !motion.matches && inView && !document.hidden && !hovered && !focused && !gallery.closest('[hidden]') && !document.getElementById('media-dialog')?.open;
   function sync() {
@@ -57,7 +65,14 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     slides.forEach((slide, i) => slide.setAttribute('aria-label', `${i + 1} ${tr('dari', 'of')} ${slides.length}`));
   }
   function show(n, announce = false) {
+    const direction = n < index ? -1 : 1;
     slides[index].querySelector('video')?.pause(); index = (n + slides.length) % slides.length;
+    stage.style.setProperty('--gallery-direction', direction); stage.dataset.galleryIndex = String(index);
+    const neighbors = window.PortfolioModels.galleryNeighbors(index,slides.length);
+    previews.forEach(({preview,image,side}) => {
+      preview.hidden = neighbors[side] === null;
+      if (!preview.hidden) image.src = thumbButtons[neighbors[side]].querySelector('img').src;
+    });
     slides.forEach((slide, i) => { slide.hidden = i !== index; slide.setAttribute('aria-hidden', String(i !== index)); });
     thumbButtons.forEach((button, i) => button.setAttribute('aria-current', String(i === index)));
     current.parentElement.setAttribute('aria-live', announce ? 'polite' : 'off'); current.textContent = String(index + 1);
