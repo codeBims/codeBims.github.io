@@ -7,8 +7,10 @@
   let heroVisible = false, frame = 0;
 
   function animate(element, keyframes, options) {
-    if (!element || media.matches || document.hidden) return;
-    const animation = element.animate(keyframes, {duration:800,easing:ease,fill:'backwards',...options});
+    if (!element || window.PortfolioEffects.interaction === 'none' || document.hidden) return;
+    element.getAnimations().forEach(animation => animation.cancel());
+    const fade = window.PortfolioEffects.interaction === 'fade';
+    const animation = element.animate(fade ? [{opacity:.4},{opacity:1}] : keyframes, fade ? {duration:180,easing:ease} : {duration:800,easing:ease,fill:'backwards',...options});
     running.add(animation);
     animation.finished.catch(() => {}).finally(() => running.delete(animation));
   }

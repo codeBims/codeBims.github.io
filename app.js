@@ -139,11 +139,19 @@ function updateScroll() {
 }
 window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(updateScroll); } }, { passive:true });
 updateScroll();
-if (!motion.matches && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+let revealObserver;
+function enableReveals() {
+  if (motion.matches || revealObserver || !('IntersectionObserver' in window)) return;
+  revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
   }), { threshold: .05 });
   document.documentElement.classList.add('motion-ready');
   let cardOrder = 0;
-  document.querySelectorAll('.work-card, .section-heading, .section-intro, .explorer-heading, .positioning-photo-wrap, .positioning-copy, .timeline article, .case-narrative article, .contact-main').forEach(el => { el.dataset.reveal=''; el.style.setProperty('--reveal-delay',`${el.matches('.work-card') ? cardOrder++%3*100 : 0}ms`); observer.observe(el); });
+  document.querySelectorAll('.work-card, .section-heading, .section-intro, .explorer-heading, .positioning-photo-wrap, .positioning-copy, .timeline article, .case-narrative article, .contact-main').forEach(el => {
+    el.dataset.reveal=''; el.style.setProperty('--reveal-delay',`${el.matches('.work-card') ? cardOrder++%3*100 : 0}ms`);
+    if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-visible');
+    else revealObserver.observe(el);
+  });
 }
+enableReveals();
+motion.addEventListener('change', enableReveals);

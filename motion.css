@@ -132,8 +132,3 @@
  .journey-index > .micro-label { display:none; }.journey-index > strong { font-size:1.5rem; align-self:center; min-width:74px; }.journey-photo { display:none; }.chapter-links { display:flex; justify-content:flex-end; margin:0; gap:.35rem; }.chapter-links a { min-height:44px; padding:.5rem .1rem; font-size:.65rem; white-space:nowrap; }.chapter-links a > span:first-child { display:none; }
  .chapter-list article,.chapter-list article:nth-child(n) { min-height:260px; scroll-margin-top:calc(var(--header-height) + 80px); }.contact-signal { margin-inline:auto; }.copy-email { min-height:44px; }
 }
-@media (prefers-reduced-motion:reduce) {
- @view-transition { navigation:none; }
- ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*) { animation-duration:0s !important; }
- .work-card,.work-card:hover { transform:none; }.story-token,.story-result-line,.model-scale i { transition:none; }
-}

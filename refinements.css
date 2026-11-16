@@ -156,4 +156,3 @@ main section[id], main > section[id], .case-study[id] { scroll-margin-top: 16px;
  .media-dialog-toolbar h2 { font-size:1.1rem; }.media-scroll img { min-width:800px; }
 }
 @media (max-width:430px) { .work-card { display:block; }.work-image { aspect-ratio:1.8; padding:1rem; }.theme-picker select { max-width:138px; }.site-header { row-gap:.3rem; }.section-nav a { font-size:.7rem; min-height:44px; padding-inline:.8rem; }.hero-profile { grid-template-columns:.9fr 1.1fr; }.case-body { padding:1rem; }.case-facts div { grid-template-columns:1fr; }.certificate-grid { grid-template-columns:1fr; }.capability-grid { grid-template-columns:1fr; }.capability-grid article { border-left:0; border-top:1px solid var(--line); } }
-@media (prefers-reduced-motion:reduce) { html {scroll-behavior:auto;} *,*::before,*::after { animation:none !important; transition:none !important; }.motion-ready [data-reveal] { opacity:1; transform:none; } }

@@ -3,11 +3,18 @@
   const reduced = window.PortfolioEffects?.media || matchMedia('(prefers-reduced-motion: reduce)');
   const text = (id,en) => document.documentElement.lang === 'en' ? en : id;
   const ease = 'cubic-bezier(.2,.8,.2,1)';
+  const interaction = () => window.PortfolioEffects?.interaction || (reduced.matches ? 'fade' : 'full');
   function enter(el) {
-    if (!el || reduced.matches) return;
+    if (!el || interaction() === 'none') return;
     el.getAnimations().forEach(animation => animation.cancel());
-    el.animate([{opacity:.25,transform:'translateY(12px)',filter:'blur(3px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:440,easing:ease});
+    const full = interaction() === 'full';
+    el.animate(full ? [{opacity:.25,transform:'translateY(12px)'},{opacity:1,transform:'none'}] : [{opacity:.4},{opacity:1}],{duration:full?440:180,easing:ease});
   }
+  reduced.addEventListener('change',()=>{
+    if(reduced.matches)document.getAnimations().forEach(animation=>{
+      if(Number.isFinite(animation.effect?.getComputedTiming().endTime))animation.finish();
+    });
+  });
 
   document.querySelectorAll('[data-instrument]').forEach(instrument => {
     const grains = [...instrument.querySelectorAll('[data-grain]')];
@@ -22,11 +29,11 @@
       if (!visible || paused || hovering || focused || reduced.matches || document.hidden) return;
       timer = setTimeout(() => show((stage+1)%3),4200);
     }
-    function show(next) {
+    function show(next, manual = false) {
       cancelAnimationFrame(frame); stage = next; instrument.dataset.stage = stage;
       buttons.forEach((button,i) => button.setAttribute('aria-pressed',String(i===stage)));
       const target=M.grainPositions(stage), from=positions.map(p=>({...p}));
-      if (reduced.matches || !visible) { positions=target; paint(positions); schedule(); return; }
+      if (reduced.matches || (!visible && !manual)) { positions=target; paint(positions); if(manual)enter(instrument.querySelector('svg')); schedule(); return; }
       const start=performance.now();
       function tick(now) {
         const progress=Math.min(1,(now-start)/950), e=1-Math.pow(1-progress,4);
@@ -35,7 +42,7 @@
       }
       frame=requestAnimationFrame(tick);
     }
-    buttons.forEach((button,i)=>button.addEventListener('click',()=>{paused=true;labels();show(i);}));
+    buttons.forEach((button,i)=>button.addEventListener('click',()=>{paused=true;labels();show(i,true);}));
     toggle.addEventListener('click',()=>{paused=!paused;labels();schedule();});
     instrument.addEventListener('mouseenter',()=>{hovering=true;clearTimeout(timer);});
     instrument.addEventListener('mouseleave',()=>{hovering=false;schedule();});
@@ -62,6 +69,7 @@
       story.dataset.stage=String(index);
       buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
       panels.forEach((panel,i)=>{panel.hidden=i!==index;});enter(panels[index]);
+      if(interaction()==='fade')enter(story.querySelector('.story-figure'));
     }
     buttons.forEach((button,i)=>{
       button.addEventListener('click',()=>show(i));
@@ -102,13 +110,14 @@
   if(journey){
     const chapters=[...journey.querySelectorAll('[data-chapter]')], links=[...journey.querySelectorAll('[data-chapter-link]')];
     const year=journey.querySelector('[data-chapter-year]'),photo=journey.querySelector('[data-chapter-photo]'),learning=journey.querySelector('[data-learning-mark]');
+    new IntersectionObserver(entries=>{learning.dataset.inView=String(entries[0].isIntersecting);},{threshold:.2}).observe(learning);
     let active=-1, ticking=false;
     function select(index){
       if(active===index)return;active=index;const chapter=chapters[index];
       year.textContent=chapter.dataset.chapterYear;enter(year);
       links.forEach((link,i)=>i===index?link.setAttribute('aria-current','step'):link.removeAttribute('aria-current'));
       const src=chapter.dataset.chapterImage;photo.hidden=!src;learning.hidden=!!src;
-      if(src){photo.src=src;photo.alt=links[index].textContent.trim();enter(photo);}
+      if(src){photo.src=src;photo.alt=links[index].textContent.trim();enter(photo);}else enter(learning);
     }
     function update(){const line=document.querySelector('.site-header').getBoundingClientRect().bottom+innerHeight*.3;let index=0;chapters.forEach((chapter,i)=>{if(chapter.getBoundingClientRect().top<line)index=i;});select(index);ticking=false;}
     window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
@@ -118,9 +127,20 @@
     if(!matchMedia('(hover: hover) and (pointer: fine)').matches)return;
     link.addEventListener('pointermove',event=>{if(reduced.matches)return;const r=link.getBoundingClientRect();link.style.setProperty('--pointer-x',`${(event.clientX-r.left)/r.width*100}%`);link.style.setProperty('--pointer-y',`${(event.clientY-r.top)/r.height*100}%`);});
   });
+  const signal=document.querySelector('.contact-signal path');
+  function drawSignal(){
+    if(!signal || interaction()==='none')return;
+    signal.getAnimations().forEach(animation=>animation.cancel());
+    if(interaction()==='full')signal.animate([{strokeDashoffset:260},{strokeDashoffset:0}],{duration:900,easing:ease});
+    else enter(signal.closest('.contact-signal'));
+  }
+  const contact=document.querySelector('.contact-main');
+  contact?.addEventListener('pointerenter',drawSignal);
+  contact?.addEventListener('focusin',drawSignal);
   document.querySelector('[data-copy-email]')?.addEventListener('click',async()=>{
     const output=document.querySelector('[data-copy-status]');
     try {await navigator.clipboard.writeText('abimkaizen@gmail.com');output.textContent=text('Alamat email tersalin.','Email address copied.');}
     catch {output.textContent=text('Alamat email: abimkaizen@gmail.com','Email address: abimkaizen@gmail.com');}
+    enter(output);drawSignal();
   });
 })();

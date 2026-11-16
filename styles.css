@@ -979,9 +979,3 @@ footer p { margin: 0; }
   nav.section-nav a { min-height: 40px; padding: .48rem .62rem; font-size: .62rem; letter-spacing: .06em; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: .8rem; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; animation: none !important; }
-  .motion-ready [data-reveal] { opacity: 1; transform: none; }
-}
